@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GSAP Basic 01</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+.home_page{
+    
+}
+.home_main{
+    margin-left: 250px;
+}
+#mySidebar{
+    background: #000;
+}
+header{
+    background: #000;
+}
+header p{
+    color: #fff;
+}
+.w3-display-topleft h1{
+    color: #000;
+}
+</style>
+</head>
+<body class="home_page">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>LOGO</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">Shirts</a>
+    <a href="#" class="w3-bar-item w3-button">Dresses</a>
+    <a href="#" class="w3-bar-item w3-button">Jeans</a>
+    <a href="#" class="w3-bar-item w3-button">Jackets</a>
+    <a href="#" class="w3-bar-item w3-button">Gymwear</a>
+    <a href="#" class="w3-bar-item w3-button">Blazers</a>
+    <a href="#" class="w3-bar-item w3-button">Shoes</a>
+  </div>
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="home_main">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left">Xin trào các bợn, tui là Tâm nè</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container">
+    <img src="assets/images/banner01.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+      <h1 class="w3-hide-small">COLLECTION 2022</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
+    </div>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-grayscale home_list_item">
+    <div class="w3-col l3 s6">
+      <div class="w3-container item">
+        <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+      </div>
+    </div>
+    <div class="w3-col l3 s6">
+        <div class="w3-container item">
+          <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+          <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container item">
+          <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+          <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container item">
+          <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+          <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container item">
+          <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+          <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        </div>
+      </div>
+
+      <div class="w3-col l3 s6">
+        <div class="w3-container item">
+          <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+          <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container item">
+          <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+          <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container item">
+          <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+          <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        </div>
+      </div>
+      <div class="w3-col l3 s6">
+        <div class="w3-container item">
+          <img src="https://www.w3schools.com/w3images/jeans1.jpg" style="width:100%">
+          <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+        </div>
+      </div>
+
+</div>
+ 
+
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+  <!-- End page content -->
+</div>
+
+
+<script>
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script>
+    gsap.from('.w3-sidebar',{
+        x: '-100%',
+        ease: "power1.out",
+        duration: 1.2
+    });
+    gsap.from('.w3-bar-item',{
+        x: '-100%',
+        ease: "power1.out",
+        opacity: 0,
+        delay:1,
+        duration: 1.2,
+        stagger : 0.2
+    });
+    gsap.from('header',{
+        y: '-100%',
+        ease: "power1.out",
+        duration: 2,
+        delay:1,
+    });
+    gsap.from('.w3-left ,.w3-right',{
+        y: '-100%',
+        ease: "power1.out",
+        opacity: 0,
+        delay:3,
+        stagger : 0.2, // khoảng thời gian xuất hiện từng item không cùng 1 lúc
+        duration: 1.2,
+    });
+    gsap.from('.w3-display-container h1, .w3-display-container .w3-button',{
+        y: '-100%',
+        ease: "power1.out",
+        opacity: 0,
+        delay:4,
+        stagger : 0.5,
+        duration: 1.2,
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".item", { 
+        ease: "none",
+        opacity: 0,
+        stagger : 2,
+        duration:4,
+        y:200,
+        scrollTrigger: {
+            trigger: ".home_list_item",
+            start: "top top+=200", //vị trí Top , top+=200 : vị trí cách điểm top của mh trình duyệt 200
+            end: "bottom bottom",
+            scrub: 3,
+            once:true,
+            markers:true
+        }
+    });
+</script>
+</body>
+</html>
