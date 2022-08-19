@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Canvas basic 91</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    body{
+        background: url(assets/img/bg.jpg) no-repeat center;
+        background-size: cover;
+    }
+    @keyframes bouncing-loader {
+    to {
+        opacity: 0.1;
+        transform: translate3d(0, -16px, 0);
+    }
+    }
+
+    .bouncing-loader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #2b319e;
+    }
+    body.loaded .bouncing-loader{
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+        -webkit-transition: opacity 2s ease-in-out;
+        -moz-transition: opacity 2s ease-in-out;
+        -ms-transition: opacity 2s ease-in-out;
+        -o-transition: opacity 2s ease-in-out;
+    }
+    .bouncing-loader > div {
+    width: 16px;
+    height: 16px;
+    margin: 3rem 0.2rem;
+    background: #cf631b;
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate;
+    }
+
+    .bouncing-loader > div:nth-child(2) {
+    animation-delay: 0.2s;
+    }
+
+    .bouncing-loader > div:nth-child(3) {
+    animation-delay: 0.4s;
+    }
+
+
+    .wrapper{
+        overflow: hidden;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="bouncing-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <canvas id="myCanvas"></canvas>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            setTimeout(function(){
+                $('body').addClass("loaded");    
+            },3000);
+        })
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        ctx.canvas.width = window.innerWidth;
+        ctx.canvas.height = window.innerHeight;
+        let particleArray;
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.font = this.size + 'pt Arial';
+                ctx.fillText('Hello World', this.x, this.y);
+                ctx.fillStyle = this.color;
+            }
+            update() {
+                if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                    this.directionY = -this.directionY;
+                }
+
+                this.x += this.directionX;
+                this.y += this.directionY;
+
+                this.draw();
+            }
+        }
+
+        function init() {
+            particleArray = [];
+            for (let i = 0; i < 100; i++) {
+                let r = Math.floor(Math.random() * 255) + 50;
+                let g = Math.floor(Math.random() * 255) + 50;
+                let b = Math.floor(Math.random() * 255) + 50;
+                let size = Math.random() * 50;
+                let x = Math.random() * (innerWidth - size * 2);
+                let y = Math.random() * (innerHeight - size * 2);
+                let directionX = Math.random() * 0.4 - 0.2;
+                let directionY = Math.random() * 0.4 - 0.2;
+             
+                let color  = 'rgba(' + r + ',' + g + ',' + b +',1.0)';
+
+                particleArray.push(
+                    new Particle(x, y, directionX, directionY, size, color)
+                );
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+            for (let i = 0; i < particleArray.length; i++) {
+                particleArray[i].update();
+            }
+        }
+
+        init();
+        animate();
+
+        window.addEventListener("resize", function () {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            init();
+        });
+    </script>
+</body>
+</html>

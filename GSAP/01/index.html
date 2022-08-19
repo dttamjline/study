@@ -11,9 +11,7 @@
 <style>
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
-.home_page{
-    
-}
+
 .home_main{
     margin-left: 250px;
 }
@@ -28,6 +26,26 @@ header p{
 }
 .w3-display-topleft h1{
     color: #000;
+}
+.home_list_item{
+  padding-bottom: 300px;
+}
+img {
+  max-width: 100%;
+  width: auto!important;
+}
+.home_list_item img{
+  max-width: 100%;
+  width: auto!important;
+}
+@media screen and (max-width: 1024px){
+    .home_main{
+      width: 100%;
+      margin-left: 0;
+    }
+    .w3-col.s6{
+      width: 45%;
+    }
 }
 </style>
 </head>
@@ -219,7 +237,7 @@ function w3_close() {
         y:200,
         scrollTrigger: {
             trigger: ".home_list_item",
-            start: "top top+=200", //vị trí Top , top+=200 : vị trí cách điểm top của mh trình duyệt 200
+            start: "top top", //vị trí Top , top+=200 : vị trí cách điểm top của mh trình duyệt 200
             end: "bottom bottom",
             scrub: 3,
             once:true,
