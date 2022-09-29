@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Threejs basic 01</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .wrapper{
+        overflow: hidden;
+    }
+    body {
+        margin: 0;
+    }
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+
+    <script src="https://threejs.org/build/three.js"></script>
+    <script>
+        var scene = new THREE.Scene();
+        var renderer = new THREE.WebGLRenderer();
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        //PerspectiveCamera(fov : Number, aspect : Number, near : Number, far : Number)
+        //fov: (field of view) tham số này định nghĩa góc có thể nhìn được, tức là camera có thể nhìn được bao nhiêu sẽ dựa vào tham số này, có đơn vị đo góc là deg, range là 1 tới 179 deg
+        //aspect: Tham số chỉ ra tỉ lệ của camera (kiểu như kích cỡ của video phim chuẩn là tỉ lệ 16:9
+        //far và near: Tham số tương tự như perepective trong css, chỉ ra giới hạn xa gần của camera. Far là điểm cực xa của camera (default là 2000), near là điểm cực gần của camera (default là 0.1), tất nhiên là far luôn phải lớn hơn near
+        
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+		document.body.appendChild(renderer.domElement);
+
+        const geometry = new THREE.SphereGeometry(1,6,2);
+        var material = new THREE.MeshBasicMaterial( {color: 0x81c5f0, wireframe: true} ); //wireframe false will not show wireframe
+
+        const sphere = new THREE.Mesh( geometry, material );
+        scene.add( sphere );
+        renderer.render(scene, camera);
+
+		camera.position.z = 3;
+
+
+		var update = function() {
+			sphere.rotation.x += 0.01;
+			sphere.rotation.y += 0.01;
+		};
+
+		// draw scene
+		var render = function() {
+			renderer.render(scene, camera);
+		};
+
+		//run gameloop
+		var GameLoop = function() {
+			requestAnimationFrame(GameLoop);
+			update();
+			render();
+		};
+
+		GameLoop();
+        scene.background = new THREE.Color( '#000' );
+   </script>
+</body>
+</html>

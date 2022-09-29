@@ -39,7 +39,7 @@
         justify-content: center;
         background: #2b319e;
     }
-    body.loaded .bouncing-loader{
+    body.loaded .bouncing-loader,body.loaded .bouncing-loader > div{
         opacity: 0;
         transition: opacity 2s ease-in-out;
         -webkit-transition: opacity 2s ease-in-out;
@@ -53,7 +53,7 @@
     margin: 3rem 0.2rem;
     background: #cf631b;
     border-radius: 50%;
-    animation: bouncing-loader 0.6s infinite alternate;
+    animation: bouncing-loader 0.5s infinite alternate;
     }
 
     .bouncing-loader > div:nth-child(2) {
@@ -70,7 +70,7 @@
     }
 </style>
 <body>
-    
+
     <div class="wrapper">
         <canvas id="myCanvas"></canvas>
         <div class="bouncing-loader">
@@ -104,7 +104,7 @@
             }
             draw() {
                 ctx.font = this.size + 'pt Arial';
-                ctx.fillText('Hello World', this.x, this.y);
+                ctx.fillText('Hello world', this.x, this.y);
                 ctx.fillStyle = this.color;
             }
             update() {
@@ -129,10 +129,11 @@
                 let g = Math.floor(Math.random() * 255) + 50;
                 let b = Math.floor(Math.random() * 255) + 50;
                 let size = Math.random() * 50;
-                let x = Math.random() * (innerWidth - size);
-                let y = Math.random() * (innerHeight - size);
+                let x = Math.random() * (innerWidth - size * 2);
+                let y = Math.random() * (innerHeight - size * 2);
                 let directionX = Math.random() * 0.5;
                 let directionY = Math.random() * 0.5;
+                console.log(Math.random() * (innerWidth - size * 2))
              
                 let color  = 'rgba(' + r + ',' + g + ',' + b +',1.0)';
 

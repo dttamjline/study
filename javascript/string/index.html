@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <script>
+        //TẠO CHUỖI
+        //Cách 1:
+        let str1 = 'demo tạo chuỗi trong javascript'; 
+        //Cách 2 : ko nên dùng vì datatype nó có thể là object
+        let str2 = String('demo tạo chuỗi trong javascript');
+        console.log(str2);
+       //GÁN CHUỖI
+        // let str1 = 'Mr';
+        // str1 += ' Tam';
+        // console.log(str1)
+
+        //**NỐI 2 CHUỖI
+        //Cách thường
+        let s1 = "Tui là";
+        let s2 = "Tâm nè";
+        document.write('Kết quả nối chuỗi:'+ s1 + ' '+s2+'<br>');
+        //Cách 2 : Template string (ES6)
+        document.write(`<p>Kết quả nối chuỗi: ${s1} ${s2}</p>`);
+
+        //THAO TÁC VỚI CHUỖI
+        const mystring = 'Học js ở jline hay học js ở nhà?';
+        //1.Độ dài
+        console.log(mystring.length);
+        //2. Tìm index 
+        //Sử dụng indexOf : tính từ trái qua bắt đầu là vị trí 0 
+        console.log(mystring.indexOf('js'));
+        //Sử dụng indexOf : tìm chữ js thử 2 thì dùng indexOf ('chuỗi tìm', vị trí bắt đầu tìm)
+        console.log(mystring.indexOf('js',5));
+        //Sử dụng lastindexOf : tìm chữ js từ cuối chuỗi (phải qua trái)
+        console.log(mystring.lastIndexOf('js'));
+        //Sử dụng search 
+        console.log(mystring.search('js'));
+
+        //3. Cắt chuỗi
+        
+    </script>
+</body>
+</html>
