@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        var arr = ['PHP', 'Javascript', 'NodeJS', 'Jquery', 'Angular'];
+        //1. toString : chuyển đổi phần tử mảng sang chuỗi nhưng ko thể chèn khoảng trắng hay gì vô được mà mặc định chỉ có dấu , để ngăn cách
+        console.log(arr.toString());
+        //2. join : chuyển đổi phần tử mảng sang chuỗi có thể custom 
+        console.log(arr.join(', '));
+        //3. pop : xoá phần tử ở cuối mảng
+        console.log(arr.pop()); //xoá 1 phần tử
+        console.log(arr);//các phẩn còn lại sau khi xoá
+    </script>
+</body>
+</html>

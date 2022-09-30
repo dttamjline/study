@@ -7,6 +7,7 @@
     <title>String</title>
 </head>
 <body>
+    <div class="demo"></div>
     <script>
         //TẠO CHUỖI
         //Cách 1:
@@ -42,7 +43,34 @@
         console.log(mystring.search('js'));
 
         //3. Cắt chuỗi
-        
+        //Hàm slice
+        //cắt lấy chữ js
+        console.log(mystring.slice(4,6));
+        //cắt từ đầu đến hết
+        console.log(mystring.slice(0));
+        //cắt từ phải sang trái, bên phải bắt đầu từ 0 đến -1 -2 -3....
+        console.log(mystring.slice(-9,-7));
+        //Hàm substring
+        console.log(mystring.substring(0,3));
+
+
+        //4. Thay thế chuỗi
+        // console.log(mystring.replace(/js/g,'Javascript'));
+        // //5. Viết hoa chuỗi , viết thường chuỗi
+        // console.log(mystring.toUpperCase());
+        // console.log(mystring.toLowerCase());
+        // //6. Trim 
+        // let text = "     Hello World!     ";
+        // // console.log(text.trim());
+
+        // document.getElementsByClassName("demo")[0].innerText = text.trim();
+        // console.log( document.getElementsByClassName("demo"))
+        //7.hàm split() : tách chuỗi ra thành các phần tử mảng riêng biệt
+        let s = 'javascript, php, c, c++';
+        console.log(s.split(', '));
+        //8. Get a character by index
+        const ss = 'javascript'; 
+        console.log(ss.charAt(3));
     </script>
 </body>
 </html>
