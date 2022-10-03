@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=-100%, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no">
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!-- <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> -->
+	</head>
+	<body class="index">
+		<div id="root">
+			<h1>spread</h1>
+			<script>
+				//Toán tử Spread dùng để hợp nhất 2 hoặc nhiều mảng or object khác nhau
+				var arr1 = ['a', 'b', 'c'];
+				var arr2 = ['d', 'e', 'f'];
+				var arr3 = [...arr1, ...arr2];
+				console.log(arr3);
+
+
+				var obj1 = {
+					api :  "abc",
+					version : "1.0",
+					length : '30'
+				};
+				var obj2 ={
+					...obj1, //lấy thông tin của obj1
+					api: "def" // ghi đè cái api cũ 
+				};
+				console.log(obj2);
+
+
+				var arr = ['x','y', 'z'];
+				function logger(...rest){
+					for(var i = 0; i < rest.length; i++){
+						console.log(rest[i]);
+					}
+				}
+				logger(...arr);
+				//Spread thường dùng với function
+			</script>
+		</div>
+	</body>
+</html>

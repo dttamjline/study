@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=-100%, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no">
+		<title>destructuring</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!-- <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> -->
+	</head>
+	<body class="index">
+		<div id="root">
+			<h1>destructuring</h1>
+			<script>
+                var arr = ['javascript', 'PHP', 'SQL'];
+                var [a, b, ...rest] = arr;
+                // console.log(a);
+                // console.log(rest);
+
+
+				var obj = {
+					name : 'javascript',
+					price : 2000,
+					img: 'url-image',
+					children_obj: {
+						name : 'ReactJS'
+					}
+				};
+				// var { name, ... rest} = obj;
+				// console.log(name);
+				// console.log(rest)
+				var {name: parentName, children_obj : {name: childrenName}} = obj;
+				console.log(parentName);
+				console.log(childrenName);
+			</script>
+		</div>
+	</body>
+</html>

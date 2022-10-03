@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object constructor</title>
+</head>
+<body>
+    <script>
+        function User(firstName, lastName, avatar){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.avatar = avatar;
+            this.getName = function(){
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+        //prototype: thêm 1 thuộc tính nằm ngoài hàm tạo 
+        User.prototype.className = 'F999';
+        User.prototype.getClassName = function (){
+            return this.className;
+        }
+        let author = new User('Tam', 'Thanh', 'Tam\'s avatar');
+        let user = new User('user', 'user', 'User\'s avatar');
+        author.title = 'Hello, my name \'s Tam';
+        user.comment = 'This is user\'s comment';
+        console.log(author);
+        console.log(user);
+        console.log(author.getName());
+        console.log(user.getName());
+        console.log(author.className);
+        console.log(user.getClassName());
+    </script>
+</body>
+</html>

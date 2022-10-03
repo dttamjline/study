@@ -1,0 +1,53 @@
+@mixin theme ($a) {
+    background: $a; 
+    border: solid 2px #000;
+}
+@mixin theme01 ($b : #0de723){
+    background: $b;
+    box-shadow: 3px 30px 40px #0de723;
+}
+
+@mixin positionabsolute($direction : "left") {
+    position: absolute;
+    @if $direction == "left" {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $direction == "top" {
+        top:50%;
+        transform: translateY(-50%);
+    }
+    @if $direction == "center"{
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+    }
+        
+}
+
+%trans{
+    transition: all 0.5s ease;
+}
+%placeholderClass {
+    color: #fff;
+    background: #000;
+}
+.box{
+    width: 600px;
+    height: 250px;
+    margin: 0 auto;
+    @include theme01;
+    @include positionabsolute("left");
+}
+.box01{
+    @extend %trans;
+    width: 400px;
+    height: 300px;
+    @include theme(#ae4040);
+    @extend %placeholderClass;
+    &:hover{
+  
+        transform:translateY(-30px);
+    }
+}
+//Placeholder sẽ ko bằng mixin

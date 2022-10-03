@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        var arr = ['PHP', 'Javascript', 'NodeJS', 'Jquery', 'Angular'];
+        let arr = ['PHP', 'Javascript', 'NodeJS', 'Jquery', 'Angular'];
         //1. toString : chuyển đổi phần tử mảng sang chuỗi nhưng ko thể chèn khoảng trắng hay gì vô được mà mặc định chỉ có dấu , để ngăn cách
         console.log(arr.toString());
         //2. join : chuyển đổi phần tử mảng sang chuỗi có thể custom 
@@ -16,6 +16,27 @@
         //3. pop : xoá phần tử ở cuối mảng
         console.log(arr.pop()); //xoá 1 phần tử
         console.log(arr);//các phẩn còn lại sau khi xoá
+        //4.push
+        console.log(arr.push('ReactJS', 'VueJS')); // thêm phần tử vào cuối mảng
+        console.log(arr);//mảng sau khi thêm
+        //5. splice : xoá phần tử hoặc cũng có thể chèn thêm phần tử vào mảng hiện có
+        //splice (vị trí index của array bắt đầu mún xoá, số lượng item mún xoá)
+        console.log(arr.splice(1, 2)); 
+        console.log(arr);
+        //splice (vị trí index của array bắt đầu mún xoá, số lượng item mún xoá, giá trị thêm vào)
+       // console.log(arr.splice(1, 0, 'CSS', 'HTML')); // 0 là ko xoá 
+        console.log(arr.splice(1, 1, 'CSS', 'HTML')); // 1 là xoá thằng javascript r thêm CSS , HTML vô vị trí thằng đó 
+        console.log(arr);
+
+        //6.concat :   Nối 2 mảng
+        let arr02 = ['Java', 'SQL'];
+        console.log(arr.concat(arr02));
+        //7.slice : cắt phần tử của mảng ra 
+        //slice(vị trí item bắt đầu cắt, vị trí item cuối cắt ) 
+        let arr03 = ['a', 'b', 'c', 'd', 'f'];
+        console.log(arr03.slice(1,3)); 
+        //cắt chữ b và c ra khỏi mảng
+        // vị trí bắt đầu là 1 là chữ b, vị trí kết thúc là 3 là chữ d nhưng ko tính, trừ 1 lại là chữ c   
     </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileZilla3 version="3.28.0" platform="windows">
+	<Servers>
+		<Server>
+			<Host>fsftp2.red.shared-server.net</Host>
+			<Port>21</Port>
+			<Protocol>4</Protocol>
+			<Type>0</Type>
+			<User>info@seisaku.freesale-support.jp</User>
+			<Pass encoding="base64">RGdGYnU3Qlg=</Pass>
+			<Account>info@seisaku.freesale-support.jp</Account>
+			<Logontype>4</Logontype>
+			<TimezoneOffset>0</TimezoneOffset>
+			<PasvMode>MODE_DEFAULT</PasvMode>
+			<MaximumMultipleConnections>0</MaximumMultipleConnections>
+			<EncodingType>Auto</EncodingType>
+			<BypassProxy>0</BypassProxy>
+			<Name>FVN NEW CODING</Name>
+			<Comments />
+			<Colour>0</Colour>
+			<LocalDir />
+			<RemoteDir />
+			<SyncBrowsing>0</SyncBrowsing>
+			<DirectoryComparison>0</DirectoryComparison>
+		</Server>
+	</Servers>
+</FileZilla3>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=-100%, user-scalable=yes" />
+		<meta name="format-detection" content="telephone=no">
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!-- <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script> -->
+	</head>
+	<body class="index">
+		<div id="root">
+			<h1>object_literals</h1>
+			<!-- <script>
+				//literals  : 
+				//1.Định nghĩa key : value cho object
+				//2.Định nghĩa method cho object
+				//3.Định nghĩa key cho object dưới dạng biến
+				var name = "Tam";
+				var price = 1000;
+				var course = {
+					//Cách bình thường
+					// name: name,
+					// price : price
+					//Cách literals
+					name,
+					price,
+					//Cách bình thường
+					getName: function(){
+						return name;
+					},
+					//Cách literals
+					getName(){
+						return name;
+					}
+				};
+				console.log(course.getName())
+			</script> -->
+
+			<script>
+				var fieldName = "new-name";
+				var fieldPrice = "price";
+				const course = {
+					name : 'javascript',
+					[fieldName] : 'Jquery',
+					[fieldPrice] : 1000
+				}
+
+				console.log(course);
+			</script>
+		</div>
+	</body>
+</html>

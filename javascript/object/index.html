@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <script>
+        let myEmailKey = 'email';
+        myInfo = {
+            name: 'Thanh Tam', //có thể khi báo dấu - bằng cách thêm '' vào ví dụ 'name-name'
+            age : '30',
+            address : 'Long An',
+            [myEmailKey] : 'jline.tamdt@gmail.com',
+            getAddress : function(){
+                return this.address;
+            }
+        }
+        let myKey = 'name';
+        console.log(myInfo);
+        //2 cách truy xuất giá trị
+        console.log(myInfo.age);
+        console.log(myInfo['age']);
+        console.log(myInfo[myKey]); // dùng để lấy value của object ko dùng cách 1
+        console.log(myInfo);
+        console.log(myInfo.getAddress());
+    </script>
+</body>
+</html>

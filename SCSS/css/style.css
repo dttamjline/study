@@ -1,0 +1,35 @@
+.box01 {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.box01 {
+  color: #fff;
+  background: #000;
+}
+
+.box {
+  width: 600px;
+  height: 250px;
+  margin: 0 auto;
+  background: #0de723;
+  -webkit-box-shadow: 3px 30px 40px #0de723;
+          box-shadow: 3px 30px 40px #0de723;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.box01 {
+  width: 400px;
+  height: 300px;
+  background: #ae4040;
+  border: solid 2px #000;
+}
+
+.box01:hover {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+}
+/*# sourceMappingURL=style.css.map */

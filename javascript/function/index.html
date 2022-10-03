@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+        //Đối tượng arguments
+        // function writeLog(){
+        //     console.log(arguments);
+        // }
+        // writeLog('log 1', 'log 2');
+
+
+        function writeLog2(){
+            let myString = '';
+            for(let i of arguments){
+                myString += `${i} - `;
+            }
+            let indexLast = myString.lastIndexOf('-');
+            let newString = myString.slice(0,indexLast);
+            console.log(newString.trim());
+        }
+        writeLog2('log 1', 'log 2','log 3');
+
+
+        //Return
+
+        function add(a, b){
+            return a + b;
+            console.log('cxxx');//sẽ k chạy vì những hàm sau return sẽ k đc thực thi
+        }
+        console.log(add (3,7));
+
+
+        //function trong function
+        function showMess1(){
+            function showMess2(){
+                console.log('Mess 2');
+            }
+            showMess2();
+            console.log('Mess 1');
+        }
+        showMess1();
+
+        //Các loại function
+        //Declaration function
+
+        //Expression function
+    </script>
+</body>
+</html>
