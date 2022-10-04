@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While - Do while - Break - Continue</title>
+</head>
+<body>
+    <script>
+        //while
+        let i = 1;
+        while(i <= 20){
+            console.log(i);
+            i++;
+        }
+        //do while
+        
+        let j = 0, isSucess = false;
+        do {
+            j++;
+            console.log('Bạn đã nạp lần ' + j);
+            if(false){
+                isSucess = true;
+            } 
+           
+        }
+        while(!isSucess && j < 3);
+
+        //break
+        for(let k = 0; k < 10; k++){
+         
+            if(k > 5){
+                break;
+            }
+            if(k % 2 !==0){
+                continue;
+            }
+            console.log(k);
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For</title>
+</head>
+<body>
+    <script>
+        // for(let i = 1; i <= 50; i++) {
+        //     console.log(i);
+        // }
+        let arr = ['A', 'B', 'C', 'D'];
+
+        arrLength = arr.length;  //khai báo ở ngoài bởi vì nếu k gán vào 1 biến mà để arr.length 
+        //trực tiếp vô vòng for thì mỗi lần như vậy nó sẽ lặp lại để so sánh với cái length bấy nhiêu lần
+        //gây tốn hiệu suất
+
+        for(let i = 0; i < arrLength; i++){
+            console.log(arr[i]);
+        }
+    </script>
+</body>
+</html>

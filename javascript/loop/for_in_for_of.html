@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in For of</title>
+</head>
+<body>
+    <script>
+        //FOR IN áp dụng cho array, obj, string
+        let myInfo = {
+            name : 'Tam',
+            age : '30',
+            address : 'Long An'
+        }
+        console.log('FOR IN');
+        for (let key in myInfo){
+            console.log(key);
+            console.log(myInfo[key]);
+        }
+        let str = 'javascript';
+        for (let key in str){
+            //console.log(typeof arr)
+            console.log(str[key]);
+        }
+
+        let arr = ['A','B','C','D','F'];
+        for (let key in arr){
+            console.log(arr[key]);
+        }
+
+        console.log('FOR OF');
+        //FOR OF áp dụng cho array , string 
+        for(let value of arr){
+            console.log(value);
+        }
+        //ĐỐI VỚI OBJECT có 2 cách
+
+        for(let value of Object.keys(myInfo)){
+            console.log(myInfo[value]);
+        }
+        for(let value of Object.values(myInfo)){
+            console.log(value);
+        }
+        
+    </script>
+</body>
+</html>

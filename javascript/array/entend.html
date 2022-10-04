@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array extend</title>
+</head>
+<body>
+    <script>
+        let courses = [
+            {
+                name: 'PHP',
+                age: 30,
+                price: 300
+            },
+            {
+                name: 'Java',
+                age: 20,
+                price: 0
+            },
+            {
+                name: 'Ruby',
+                age: 22,
+                price: 50
+            },
+            {
+                name: 'ASP.NET',
+                age: 22,
+                price: 500
+            },
+        ];
+
+
+        console.log('HÀM forEach');
+        //Hàm forEach: Duyệt qua từng phần tử trong mảng
+        courses.forEach(function(course, index){
+            console.log(index,course);
+        });
+
+
+        //Hàm every: Duyệt qua từng phần tử trong mảng 
+        //và tất cả phần tử trong mảng phải thoả mãn 1 điều kiện nào đó nếu k sẽ trả kq false
+         //Trả về là true or false
+        let isFree =  courses.every(function(course, index){
+            return course.price === 0;
+        });
+        console.log(isFree);
+        console.log('HÀM SOME');
+        //Hàm some : Duyệt qua từng phần tử trong mảng 
+        //và chỉ cần một trong các phần tử trong mảng thoả mãn 1 điều kiện nào đó nếu là được, kết quả trả về false chỉ khi tất cả phần tử ko thoả mãn điều kiện
+        //Trả về là true or false
+        let isFree1 =  courses.some(function(course, index){
+            return course.price === 0;
+        });
+        console.log(isFree1);
+
+
+        console.log('HÀM FIND');
+        //Hàm find : Duyệt qua từng phần tử trong mảng 
+        //và chỉ cần một trong các phần tử trong mảng thoả mãn 1 điều kiện nào đó nếu là được, nếu một thằng thoả mãn là dừng lặp
+        //Trả về DUY NHẤT 1 đối tượng có giá trị thoả mãn điều kiện đó theo thứ tự duyệt từ trên xuống
+        let course =  courses.find(function(course, index){
+            return course.age === '22';
+        });
+        console.log(course);
+        console.log('HÀM FILTER');
+        //Hàm filter : Duyệt qua từng phần tử trong mảng 
+        //và chỉ cần một trong các phần tử trong mảng thoả mãn 1 điều kiện nào đó nếu là được, nếu một thằng thoả mãn là dừng lặp
+        //Trả về NHIỀU 1 đối tượng có giá trị thoả mãn điều kiện đó theo thứ tự duyệt từ trên xuống
+        let listcourse =  courses.filter(function(course, index){
+            return course.age === '22';
+        });
+        console.log(listcourse);
+
+
+        console.log('HÀM MAP');
+        //Hàm map : Duyệt qua từng phần tử trong mảng thay đổi thuộc tính trong mảng đối tượng
+      
+        let newCourse =  courses.map(function(course, index, originArray){
+            return {
+                    name: `Khoá học ${course.name}`,
+                    age: course.age,
+                    price: course.price,
+                    priceEx : course.price,
+                    index : index,
+                    originArray : originArray //orginArray là mảng cũ trước khi thao tác
+            };
+        });
+        console.log(newCourse);
+
+        console.log('HÀM REDUCE');
+        //Hàm reduce : sử dụng để thực thi một hàm lên các phần tử của mảng (từ trái sang phải) 
+        //với một biến tích lũy để thu về một giá trị duy nhất
+        //Cú pháp: 
+        //arr.reduce(callback( accumulator, currentValue[, index[, array]] ) {
+            // return result from executing something for accumulator or currentValue
+        //}[, initialValue])
+        
+        
+        //accumulator biến tích lũy, được trả về sau mỗi lần gọi hàm callback.
+        //currentValue phần tử của mảng đang được xử lý.
+        //index (Optional) chỉ số của phần tử trong mảng đang được xử lý.
+        //array (Optional) mảng hiện tại gọi hàm reduce().
+        //initialValue là giá trị cho tham số thứ nhất (accumulator) của hàm callback trong lần gọi hàm đầu tiên. Nếu giá trị này không được cung cấp thì giá trị phần tử đầu tiên của mảng sẽ được sử dụng.
+        //Giá trị trả về chính là giá trị của accumulator sau lần gọi hàm callback cuối cùng.
+        //Nếu ko có giá trị khởi tạo thì nó sẽ lấy giá trị đầu tiên làm giá trị khởi tạo
+        //Giá trị khởi tạo là kiểu number thì kết quả sẽ kiểu number, ..v..v
+        
+        //Ví dụ 1: Tính tổng giá tiền của các khoá học
+
+        let total = courses.reduce(function(accumulator, currentValue){
+            return accumulator + currentValue.price;
+        },0);
+        console.log(total);
+
+
+        //Ví dụ 2: Làm phẳng mảng
+        let arr = [1, 2, [3, 4], 5, 6, [7, 8, 9]];
+        let arrOut = arr.reduce(function(flatOut, item){
+            return flatOut.concat(item);
+        },[]);
+        console.log(arrOut);
+    </script>
+</body>
+</html>
