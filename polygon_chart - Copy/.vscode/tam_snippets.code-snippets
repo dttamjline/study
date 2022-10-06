@@ -1,0 +1,309 @@
+{
+	"posx": {
+		"scope": "css,less,scss",
+		"prefix": "posx",
+		"body": ["position: absolute;", "content:'';", "top:0;", "left: 50%;","transform: translateX(-50%);", "$0"]
+	},
+	"posy": {
+		"scope": "css,less,scss",
+		"prefix": "posy",
+		"body": [ "position: absolute;", "content:'';", "top: 50%;","left:0;","transform: translateY(-50%);", "$0"]
+	},
+	"posxy": {
+		"scope": "css,less,scss",
+		"prefix": "postranxy",
+		"body": [ "position: absolute;", "content:'';", "top:50%;","left:50%;","transform: translate(-50%,-50%);", "$0"]
+	},
+	"posl": {
+		"scope": "css,less,scss",
+		"prefix": "posl",
+		"body": [ "position: absolute;", "content:'';", "top:0;","left:0;", "$0"]
+	},
+	"posr": {
+		"scope": "css,less,scss",
+		"prefix": "posr",
+		"body": [ "position: absolute;", "content:'';", "top:0;","right:0;", "$0"]
+	},
+	"wh": {
+		"scope": "css,less,scss",
+		"prefix": "wh",
+		"body": ["width: $1;", "height: $1;"]
+	},
+	"beforeleft": {
+		"scope": "css,less,scss",
+		"prefix": "beforeleft",
+		"body": [
+			"position: absolute;",
+			"content: '';",
+			"top: 50%;",
+			"left: 0;",
+			"transform: translateY(-50%);",
+			"width: $1;",
+			"height: $1;",
+			"background: url(../$2) no-repeat center/contain;",
+		]
+	},
+	"beforeright": {
+		"scope": "css,less,scss",
+		"prefix": "beforeright",
+		"body": [
+			"position: absolute;",
+			"content: '';",
+			"top: 50%;",
+			"right: 0;",
+			"transform: translateY(-50%);",
+			"width: $1;",
+			"height: $1;",
+			"background: url(../$2) no-repeat center/contain;",
+		]
+	},
+	//////////////////Font///////////////
+	"fontnoto": {
+		"scope": "css,less,scss",
+		"prefix": "fontnoto",
+		"body": ["font-family: 'Noto Sans JP', sans-serif;"]
+	},
+	"fontnotoserif": {
+		"scope": "css,less,scss",
+		"prefix": "fontnotoserif",
+		"body": ["font-family: 'Noto Serif JP', serif;"]
+	},
+	"fontcentury": {
+		"scope": "css,less,scss",
+		"prefix": "fontcentury",
+		"body": ["font-family: 'Century Gothic', CenturyGothic, sans-serif;"]
+	},
+	//////////////////Font weight/////////////////////
+	"fontweight900": {
+		"scope": "css,less,scss",
+		"prefix": "fontweight900",
+		"body": ["font-weight:900;"]
+	},
+	"fontweightbold": {
+		"scope": "css,less,scss",
+		"prefix": "fontweightbold",
+		"body": ["font-weight:bold;"]
+	},
+	"fontweight500": {
+		"scope": "css,less,scss",
+		"prefix": "fontweight500",
+		"body": ["font-weight:500;"]
+	},
+	///////////////lineheight///////////////////////
+	"lineheight15": {
+		"scope": "css,less,scss",
+		"prefix": "lineheight15",
+		"body": ["line-height: 1.5em;"]
+	},
+	"lh0": {
+		"scope": "css,less,scss",
+		"prefix": "lineheight0",
+		"body": ["line-height: 0;"]
+	},
+	///////////////text///////////////////////
+	"textcen": {
+		"scope": "css,less,scss",
+		"prefix": "textcen",
+		"body": ["text-align: center;"]
+	},	
+	"textdecor": {
+		"scope": "css,less,scss",
+		"prefix": "textdecor",
+		"body": ["text-decoration:none;"]
+	},
+	"textupper": {
+		"scope": "css,less,scss",
+		"prefix": "textupper",
+		"body": ["text-transform: uppercase;"]
+	},
+	///////////////Flex///////////////////////
+	"justifycen": {
+		"scope": "css,less,scss",
+		"prefix": "justifycen",
+		"body": [
+			"display: flex;",
+			"justify-content: center;"
+		]
+	},
+	"justifyend": {
+		"scope": "css,less,scss",
+		"prefix": "justifyend",
+		"body": [
+			"display: flex;",
+			"justify-content: flex-end;"
+		]
+	},
+	"justifyspace": {
+		"scope": "css,less,scss",
+		"prefix": "justifyspace",
+		"body": [
+			"display: flex;",
+			"justify-content: space-between;"
+		]
+	},
+	"alignitemstart": {
+		"scope": "css,less,scss",
+		"prefix": "alignitemcen",
+		"body": [
+			"display: flex;",
+			"align-items: flex-start;"
+		]
+	},
+	"alignitemcen": {
+		"scope": "css,less,scss",
+		"prefix": "alignitemcen",
+		"body": [
+			"display: flex;",
+			"align-items: center;"
+		]
+	},
+	"alignitemend": {
+		"scope": "css,less,scss",
+		"prefix": "alignitemend",
+		"body": [
+			"display: flex;",
+			"align-items: flex-end;"
+		]
+	},
+	"flexcen": {
+		"scope": "css,less,scss",
+		"prefix": "flexcen",
+		"body": [
+			"display: flex;",
+			"justify-content: center;",
+			"align-items: center;"
+		]
+	},
+	///////////////media///////////////////////
+	"mediasm": {
+		"scope": "css,less,scss",
+		"prefix": "mediasm",
+		"body": [
+			"@include g.mq('sm') {",
+				"$0",
+			"}",
+		]
+	},
+	"mediamd": {
+		"scope": "css,less,scss",
+		"prefix": "mediamd",
+		"body": [
+			"@include g.mq('md') {",
+				"$0",
+			"}",
+		]
+	},
+	"mediaxl": {
+		"scope": "css,less,scss",
+		"prefix": "mediaxl",
+		"body": [
+			"@include g.mq('xl') {",
+				"$0",
+			"}",
+		]
+	},
+	"mediaxxl": {
+		"scope": "css,less,scss",
+		"prefix": "mediaxxl",
+		"body": [
+			"@include g.mq('xxl') {",
+				"$0",
+			"}",
+		]
+	},
+	///////////////transition///////////////////////
+	"trans0.5": {
+		"scope": "css,less,scss",
+		"prefix": "trans0.5",
+		"body": [
+			"transition: all 0.5s;",
+		]
+	},
+	///////////////margin///////////////////////
+	"margin0auto": {
+		"scope": "css,less,scss",
+		"prefix": "margin0auto",
+		"body": [
+			"margin: 0 auto",
+		]
+	},
+	"mb": {
+		"scope": "css,less,scss",
+		"prefix": "mb",
+		"body": [
+			"margin-bottom: $1;",
+		]
+	},
+	"ml": {
+		"scope": "css,less,scss",
+		"prefix": "ml",
+		"body": [
+			"margin-left: $1;",
+		]
+	},
+	"mr": {
+		"scope": "css,less,scss",
+		"prefix": "mr",
+		"body": [
+			"margin-right: $1;",
+		]
+	},
+	"mt": {
+		"scope": "css,less,scss",
+		"prefix": "mt",
+		"body": [
+			"margin-top: $1;",
+		]
+	},
+	"margin": {
+		"scope": "css,less,scss",
+		"prefix": "margin",
+		"body": [
+			"marginp: $1;",
+		]
+	},
+	///////////////margin///////////////////////
+	"pb": {
+		"scope": "css,less,scss",
+		"prefix": "pb",
+		"body": [
+			"padding-bottom: $1;",
+		]
+	},
+	"pl": {
+		"scope": "css,less,scss",
+		"prefix": "pl",
+		"body": [
+			"padding-left: $1;",
+		]
+	},
+	"pr": {
+		"scope": "css,less,scss",
+		"prefix": "pr",
+		"body": [
+			"padding-right: $1;",
+		]
+	},
+	"pt": {
+		"scope": "css,less,scss",
+		"prefix": "pt",
+		"body": [
+			"padding-top: $1;",
+		]
+	},
+	"padding": {
+		"scope": "css,less,scss",
+		"prefix": "padding",
+		"body": [
+			"padding: $1;",
+		]
+	},
+	///////////////margin///////////////////////
+	"clamped": {
+		"scope": "css,less,scss",
+		"prefix": "clamped",
+		"body": [
+			"g.clamped($1, $2, $3, $4);",
+		]
+	},
+}

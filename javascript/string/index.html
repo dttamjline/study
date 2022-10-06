@@ -71,6 +71,16 @@
         //8. Get a character by index
         const ss = 'javascript'; 
         console.log(ss.charAt(3));
+
+
+        //8. includes Hàm kiểm tra chuỗi có nằm trong chuỗi lớn, hay là nằm trong phần tử nào của mảng 
+        console.log('HÀM INCLUDES')
+        let s3 = 'Học javascript rất khó khăn';
+        console.log(s3.includes('javascript'));
+        let arr04 = ['PHP','Javascript', 'Jquery'];
+        console.log(arr04.includes('PHP',-4));//nếu vị trí tìm là âm thì lấy tổng số phần tử là 3 + -4 = -1 => vị trí tìm vẫn là 0
+        console.log(arr04.includes('PHP',-2));//3 + -2 = 1 , tìm ở vị trí item có index = 1 => ko có
+        
     </script>
 </body>
 </html>
