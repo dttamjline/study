@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validate</title>
+    <style>
+        *, *::after, *::before{
+            box-sizing: border-box;
+        }
+        p{
+            margin: 0;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .form{
+            width: 70%;
+            margin: auto;
+            border: solid 3px #005a1e;
+            padding: 40px;
+        }
+        .form_group{
+            width: 100%;
+            margin-bottom:30px;
+        }
+        .form_group:last-child{
+            margin-bottom: 0;
+        }
+        .form_group__ttl{
+            margin-bottom: 30px;
+        }
+        .form_ttl{
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.5em;
+            margin:0 auto 5px;
+        }
+        .form_desc{
+            line-height: 1.5em;
+            text-align: center;
+            font-weight: 500;
+            font-size: 20px;
+            color: #505050;
+        }
+        .form_label{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form_input{
+            padding: 10px;
+            width: 100%;
+        }
+        .form_input:focus{
+            outline: 0;
+        }
+        .form_btn{
+            border:solid 1px #005a1e;
+            background: #005a1e;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            transition: all 0.5s;
+        }
+        .form_btn:focus{
+            outline: 0;
+            box-sizing: none;
+        }
+        .form_btn:hover{
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form class="form" action="#" method="POST">
+            <div class="form_group__ttl">
+                <h2 class="form_ttl">Đăng ký tài khoản</h2>
+                <p class="form_desc">Học lập trình thặc là khó</p>
+            </div>
+            <div class="form_group">
+                <label class="form_label" for="fullname">Họ và tên</label>
+                <input type="text" class="form_input" name="fullname" id="fullname" placeholder="Ví dụ : Đoàn Thanh Tâm" onblur="this.placeholder='Ví dụ : Đoàn Thanh Tâm'" onfocus="this.placeholder=''">
+                <span class="form_mess"></span>
+            </div>
+            <div class="form_group">
+                <label class="form_label" for="email">Email</label>
+                <input type="email" class="form_input" name="email" id="email" placeholder="Ví dụ : jline.tamdt@gmail.com" onblur="this.placeholder='Ví dụ : jline.tamdt@gmail.com'" onfocus="this.placeholder=''">
+                <span class="form_mess"></span>
+            </div>
+            <div class="form_group">
+                <label class="form_label" for="password">Mật khẩu</label>
+                <input type="password" class="form_input" name="password" id="password" placeholder="Nhập mật khẩu của bạn" onblur="this.placeholder='Ví dụ : Nhập mật khẩu của bạn'" onfocus="this.placeholder=''">
+                <span class="form_mess"></span>
+            </div>
+            <div class="form_group">
+                <label class="form_label" for="re_password">Mật khẩu</label>
+                <input type="password" class="form_input" name="re_password" id="re_password" placeholder="Nhập lại mật khẩu của bạn" onblur="this.placeholder='Ví dụ : Nhập lại mật khẩu của bạn'" onfocus="this.placeholder=''">
+                <span class="form_mess"></span>
+            </div>
+            <button class="form_btn">Đăng ký</button>
+       </form>
+    </div>
+</body>
+</html>

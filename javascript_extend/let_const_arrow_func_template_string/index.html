@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let const arrow function template string</title>
+</head>
+<body>
+    <script>
+
+
+        //cách 1 
+        const num = function(a, b){
+            return {
+                a: a,
+                b: b
+            }
+        }
+        //cách 2
+        // const num = (a,b) => {
+        //     return {
+        //         a: a,
+        //         b: b
+        //     }
+        // }
+        //cách 3
+        //const num = (a,b) => ({a:a,b:b}); //thêm dấu ngoặc tròn để thay cho từ khoá return khi kiểu trả về là object
+        console.log(2,3);
+
+
+
+        //Tính tổng
+        //cách 1
+
+        // const sum = function(a, b){
+        //     return a + b;
+        // }
+        //console.log(sum(2,5));
+        
+        //cách 2
+        // const sum = (a, b) => {
+        //     return a + b;
+        // }
+
+        //cách 3
+
+        const sum = (a , b) => a + b;
+        console.log(sum(2,5));
+
+
+        //template string
+
+        const x = `ES6 \\với template string \${}\nnè`;   //\n là new line
+
+        console.log(x)
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sprite_sheetsprite_sheet</title>
+</head>
+<style>
+    *, *::after, *::before{ 
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        background: radial-gradient(#9bdfff,#009be4);
+    }
+    .wrapper{
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        min-height: 100vh;
+    }
+    .road{
+        position: relative;
+        width: 80%;
+        height: 160px;
+        margin: 0 auto;
+        background: #818181;
+        transform-origin: bottom;
+        transform-style: preserve-3d;
+        transform: perspective(500px) rotateX(30deg); 
+    }
+    .road::before{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left:0;
+        transform: translateY(-50%);
+        background: linear-gradient(90deg, #fff 0%, #fff 70%, #818181 70%, #818181 100%);
+        background-size: 200px;
+        width:100%;
+        height: 10px;
+    }
+    .road::after{
+        position: absolute;
+        content: '';
+        bottom: -10px;
+        width: 100%;
+        height:10px;
+        background: #6c6c6c;
+        transform-origin: top;
+        transform: perspective(500px) rotateX(-25deg); 
+    }
+    @keyframes dog_walk_move{
+        0%{
+            bottom:0;
+            left:0;
+        }
+        100%
+        {
+            bottom:0;
+            left:94%;
+        }
+    }
+    @keyframes dog_walk{
+        100%{
+            background-position:-1717px 0;
+        }
+     }
+
+     .ani{
+        overflow: hidden;
+     }
+    .ani span, .ani span::after {
+        width: 101px;
+        height: 83px;
+     }
+    .ani span{
+        transform: none!important; 
+        position:absolute;
+        display:block;
+        animation:dog_walk_move 20s linear both infinite;
+
+    }
+    .ani span::after{
+        content:'';
+        position:absolute;
+        bottom: 40px;
+        background-image:url(img/dog_walk.png);
+        transform: scale(-1,1);
+        animation: dog_walk 1s steps(17) infinite;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="road">
+            <div class="ani"><span></span></div>
+        </div>
+    </div>
+</body>
+</html>

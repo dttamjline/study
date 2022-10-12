@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+        // JSON to js
+        const a = "2";
+        console.log(typeof JSON.parse(a)); 
+        const b = '{"name":"tam", "age" :30}';  //30 là số nên ko cần ""
+        console.log(JSON.parse(b));
+        // js to JSON
+
+        const c = {
+            name : 'Tam',
+            age : 30
+        };
+        console.log(JSON.stringify(c));
+    </script>
+</body>
+</html>
