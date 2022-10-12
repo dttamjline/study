@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>optional_chaining</title>
+</head>
+<body>
+    <script>
+        //optional_chaining : kiểm tra giá sự tồn tại key
+        const obj = {
+            name: 'Tam',
+            key: {
+                name: 'Tre',
+                key1: {
+                    name: 'Hiep',
+                    key2: {
+                        name: 'Dieu'
+                    }
+                } 
+            }
+        }
+
+        if(
+            //obj.key && obj.key.key1 && obj.key.key1.key2 //viết vầy dài 
+            obj.key?.key1?.key2
+        ){
+            console.log(obj.key.key1.key2.name);
+        }
+    </script>
+</body>
+</html>

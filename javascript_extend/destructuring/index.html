@@ -14,6 +14,15 @@
 			<h1>destructuring</h1>
 			<script>
                 var arr = ['javascript', 'PHP', 'SQL'];
+
+				var [a,b] = arr; // => này gọi là destructuring
+				console.log(a,b);
+				var [a, ,c] = arr;
+				console.log(a,c);
+
+
+
+
                 var [a, b, ...rest] = arr;
                 // console.log(a);
                 // console.log(rest);
