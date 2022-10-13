@@ -20,8 +20,8 @@
             right: 30px;
             top: 30px;
             z-index: 100;
-            transition: all 0.5s;
-            animation: showMess ease 1s, fadeOut 1s 3s forwards;
+            transition:all linear 0.3s;
+            margin-bottom: 10px;
         }
         @keyframes showMess{
             from{
@@ -49,6 +49,10 @@
            padding: 15px;
            display: flex;
            align-items: center;
+           margin-bottom: 20px;
+        }
+        .toast:last-child{
+            margin-bottom: 0;
         }
         .toast.toast--success{
             border-left: solid 5px #12ad39;
@@ -127,42 +131,7 @@
 <body>
     <div class="wrapper">
         <div id="toast">
-            <!-- <div class="toast toast--success">
-                <div class="toast__icon">
-                    <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <div class="toast__body">
-                    <p class="toast__ttl">Bạn đã đăng nhập thành công</p>
-                    <p class="toast__desc">Chào mừng bạn đến với website Tâm</p>
-                </div>
-                <div class="toast__close">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-            </div> -->
-            <!-- <div class="toast toast--error">
-                <div class="toast__icon">
-                    <i class="fa-sharp fa-solid fa-circle-xmark"></i>
-                </div>
-                <div class="toast__body">
-                    <p class="toast__ttl">Đăng nhập thất bại</p>
-                    <p class="toast__desc">Tên đăng nhập hoặc mật khẩu không đúng</p>
-                </div>
-                <div class="toast__close">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-            </div>
-            <div class="toast toast--info">
-                <div class="toast__icon">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                </div>
-                <div class="toast__body">
-                    <p class="toast__ttl">Đăng nhập thất bại</p>
-                    <p class="toast__desc">Lỗi hệ thống</p>
-                </div>
-                <div class="toast__close">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-            </div> -->
+            
         </div>
         <ul class="btn">
             <li class="btn__success">click to show success mess</li>
