@@ -1,0 +1,14 @@
+{
+  "course": [
+    {
+      "id": 1,
+      "name": "Tên khoá học 1",
+      "desc": "Mô tả khoá học 1"
+    },
+    {
+      "id": "3",
+      "name": "Tên khoá học 2 ",
+      "desc": "Mô tả khoá học 2"
+    }
+  ]
+}
