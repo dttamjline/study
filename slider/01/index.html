@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top_slide {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .top_slide canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+        }
+
+        .top_slide__img {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+        .top_slide__img canvas {
+            height: 100%;
+        }
+
+        .top_slide__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .top_slide__img img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top_slide">
+        <div class="top_slide__img" data-displacement="img/pattern.jpg" data-intensity="-0.65" data-speedin="1.2"
+            data-speedout="1.2">
+            <img src="img/main_slider01.jpg" alt="">
+            <img src="img/main_slider02.jpg" alt="">
+            <img src="img/main_slider03.jpg" alt="">
+            <img src="img/main_slider01.jpg" alt="">
+            <img src="img/main_slider02.jpg" alt="">
+            <img src="img/main_slider03.jpg" alt="">
+        </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="three.min.js"></script>
+    <script src="TweenMax.min.js"></script>
+    <script src="top_slide.js"></script>
+    <script src="top.js"></script>
+</body>
+
+</html>
