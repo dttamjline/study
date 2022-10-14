@@ -4,11 +4,18 @@
 page > top > common
 ------------------------------
 */
-
+.c_section {
+    height: 100vh;
+    padding: 100px 0;
+    display: none;
+    background: #8fdbff;
+}
 .c_ttl {
     text-align: center;
     font-size: g.rem(20);
     font-weight: bold;
+    line-height: 1.2em;
+    margin-bottom: 60px;
     @include g.mq('md') {
         font-size: g.rem(60);
     }
@@ -38,9 +45,47 @@ page > top > common
 .c_item {
     margin-bottom: 20px;
     &__wrap {
+        position: relative;
         cursor: pointer;
     }
+    .c_cb__txt {
+        position: relative;
+        padding-left: 30px;
+        display: inline-block;
+        &::before {
+            position: absolute;
+            content: '';
+            top: 7px;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border: solid 1px #000;
+        }
+        &::after {
+            display: inline-block;
+            transform: rotate(45deg);
+            content: '';
+            position: absolute;
+            top: 9px;
+            left: 5px;
+            height: 6px;
+            width: 3px;
+            border-bottom: solid 1px #000;
+            border-right: solid 1px #000;
+            opacity: 0;
+        }
+    }
+    input {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+    input:checked ~ .c_cb__txt::after {
+        opacity: 1;
+    }
 }
+
 .c_cb__input {
     position: relative;
     top: -2px;
@@ -75,8 +120,18 @@ page > top > common
         margin-bottom: 100px;
     }
 }
-.result_chart {
-    width: 400px;
-    height: 400px;
+.result {
+    &_list {
+        display: flex;
+    }
+    &__chart {
+        width: 400px;
+        height: 400px;
+    }
+    &__info {
+        width: calc(100% - 400px);
+        padding: 0 50px;
+    }
 }
+
 /*******************************/

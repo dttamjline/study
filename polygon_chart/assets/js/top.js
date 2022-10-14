@@ -80,18 +80,26 @@ $(function () {
         const config = {
             type: 'radar',
             data: data,
+
             options: {
                 scales: {
                     r: {
                         grid: {
-                            color: 'white',
+                            color: '#000',
+                            display: false,
                         },
+                        // pointLabels: {
+                        //     color: 'red',
+                        // },
                         angleLines: {
-                            color: 'white',
+                            color: '#000',
+                            display: false,
                         },
                         beginAtZero: true,
                         ticks: {
                             stepSize: 1,
+                            color: '#000',
+                            backdropColor: '#8fdbff', //background of number
                         },
                     },
                 },
