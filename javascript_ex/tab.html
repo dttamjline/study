@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab</title>
+    <style>
+        *, *::before, *::after{
+            box-sizing: border-box;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+            line-height: 1.5em;
+        }
+        .wrapper{
+            overflow: hidden;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .tab_list{
+            display: flex;
+            align-items: center;
+        }
+        .tab_item{
+            padding: 10px;
+            background: #eee;
+            cursor: pointer;
+            position: relative;
+        }
+        .tab_item::after{
+            position: absolute;
+            content: '';
+            background: rgb(245, 102, 214);
+            height: 2px;
+            width: 100%;
+            left:0;
+            top:100%;
+            opacity: 0;
+        }
+        .tab_item.active::after{
+            opacity: 1;
+        }
+        .tab_item:hover::after{
+            opacity: 1;
+        }
+        .tab_pane{
+            display: none;
+        }
+        .tab_pane.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="tab_list">
+            <li class="tab_item active">Angular</li>
+            <li class="tab_item">Javascript</li>
+            <li class="tab_item">Vuejs</li>
+            <li class="tab_item">Reactjs</li>
+        </ul>
+        <div class="tab_contents">
+            <div class="tab_pane active">
+                Angular
+            </div>
+            <div class="tab_pane">
+                Javascript
+            </div>
+            <div class="tab_pane">
+                Vuejs
+            </div>
+            <div class="tab_pane">
+                Reactjs
+            </div>
+        </div>
+    </div>
+    <script>
+        const $ =  document.querySelector.bind(document);
+        const $$ =  document.querySelectorAll.bind(document);
+        const tabItems = $$('.tab_item');
+        const tabContentItems = $$('.tab_pane');
+        tabItems.forEach((tabItem, index) => {
+            tabItem.onclick = function () {
+                const tabContentItem = tabContentItems[index];
+                $('.tab_item.active').classList.remove('active');
+                $('.tab_pane.active').classList.remove('active');
+                this.classList.add('active');
+                tabContentItem.classList.add('active');
+            }
+            //Cách 2 : addEventListener
+            // tabItem.addEventListener('click', function() {
+            //     tabItem.classList.remove('active');
+            //     this.classList.add('active');
+            // })
+        });
+    </script>
+</body>
+</html>
