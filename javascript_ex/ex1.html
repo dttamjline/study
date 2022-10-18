@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>array_squared</title>
 </head>
+
 <body>
     <script>
         //Array squared
-        const input1 = [ 1, 2, 3, 4, 5 ];
-        const inputAfter1 =  input1.map((item, index) => {
+        const input1 = [1, 2, 3, 4, 5];
+        const inputAfter1 = input1.map((item, index) => {
             return Math.pow(item, 2);
-     
+
         });
-        document.write('Kết quả:'+ inputAfter1+'<br>');
+        document.write('Kết quả:' + inputAfter1 + '<br>');
 
 
         //sum_of_every_positive_element
-        const input2 = [ 1, -4, 12, 0, -3, 29, -150];
-     
-        let inputAfter2 =  input2.filter(function(item, index){
+        const input2 = [1, -4, 12, 0, -3, 29, -150];
+
+        let inputAfter2 = input2.filter(function (item, index) {
             return item > 0
         });
         console.log(typeof inputAfter2);
         console.log(Array.isArray(inputAfter2));
 
-        const sum =  inputAfter2.reduce((item,currValue) => {
+        const sum = inputAfter2.reduce((item, currValue) => {
             return (item + currValue);
-        },0);
-        document.write('Kết quả tổng phần tử dương:'+ sum);
-        
+        }, 0);
+        document.write('Kết quả tổng phần tử dương:' + sum);
+
         //Get name initials
         const input3 = 'George Raymond Richard Martin';
         const array = input3.split(' ');
@@ -38,39 +40,63 @@
             return item[0];
         });
         const arrJoin = arr.join('');
-        document.write('Nối chữ cái đầu trong mảng lại:'+ arrJoin);
+        document.write('Nối chữ cái đầu trong mảng lại:' + arrJoin);
         // console.log(arr);
 
 
         //Age difference from the youngest and oldest
 
         const input4 = [
-        {
-            name: 'John',
-            age: 13
-        },
-        {
-            name: 'Mark',
-            age: 56,
-        },
-        {
-            name: 'Rachel',
-            age: 45,
-        },
-        {
-            name: 'Nate',
-            age: 67,
-        },
-        {
-            name: 'Jeniffer',
-            age: 65,
-        }
+            {
+                name: 'John',
+                age: 13
+            },
+            {
+                name: 'Mark',
+                age: 56,
+            },
+            {
+                name: 'Rachel',
+                age: 45,
+            },
+            {
+                name: 'Nate',
+                age: 67,
+            },
+            {
+                name: 'Jeniffer',
+                age: 65,
+            }
         ];
         const minmax = input4.map((item, index) => {
+            return item.age;
 
-   
-        });  
-    //    console.log(minmax)
+        });
+        console.log(minmax);
+
+        const min = minmax.reduce((a, b) => Math.min(a, b));
+        console.log(min);
+        const max = minmax.reduce((a, b) => Math.max(a, b), 0);
+        console.log(max);
+        const sub = max - min;
+        console.log(sub);
+
+        const emply = [];
+        emply.push(min, max, sub);
+        console.log(emply);
+
+
+        //n!
+        const input5 = 6;
+        const ar = new Array(input5).fill(null);
+
+        let arr_after = ar.map(function(currentValue, index){
+            return index + 1;
+        }).reduce(function(accumulator, currentValue){
+            return accumulator * currentValue;
+        });
+        console.log(arr_after)
     </script>
 </body>
+
 </html>

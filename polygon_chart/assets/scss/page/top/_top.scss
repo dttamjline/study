@@ -121,16 +121,30 @@ page > top > common
     }
 }
 .result {
-    &_list {
+    &__list {
         display: flex;
+        flex-wrap: wrap;
     }
     &__chart {
-        width: 400px;
+        width: 90%;
         height: 400px;
+        margin: 0 auto 30px;
+        @include g.mq('md') {
+            width: 400px;
+            height: 400px;
+            margin: 0;
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
     }
     &__info {
-        width: calc(100% - 400px);
-        padding: 0 50px;
+        width: 100%;
+        @include g.mq('md') {
+            width: calc(100% - 400px);
+            padding: 0 50px;
+        }
     }
 }
 

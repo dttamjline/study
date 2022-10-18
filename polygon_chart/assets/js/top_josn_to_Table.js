@@ -28,6 +28,7 @@ $(function () {
                 .find(btn)
                 .addClass('disabled');
         }
+        //console.log($('#' + id).find('input:checked').length);
         switch (id) {
             case 'q_check01':
                 p01 = num;
@@ -116,23 +117,16 @@ $(function () {
     });
     //Read excel file
 
-    const result_info = '.result__info';
+    const result_info = '.result_info';
     (async () => {
         let workbook = XLSX.read(
             await (await fetch('./assets/excel/test.xlsx')).arrayBuffer()
         );
         let worksheet = workbook.SheetNames;
         worksheet.forEach((name) => {
-            let html = XLSX.utils.sheet_to_json(workbook.Sheets[name]);
-            console.log(html);
-            let template = '<div>';
-            html.map(function (item, index) {
-                return (template += `<p>${item.Content}</p>`);
-                // console.log(item);
-            });
-            template += '</div>';
-            $(result_info).html(template);
+            let html = XLSX.utils.sheet_to_html(workbook.Sheets[name]);
+            $(result_info).html(html);
         });
-        // console.log(workbook);
+        console.log(workbook);
     })();
 });
