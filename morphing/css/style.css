@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+}
+
+.morphing {
+  position: relative;
+  font-size: 400px;
+  background-color: #000;
+  color: #f0ff1f;
+  min-height: 100vh;
+  filter: contrast(25) blur(1px) sepia(2px);
+}
+
+.word {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: word 15s infinite ease-in-out;
+}
+.word:nth-child(1) {
+  animation-delay: -15s;
+}
+.word:nth-child(2) {
+  animation-delay: -13.125s;
+}
+.word:nth-child(3) {
+  animation-delay: -11.25s;
+}
+.word:nth-child(4) {
+  animation-delay: -9.375s;
+}
+.word:nth-child(5) {
+  animation-delay: -7.5s;
+}
+.word:nth-child(6) {
+  animation-delay: -5.625s;
+}
+.word:nth-child(7) {
+  animation-delay: -3.75s;
+}
+@keyframes word {
+  0%, 5%, 100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  20%, 80% {
+    filter: blur(1em);
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
