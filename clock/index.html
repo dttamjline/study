@@ -42,6 +42,18 @@
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         border: solid 7px #f55f20;
     }
+    .numbers::after{
+        position: absolute;
+        content: '';
+        width: 90%;
+        height: 30%;
+        background: rgba(0, 0, 0, 0.15);
+        left: 90px;
+        bottom: -4px;
+        z-index: -1;
+        border-radius: 50%;
+        transform: skewX(-15deg);
+    }
     .numbers > div{
         position: absolute;
         font-size: 4rem;
@@ -101,12 +113,12 @@
     }
     .arrows .hour {
         height: 80px;
-        transform: rotate(90deg);
+        /* transform: rotate(90deg); */
     }
 
     .arrows .second {
         background-color: #ff0000;
-        transform: rotate(270deg);
+        /* transform: rotate(270deg); */
     }
     .one{
         right: 90px;
@@ -168,14 +180,12 @@
         <div id="ocean"></div>
       </main>
     <script>
-        const h = document.querySelector('.hour');
 
-        const m = document.querySelector('.minute');
-
-        const s = document.querySelector('.second');
-      
-
-        function setDate(){
+        (function(){
+            function setDate(){
+            const h = document.querySelector('.hour');
+            const m = document.querySelector('.minute');
+            const s = document.querySelector('.second');
             const time = new Date();
             const getSecond = time.getSeconds();
             console.log(getSecond)
@@ -196,7 +206,10 @@
            h.style.transform = `rotate(${hourDegree}deg)`;
 
         }
+        setDate();
         setInterval(setDate, 1000);
+   
+        })();
     </script>
 </body>
 </html>
