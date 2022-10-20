@@ -1,0 +1,922 @@
+
+@use "kirepillow/common";
+@use "../global" as g;
+@import "../foundation/base";
+
+.kirepillow_mv{
+    background: url(../images/kirepillow/mv_bg01.jpg) no-repeat center;
+    background-size: cover;
+    padding: 15px 0 57px;
+    &_container{
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    &_txt_address{
+        text-align: right;
+        color: g.$color2;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        margin-bottom: 27px;
+    }
+    &_list{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 75px;
+    }
+    &_item{
+        &.i01{
+            width: 823px;
+            margin-top: 66px;
+            .ttl{
+                line-height: 0;
+                margin: 0;
+            }
+        }
+        &.i02{
+            position: absolute;
+            right: -12px;
+            top: 0;
+            width: 310px;
+            height: 310px;
+            background: g.$color2;
+            padding: 13px;
+            border-radius: 50%;
+            .img{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                .txt_small{
+                    color: g.$color4;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: 15px;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+        &.i03{
+            width: 699px;
+            .ttl{
+                width: 100%;
+                margin: -175px 0 0 210px;
+            }
+        }
+    }
+    &_slide{
+        width: 100vw;
+        margin-left: calc((100% - 2258px) / 2);
+        transform: rotate(-15deg);
+        .slick-list{
+            overflow: inherit;
+        }
+        .slick-slide{
+            margin-left: -1px;
+        }
+        &_item{
+            width: 610px!important;
+        }
+    }
+    &_des{
+        text-align: center;
+        color: g.$color2;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    .kirepillow_box_ttl_big{
+        margin-bottom: 138px;
+    }
+}
+.kirepillow_box_ttl_big{
+    max-width: 1920px;
+    position: relative;
+    width: 100vw;
+    margin-left: calc((100% - 1851px) / 2);
+    transform: rotate(-15deg);
+    margin-top: -45px;
+    background: g.$color2;
+    text-align: center;
+    padding: 111px 0 85px;
+    &:before{
+        @extend %pos_a;
+        left: -50%;
+        transform: translateX(-50%);
+        background: g.$color2;
+        width: 10000px;
+        height: 100%;
+        top: 0;
+        z-index: -1;
+    }
+    .ttl_big{
+        position: relative;
+        width: 1815px;
+        line-height: 0;
+        display: inline-block;
+        margin: 0 auto;
+        left: 30px;
+    }
+    .img{
+        position: absolute;
+        left: 48%;
+        transform: translateX(-50%) rotate(15deg);
+        top: -89px;
+        display: inline-block;
+        margin: 0 auto;
+        width: 719px;
+    }
+}
+
+.situation{
+    position: relative;
+    background: #008EB0;
+    padding: 71px 0 228px;
+    &:after{
+        @extend %pos_a;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -212px;
+        background: url(../images/kirepillow/situation_bg.png) no-repeat center;
+        background-size: cover;
+        width: 100%;
+        height: 212px;
+    }
+    &_ttl{
+        text-align: center;
+        margin-bottom: 34px;
+        color: #F6FF00;
+        font-size: 45px;
+        font-weight: bold;
+        line-height: 1.54em;
+    }
+    &_img{
+        border: solid 29px #fff;
+        margin-bottom: 16px;
+    }
+    &_voice{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+        .img_person{
+            width: 350px;
+            flex-shrink: 0;
+            margin-right: 32px;
+        }
+        .img_caption{
+            width: 658px;
+            flex-shrink: 0;
+            position: relative;
+            left: -102px;
+            top: 9px;
+        }
+    }
+}
+.film_shiroki{
+    background: url(../images/kirepillow/film_shiroki_bg.jpg) no-repeat center;
+    background-size: cover;
+    padding: 270px 0 17px;
+    &_ttl{
+        margin:0 auto 270px;
+        text-align: center;
+        .ttl01{
+            font-size: 45px;
+            font-weight: bold;
+            color: g.$color2;
+            display: block;
+            margin-bottom: 30px;
+        }
+        .ttl02{
+            display: block;
+            width: 671px;
+            margin: 0 auto;
+            line-height: 0;
+            position: relative;
+            left: -27px;
+        }
+    }
+    .kirepillow_box_ttl_big{
+        margin-bottom: 52px;
+        .img{
+            left: 48.9%;
+            top: -156px;
+        }
+    }
+    &_list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .ttl{
+            margin-bottom: 0;
+            line-height: 1.34em;
+            color: g.$color2;
+            font-weight: bold;
+            font-size: 60px;
+            white-space: nowrap;
+            position: relative;
+            left: 74px;
+            top: 59px;
+        }
+        .img{
+            width: 593px;
+            flex-shrink: 0;
+        }
+    }
+}
+.secret{
+    background: url(../images/kirepillow/secret_bg.jpg) no-repeat center;
+    background-size: cover;
+    padding: 62px 0 0; 
+    &_ttl{
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+        color: g.$color2;
+        .ttl_big{
+            font-size: 60px;
+        }   
+    }
+    &_list{
+        display: flex;
+    }
+    &_img{
+        width: 677px;
+        flex-shrink: 0;
+        margin-top: -99px;
+        position: relative;
+        right: 59px;
+    }
+    &_info{
+        width: 68%;
+        flex-shrink: 0;
+        padding-top: 90px;
+        .ttl{
+            margin-bottom: 38px;
+            .bg{
+                background: g.$color2;
+                display: inline-block;
+                padding: 21px 43px 20px;
+                font-size: 45px;
+                font-weight: bold;
+                color: #138B9E;
+                margin-bottom: 20px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+        .des{
+            color: g.$color2;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    }
+}
+
+.clean_pillow_sec01{
+    position: relative;
+    padding: 39px 0 35px;
+    background: g.$color2;
+    &:after{
+        @extend %pos_a;
+        right: 0;
+        bottom: 0;
+        clip-path: polygon(100% 12%, 0 100%, 100% 100%);
+        -webkit-clip-path: polygon(100% 12%, 0 100%, 100% 100%);
+        background: #00ABC9;
+        width: 100%;
+        height: 100%;
+    }
+    .container{
+        position: relative;
+        z-index: 1;
+    }
+    &_img{
+        width: 589px;
+        margin-left: auto;
+    }
+    &_ttl{
+        margin-bottom: 51px;
+        transform: rotate(-15deg);
+        .ttl_small{
+            color: #00ABC9;
+            font-size: 50px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 13px;
+        }
+        .ttl_big{
+            color: #00ABC9;
+            font-size: 60px;
+            font-weight: bold;
+            display: block;
+            position: relative;
+            left: -11px;
+        }
+    }
+}
+.clean_pillow_sec02{
+    &_item{
+        position: relative;
+        background: #00ABC9;
+        @extend %d_flex_space;
+        .img{
+            width: 50%;
+            flex-shrink: 0;
+            margin: 0;
+            line-height: 0;
+            z-index: 2;
+        }
+     
+    }
+    &_info{
+        width: 50%;
+       
+        z-index: 2;
+    }
+    .wrap_info{
+        display: flex;
+        width: 550px;
+        padding: 150px 0 0 48px;
+        .num{
+            font-family: 'M PLUS 1p', sans-serif;
+            font-size: 179px;
+            font-weight: bold;
+            color: #F6FF00;
+            line-height: 1em;
+            margin: -4px 17px 0 0;
+        }
+        .ttl{
+            font-size: 50px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 26px;
+        }
+        .des{
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1.83em;
+            white-space: nowrap;
+        }
+    }
+    &_item.i02{
+        .wrap_info{
+            margin-left: auto;
+            padding: 139px 40px 0 0;
+            .num{
+                margin: 4px 22px 0 0;
+            }
+        }
+    }
+    &_item.i03{
+        background: none;
+        &:after{
+            @extend %pos_a;
+            background: #00ABC9;
+            left: 50%;
+            top: -292px;
+            width: calc(100% + 280px);
+            height: 100%;
+            z-index: 1;
+            transform: rotate(-15deg) translateX(-50%);
+        }
+      
+    }
+}
+.voice{
+    position: relative;
+    padding: 138px 0 70px;
+    &_ttl{
+        position: relative;
+        color: #00ABC9;
+        margin-bottom: 55px;
+        line-height: 1.5em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 50px;
+    }
+    &_list{
+        padding: 0 42px;
+    }
+    &_item{
+        display: flex;
+        margin-bottom: 46px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &_img{
+            margin: 0;
+            line-height: 0;
+            flex-shrink: 0;
+        }
+        &_caption{
+            width: 742px;   
+           margin-bottom: 27px;
+        }
+
+        &_txt{
+            font-size: 30px;
+            font-weight: 500;
+            color: #0959A7;
+            letter-spacing: 0.1em;
+            padding: 0 56px;
+        }
+    }
+}
+.voice_item {
+    &.i01{
+        .voice_item_img{
+            width: 249px;
+            margin: 44px 14px 0 0;
+        }
+    }
+    &.i02{
+        .voice_item_img{
+            width: 280px;
+            margin: 36px -18px 0 0;
+        }
+    }
+    &.i03{
+        .voice_item_img{
+            width: 245px;
+            margin: 13px -4px 0 21px;
+        }
+
+    }
+}
+.solve_problem{
+    background: url(../images/kirepillow/solve_problem_bg.jpg) no-repeat center;
+    background-size: cover;
+    padding: 123px 0 93px;
+    &_list{
+        display: flex;
+        margin-bottom: 22px;
+    }
+    &_ttl{
+        width: 608px;
+        flex-shrink: 0;
+        margin: 27px 80px 0 14px;
+    }
+    &_img{
+        width: 376px;
+        flex-shrink: 0;
+        margin: 0;
+    }
+    &_des{
+        color: g.$color2;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1.4em;
+        letter-spacing: 0.1em;
+    }
+    .kirepillow_box_ttl_big{
+        margin-bottom: 168px;
+    }
+}
+.contact_form{
+    background: #F3F3F3;
+    padding: 77px 0;
+    &_ttl{
+        text-align: center;
+        font-size: 45px;
+        font-weight: bold;
+        color: g.$color1;
+        margin-bottom: 24px;
+        line-height: 1.5em;
+    }
+    &_ttl_small{
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        color: #28A4E1;
+        margin-bottom: 45px;
+        letter-spacing: 0.1em;
+    }
+    &_wrap{
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    &_path{
+        display: flex;
+        background: g.$color2;
+        li{
+            position: relative;
+            border-top: solid 1px #B0B0B0;
+            border-bottom: solid 1px #B0B0B0;
+            width: calc(100% / 3);
+            text-align: center;
+            .wrap{
+                position: relative;
+                z-index: 1;
+                display: block;
+                width: 100%;
+                height: 100%;
+                font-size: 25px;
+                color: #B0B0B0;
+                font-weight: bold;
+                padding: 21px 5px 17px;
+            }
+            &.active{
+               .wrap{
+                color: #158FCB;
+               }
+            }
+            &:after{
+                @extend %pos_a;
+                top: 50%;
+                right: -30px;
+                transform: translateY(-50%);
+                width: 30px;
+                height: 80px;
+                background: url(../images/kirepillow/contact_form_arrow_step.png) no-repeat center/cover;
+            }
+            &:last-child{
+                &:after{
+                    content: none;
+                }
+            }
+        }
+    }
+    &_mail{
+        padding: 50px 44px;
+        background: g.$color2;
+    }
+    &_ttl01{
+        color: g.$color1;
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 11px;
+        line-height: 1.5em;
+    }
+    &_txt{
+        color: g.$color1;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 64px;
+        line-height: 1.5em;
+    }
+    &_tbl{
+        margin-bottom: 50px;
+        dl{
+            display: table;
+            width: 100%;
+        } 
+        dt{
+            width: 245px;
+            display: table-cell;
+            line-height: 1.5em;
+            vertical-align: top;
+            .required{
+                position: relative;
+                top:5px;
+                background: #28A4E1;
+                width: 81px;
+                padding: 5px 3px;
+                display: inline-block;
+                color: #fff;
+                font-weight: bold;
+                letter-spacing: 0.05em;
+                text-align: center;
+                margin-right: 20px;
+                font-size: 16px;
+                flex-shrink: 0;
+                line-height: 1.2em;
+                &.bg01{
+                    background: #B0B0B0;
+                }
+            }
+
+        }
+        dd{
+            display: table-cell;
+            width: calc(100% - 245px);
+            line-height: 1.5em;
+            vertical-align: top;
+            padding: 0 0 0 28px;
+          
+        }
+        .wrap_ttl{
+            display: flex;
+            align-items: flex-start;
+            .ttl{
+                font-size: 20px;
+                font-weight: bold;
+                color: g.$color1;
+            }
+        }
+        input:focus, textarea:focus, select:focus{
+            outline: 0;
+        }
+        textarea{
+            width: 100%;
+            height: 223px;
+            padding: 20px;
+            border: solid 1px #B0B0B0;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        input{
+            background:#fff;
+            border: solid 1px #B0B0B0;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        input[type="text"], input[type="email"]{
+            padding: 10px 20px 11px;
+            width: 100%;
+        }
+    }
+    &_checkbox{
+        text-align: center;
+        margin: 74px 0 0;
+        .txt{
+            color: g.$color1;
+            display: block;
+            line-height: 1.5em;
+            margin-bottom: 30px;
+        }
+        input{
+            margin-right: 10px;
+            appearance: none;
+            -webkit-appearance: none;
+        }
+        .txt_underline{
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            color: #28A4E1;
+            @extend %trans;
+            &:after{
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 0;
+                background: #28A4E1;
+                width: 100%;
+                height: 1px;
+            }
+            a{
+                position: relative;
+                z-index: 3;
+                text-decoration: none;
+                color: #555;
+                transition: all 0.5s;
+            }
+       
+        }
+     
+        label {
+            position: relative;
+           
+            input{
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+                cursor: pointer;
+                height: 20px;
+                width:20px;
+            }
+            justify-content: center;
+            .txt_checkbox{
+                position: relative;
+                padding-left: 30px;
+                display: inline-block;
+                color: g.$color1;
+                &:before{
+                    position: absolute;
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    background-color: #28A4E1;
+                    left: 0;
+                    font-weight: bold;
+                    top: 9px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-top: 2px;  
+                    border: solid 1px #ccc;
+                }
+                &:after{
+                    content: "";
+                    position: absolute;
+                    display: none;
+                    background: url(../images/kirepillow/icon_check.png) no-repeat center;
+                    background-size: contain;
+                    width: 15px;
+                    height: 12px;
+                    left: 3px;
+                    top: 13px;
+                }
+            }
+            input:checked ~ .txt_checkbox:after {
+                display: block;
+             }
+        }
+      
+     
+         
+    }
+    &_btn{
+        width: 411px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto; 
+        input{
+            position: relative;
+            line-height: 1.5em;
+            background: #28A4E1;
+            padding: 20px 10px;
+            text-decoration: none;
+            border: solid 1px #28A4E1;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.5s;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    }
+    &_note{
+        font-size: 16px;
+        color: #B0B0B0;
+        display: block;
+        margin-bottom: 3px;
+    }
+ 
+}
+
+@include g.mq(minmd) {
+    .contact_form_btn input:hover{
+        background: g.$color2;
+        color: #28A4E1;
+    }
+    .contact_form_checkbox .txt_underline:hover{
+        opacity: 0.7;
+    }
+    .clean_pillow_sec02_item.i03{
+        margin-top: -5px;
+    }
+    .clean_pillow_sec02_item.i03 .wrap_info {
+        padding: 160px 0 0 34px;
+    }
+    .clean_pillow_sec02_item.i03 .wrap_info .num{
+        margin: -16px 17px 0 0;
+    }
+    .clean_pillow_sec02_item.i03 .wrap_info .ttl{
+        margin-bottom: 16px;
+    }
+    .voice_item.i02{
+        margin-bottom: 40px;
+    }
+ }
+ @include g.mq(max1880) {
+    .kirepillow_box_ttl_big .ttl_big {
+        width: 100%;
+        left: 30px;
+    }
+    .kirepillow_box_ttl_big {
+        margin-left: 0;
+        padding: 111px 0 85px;
+        width: 120%;
+        left: -12%;
+    }
+    .kirepillow_mv .kirepillow_box_ttl_big{
+        margin-top: -84px;
+    }
+    .kirepillow_box_ttl_big .img {
+        left: 49%;
+        transform: translateX(-50%) rotate(15deg);
+        top: -89px;
+        width: 48%;
+    }
+ }
+ @include g.mq(max1600)
+{
+    .kirepillow_mv_slide_item {
+        width: 570px!important;
+    }
+    .kirepillow_mv .kirepillow_box_ttl_big {
+        margin-top: -100px;
+    }
+    .kirepillow_box_ttl_big .img {
+        left: 45%;
+        transform: translateX(-50%) rotate(15deg);     
+        width: 43%;
+    }
+}
+ @include g.mq(max1440) {
+    .kirepillow_mv_slide_item {
+        width: 470px!important;
+    }
+    .kirepillow_mv_slide {
+        margin-left: calc((100% - 1890px) / 2);
+    }
+    .kirepillow_mv .kirepillow_box_ttl_big{
+        margin-top: -100px;
+    }
+    .kirepillow_box_ttl_big .ttl_big {
+        width: 80%;
+        left: 24px;
+    }
+    .kirepillow_box_ttl_big .img {
+        left: 45%;
+        transform: translateX(-50%) rotate(15deg);
+        width: 34%;
+        top: -30px;
+    }
+}
+@include g.mq(max1100) {
+    .kirepillow_mv_slide_item {
+        width: 400px!important;
+    }
+    .kirepillow_mv_slide {
+        margin-left: calc((100% - 1570px) / 2);
+    }
+        
+    .kirepillow_mv{
+        padding: 15px 1% 57px;
+    }
+    .kirepillow_mv_item.i02 {
+        right: 0;
+        width: 28vw;
+        height: 28vw;
+        padding: 1vw;
+    }
+    .kirepillow_mv_item.i02 .img .txt_small{
+        font-size: 14px;
+        bottom: 1vw;
+    }
+    .kirepillow_mv_item.i01 {
+        width: 72%;
+        margin-top: 5vw;
+    }
+    .kirepillow_mv_item.i03 {
+        width: 60%;
+    }
+    .kirepillow_mv_item.i03 .ttl {
+        margin: -15vw 0 0 18vw;
+    }
+}
+@include g.mq(max992) {
+    .kirepillow_mv_slide_item {
+        width: 320px!important;
+    }
+    .kirepillow_mv_slide {
+        margin-left: calc((100% - 1270px) / 2);
+    }
+    .kirepillow_mv_item.i02 .img .txt_small {
+        font-size: 2vw;
+        bottom: 1.5vw;
+        width: 100%;
+        text-align: center;
+    }
+    .kirepillow_box_ttl_big {
+        padding: 68px 0;
+    }
+    .kirepillow_mv .kirepillow_box_ttl_big {
+        margin-top: -60px;
+    }
+}
+@include g.mq(md) 
+{
+    .kirepillow_mv_list {
+        margin-bottom: 10vw;
+    }
+    .kirepillow_mv_txt_address {
+        letter-spacing: 0.01em;
+    }
+    .kirepillow_mv_slide_item {
+        width: 35vw !important;
+    }
+    .kirepillow_mv_slide {
+        margin-left: -18vw;
+    }
+    .kirepillow_mv .kirepillow_box_ttl_big {
+        margin-top: -4vw;
+        padding: 8vw 0 7vw;
+    }
+}
+@include g.mq(sm) 
+{
+    .kirepillow_mv_txt_address {
+        font-size: 12px;
+    }
+}
+ ::-webkit-scrollbar {
+    display: none;
+  }

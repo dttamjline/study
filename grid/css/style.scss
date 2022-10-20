@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.grid{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.wrapper {
+    display: grid;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "header header header" 
+    "nav nav nav" 
+    "aside section article"
+    "footer footer footer";
+    grid-auto-rows: minmax(200px, auto);
+
+   
+}
+.header {
+    background: #ff0000;
+    @extend .grid;
+    grid-area: header;
+}
+.nav {
+    background: #001aff;
+    @extend .grid;
+    grid-area: nav;
+    grid-column: 2/4;
+}
+.footer {
+    background: #ff6600;
+    @extend .grid;
+    grid-area: footer;
+}
+.aside {
+    @extend .grid;
+    grid-area: aside;
+    background: #00ff0d;
+    grid-row:2 / 4;
+}
+.section{
+    @extend .grid;
+    grid-area: section;
+    background: #616212;
+}
+.article{
+    @extend .grid;
+    grid-area: article;
+    background: #6606ff;
+}
+@media screen and (max-width:768px) {
+    .wrapper {
+        grid-auto-columns: 100%;
+        grid-template-areas:
+            "section"
+            "aside" 
+            "article"
+            "footer";
+        grid-template-columns: inherit;
+    }
+    .aside{
+        grid-row: inherit;
+    }
+}

@@ -1,0 +1,14 @@
+@use "../global" as g;
+
+
+footer{
+    background: g.$color1;
+}
+.copyright{
+    font-size: 16px;
+    line-height: 1.5em;
+    text-align: center;
+    color: g.$color2;
+    padding: 10px 3% 30px;
+    margin-bottom: 0;
+}

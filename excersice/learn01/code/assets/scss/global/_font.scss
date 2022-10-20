@@ -1,0 +1,25 @@
+/*!
+global > font
+------------------------------
+*/
+
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    font-display: optional;
+    src: url('../../assets/fonts/NotoSansCJKjp-Medium.woff2') format('woff2');
+    src: url('../../assets/fonts/NotoSansCJKjp-Medium.ttf') format('truetype');
+}
+  
+@font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    font-display: optional;
+    src: url('../../assets/fonts/NotoSansCJKjp-Bold.woff2') format('woff2');
+    src: url('../../assets/fonts/NotoSansCJKjp-Bold.ttf') format('truetype');
+}
+  
+
+$font-family-base: "Noto Sans JP", serif; // Medium 500, Bold 700

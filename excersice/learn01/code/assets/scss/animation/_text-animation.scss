@@ -1,0 +1,18 @@
+@use "../global" as g;
+
+/*!
+animation > text-animation
+------------------------------
+*/
+
+.fadeIn {
+    opacity: 0;
+    transition: opacity .5s, transform .5s;
+    transform: translate(0, 50px);
+    
+}
+
+.scrollIn {
+    opacity: 1;
+    transform: translate(0, 0);
+}

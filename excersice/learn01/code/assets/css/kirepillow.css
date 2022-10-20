@@ -1,0 +1,1825 @@
+/*!
+global > color
+------------------------------
+*/
+/*!
+global > content-width
+------------------------------
+*/
+/*!
+global > font
+------------------------------
+*/
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url("../../assets/fonts/NotoSansCJKjp-Medium.woff2") format("woff2");
+  src: url("../../assets/fonts/NotoSansCJKjp-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url("../../assets/fonts/NotoSansCJKjp-Bold.woff2") format("woff2");
+  src: url("../../assets/fonts/NotoSansCJKjp-Bold.ttf") format("truetype");
+}
+/*!
+foundation > reset
+------------------------------
+*/
+/*! destyle.css v2.0.2 | MIT License | https://github.com/nicolas-cusan/destyle.css */
+/* Reset box-model and set borders */
+/* ============================================ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 0;
+}
+
+/* Document */
+/* ============================================ */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. Remove gray overlay on links for iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -webkit-tap-highlight-color: transparent; /* 3*/
+  font-size: 62.5%;
+}
+
+/* Sections */
+/* ============================================ */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/* Vertical rhythm */
+/* ============================================ */
+p,
+table,
+blockquote,
+address,
+pre,
+iframe,
+form,
+figure,
+dl {
+  margin: 0;
+}
+
+/* Headings */
+/* ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+/* Lists (enumeration) */
+/* ============================================ */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Lists (definition) */
+/* ============================================ */
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/* Grouping content */
+/* ============================================ */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+  border-top-width: 1px;
+  margin: 0;
+  clear: both;
+  color: inherit;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: inherit; /* 2 */
+}
+
+address {
+  font-style: inherit;
+}
+
+/* Text-level semantics */
+/* ============================================ */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: inherit; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content */
+/* ============================================ */
+/**
+ * Prevent vertical alignment issues.
+ */
+img,
+embed,
+object,
+iframe {
+  vertical-align: bottom;
+}
+
+/* Forms */
+/* ============================================ */
+/**
+ * Reset form fields to make them styleable
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  text-align: inherit;
+}
+
+/**
+ * Reset radio and checkbox appearance to preserve their look in iOS.
+ */
+[type=checkbox] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+       appearance: checkbox;
+}
+
+[type=radio] {
+  -webkit-appearance: radio;
+  -moz-appearance: radio;
+       appearance: radio;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+button[disabled],
+[type=button][disabled],
+[type=reset][disabled],
+[type=submit][disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove arrow in IE10 & IE11
+ */
+select::-ms-expand {
+  display: none;
+}
+
+/**
+ * Remove padding
+ */
+option {
+  padding: 0;
+}
+
+/**
+ * Reset to invisible
+ */
+fieldset {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the outline style in Safari.
+ */
+[type=search] {
+  outline-offset: -2px; /* 1 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Clickable labels
+ */
+label[for] {
+  cursor: pointer;
+}
+
+/* Interactive */
+/* ============================================ */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/*
+ * Remove outline for editable content.
+ */
+[contenteditable] {
+  outline: none;
+}
+
+/* Table */
+/* ============================================ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption {
+  text-align: left;
+}
+
+td,
+th {
+  vertical-align: top;
+  padding: 0;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Misc */
+/* ============================================ */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/*!
+foundation > base
+------------------------------
+*/
+h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+  font-size: 250%;
+  -webkit-text-size-adjust: none;
+}
+
+header, section, footer, aside, nav, main, article, figure {
+  display: block;
+}
+
+a {
+  color: #158FCB;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+section p:last-child, .section p:last-child {
+  margin-bottom: 0;
+}
+
+p, dd, td, th, li {
+  line-height: 1.6em;
+}
+
+img {
+  transition: all 0.5s;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+body {
+  color: #000;
+  font-family: "Noto Sans JP", serif;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 769px) {
+  .sp {
+    display: none;
+  }
+  a:hover img {
+    opacity: 0.7;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+    font-size: 150%;
+  }
+  a, a *, div, div * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  a:hover img {
+    opacity: 1;
+  }
+  .pc {
+    display: none;
+  }
+}
+/*!
+component > title
+------------------------------
+*/
+/*!
+layout > container
+------------------------------
+*/
+.container {
+  margin: 0 auto;
+  width: 1100px;
+}
+
+.container {
+  max-width: 1100px;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 3%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 3%;
+  }
+}
+
+/*!
+global > color
+------------------------------
+*/
+/*!
+global > content-width
+------------------------------
+*/
+/*!
+global > font
+------------------------------
+*/
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url("../../assets/fonts/NotoSansCJKjp-Medium.woff2") format("woff2");
+  src: url("../../assets/fonts/NotoSansCJKjp-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url("../../assets/fonts/NotoSansCJKjp-Bold.woff2") format("woff2");
+  src: url("../../assets/fonts/NotoSansCJKjp-Bold.ttf") format("truetype");
+}
+/*!
+foundation > base
+------------------------------
+*/
+h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+  font-size: 250%;
+  -webkit-text-size-adjust: none;
+}
+
+header, section, footer, aside, nav, main, article, figure {
+  display: block;
+}
+
+a {
+  color: #158FCB;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+section p:last-child, .section p:last-child {
+  margin-bottom: 0;
+}
+
+p, dd, td, th, li {
+  line-height: 1.6em;
+}
+
+img {
+  transition: all 0.5s;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+body {
+  color: #000;
+  font-family: "Noto Sans JP", serif;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+.h_btn .btn01 a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h_btn .btn01 a {
+  transition: all 0.5s;
+}
+
+@media screen and (min-width: 769px) {
+  .sp {
+    display: none;
+  }
+  a:hover img {
+    opacity: 0.7;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+    font-size: 150%;
+  }
+  a, a *, div, div * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  a:hover img {
+    opacity: 1;
+  }
+  .pc {
+    display: none;
+  }
+}
+.logo {
+  width: 213px;
+  min-width: 100px;
+  flex-shrink: 0;
+  line-height: 0;
+  margin: 0 auto 0 0;
+}
+
+#header {
+  background: #F3F3F3;
+  padding: 5px 0 4px;
+}
+
+#header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.h_main {
+  position: relative;
+  top: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.h_info {
+  margin-right: 22px;
+  text-align: center;
+}
+
+.h_note {
+  margin-bottom: 1px;
+  line-height: inherit;
+}
+.h_note .wrap {
+  font-size: 11px;
+  font-weight: 500;
+  background: #fff;
+  padding: 3px 20px;
+  color: #138B9E;
+  border-radius: 10px;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+.h_btn {
+  position: relative;
+  top: 2px;
+  display: flex;
+}
+.h_btn .btn01 {
+  width: 158px;
+}
+.h_btn .btn01 a {
+  line-height: 1.5em;
+  text-decoration: none;
+  background: #158FCB;
+  color: #fff;
+  padding: 18px 10px 17px;
+  border-radius: 10px;
+  border: solid 1px #158FCB;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.h_tel {
+  margin-bottom: 0;
+}
+.h_tel a .wrap {
+  display: inline-block;
+  line-height: 1.2em;
+  font-size: 35px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .h_btn a:hover {
+    background: #fff;
+    color: #158FCB;
+  }
+  .h_tel a {
+    pointer-events: none;
+  }
+}
+footer {
+  background: #000;
+}
+
+.copyright {
+  font-size: 16px;
+  line-height: 1.5em;
+  text-align: center;
+  color: #fff;
+  padding: 10px 3% 30px;
+  margin-bottom: 0;
+}
+
+/*!
+page > top > common
+------------------------------
+*/
+@media screen and (max-width: 768px) {
+  .skills {
+    padding: 80px 0;
+  }
+}
+
+/*!
+global > color
+------------------------------
+*/
+/*!
+global > content-width
+------------------------------
+*/
+/*!
+global > font
+------------------------------
+*/
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 500;
+  font-display: optional;
+  src: url("../../assets/fonts/NotoSansCJKjp-Medium.woff2") format("woff2");
+  src: url("../../assets/fonts/NotoSansCJKjp-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url("../../assets/fonts/NotoSansCJKjp-Bold.woff2") format("woff2");
+  src: url("../../assets/fonts/NotoSansCJKjp-Bold.ttf") format("truetype");
+}
+/*!
+foundation > base
+------------------------------
+*/
+h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+  font-size: 250%;
+  -webkit-text-size-adjust: none;
+}
+
+header, section, footer, aside, nav, main, article, figure {
+  display: block;
+}
+
+a {
+  color: #158FCB;
+}
+
+a:hover, a:active {
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+section p:last-child, .section p:last-child {
+  margin-bottom: 0;
+}
+
+p, dd, td, th, li {
+  line-height: 1.6em;
+}
+
+img {
+  transition: all 0.5s;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+body {
+  color: #000;
+  font-family: "Noto Sans JP", serif;
+}
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+.clean_pillow_sec02_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact_form_checkbox .txt_underline {
+  transition: all 0.5s;
+}
+
+.contact_form_path li:after, .clean_pillow_sec02_item.i03:after, .clean_pillow_sec01:after, .situation:after, .kirepillow_box_ttl_big:before {
+  position: absolute;
+  content: "";
+}
+
+@media screen and (min-width: 769px) {
+  .sp {
+    display: none;
+  }
+  a:hover img {
+    opacity: 0.7;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+    font-size: 150%;
+  }
+  a, a *, div, div * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  a:hover img {
+    opacity: 1;
+  }
+  .pc {
+    display: none;
+  }
+}
+.kirepillow_mv {
+  background: url(../images/kirepillow/mv_bg01.jpg) no-repeat center;
+  background-size: cover;
+  padding: 15px 0 57px;
+}
+.kirepillow_mv_container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+.kirepillow_mv_txt_address {
+  text-align: right;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-bottom: 27px;
+}
+.kirepillow_mv_list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 75px;
+}
+.kirepillow_mv_item.i01 {
+  width: 823px;
+  margin-top: 66px;
+}
+.kirepillow_mv_item.i01 .ttl {
+  line-height: 0;
+  margin: 0;
+}
+.kirepillow_mv_item.i02 {
+  position: absolute;
+  right: -12px;
+  top: 0;
+  width: 310px;
+  height: 310px;
+  background: #fff;
+  padding: 13px;
+  border-radius: 50%;
+}
+.kirepillow_mv_item.i02 .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.kirepillow_mv_item.i02 .img .txt_small {
+  color: #138B9E;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.kirepillow_mv_item.i03 {
+  width: 699px;
+}
+.kirepillow_mv_item.i03 .ttl {
+  width: 100%;
+  margin: -175px 0 0 210px;
+}
+.kirepillow_mv_slide {
+  width: 100vw;
+  margin-left: calc((100% - 2258px) / 2);
+  transform: rotate(-15deg);
+}
+.kirepillow_mv_slide .slick-list {
+  overflow: inherit;
+}
+.kirepillow_mv_slide .slick-slide {
+  margin-left: -1px;
+}
+.kirepillow_mv_slide_item {
+  width: 610px !important;
+}
+.kirepillow_mv_des {
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.kirepillow_mv .kirepillow_box_ttl_big {
+  margin-bottom: 138px;
+}
+
+.kirepillow_box_ttl_big {
+  max-width: 1920px;
+  position: relative;
+  width: 100vw;
+  margin-left: calc((100% - 1851px) / 2);
+  transform: rotate(-15deg);
+  margin-top: -45px;
+  background: #fff;
+  text-align: center;
+  padding: 111px 0 85px;
+}
+.kirepillow_box_ttl_big:before {
+  left: -50%;
+  transform: translateX(-50%);
+  background: #fff;
+  width: 10000px;
+  height: 100%;
+  top: 0;
+  z-index: -1;
+}
+.kirepillow_box_ttl_big .ttl_big {
+  position: relative;
+  width: 1815px;
+  line-height: 0;
+  display: inline-block;
+  margin: 0 auto;
+  left: 30px;
+}
+.kirepillow_box_ttl_big .img {
+  position: absolute;
+  left: 48%;
+  transform: translateX(-50%) rotate(15deg);
+  top: -89px;
+  display: inline-block;
+  margin: 0 auto;
+  width: 719px;
+}
+
+.situation {
+  position: relative;
+  background: #008EB0;
+  padding: 71px 0 228px;
+}
+.situation:after {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -212px;
+  background: url(../images/kirepillow/situation_bg.png) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 212px;
+}
+.situation_ttl {
+  text-align: center;
+  margin-bottom: 34px;
+  color: #F6FF00;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.54em;
+}
+.situation_img {
+  border: solid 29px #fff;
+  margin-bottom: 16px;
+}
+.situation_voice {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+.situation_voice .img_person {
+  width: 350px;
+  flex-shrink: 0;
+  margin-right: 32px;
+}
+.situation_voice .img_caption {
+  width: 658px;
+  flex-shrink: 0;
+  position: relative;
+  left: -102px;
+  top: 9px;
+}
+
+.film_shiroki {
+  background: url(../images/kirepillow/film_shiroki_bg.jpg) no-repeat center;
+  background-size: cover;
+  padding: 270px 0 17px;
+}
+.film_shiroki_ttl {
+  margin: 0 auto 270px;
+  text-align: center;
+}
+.film_shiroki_ttl .ttl01 {
+  font-size: 45px;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  margin-bottom: 30px;
+}
+.film_shiroki_ttl .ttl02 {
+  display: block;
+  width: 671px;
+  margin: 0 auto;
+  line-height: 0;
+  position: relative;
+  left: -27px;
+}
+.film_shiroki .kirepillow_box_ttl_big {
+  margin-bottom: 52px;
+}
+.film_shiroki .kirepillow_box_ttl_big .img {
+  left: 48.9%;
+  top: -156px;
+}
+.film_shiroki_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.film_shiroki_list .ttl {
+  margin-bottom: 0;
+  line-height: 1.34em;
+  color: #fff;
+  font-weight: bold;
+  font-size: 60px;
+  white-space: nowrap;
+  position: relative;
+  left: 74px;
+  top: 59px;
+}
+.film_shiroki_list .img {
+  width: 593px;
+  flex-shrink: 0;
+}
+
+.secret {
+  background: url(../images/kirepillow/secret_bg.jpg) no-repeat center;
+  background-size: cover;
+  padding: 62px 0 0;
+}
+.secret_ttl {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.secret_ttl .ttl_big {
+  font-size: 60px;
+}
+.secret_list {
+  display: flex;
+}
+.secret_img {
+  width: 677px;
+  flex-shrink: 0;
+  margin-top: -99px;
+  position: relative;
+  right: 59px;
+}
+.secret_info {
+  width: 68%;
+  flex-shrink: 0;
+  padding-top: 90px;
+}
+.secret_info .ttl {
+  margin-bottom: 38px;
+}
+.secret_info .ttl .bg {
+  background: #fff;
+  display: inline-block;
+  padding: 21px 43px 20px;
+  font-size: 45px;
+  font-weight: bold;
+  color: #138B9E;
+  margin-bottom: 20px;
+}
+.secret_info .ttl .bg:last-child {
+  margin-bottom: 0;
+}
+.secret_info .des {
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.clean_pillow_sec01 {
+  position: relative;
+  padding: 39px 0 35px;
+  background: #fff;
+}
+.clean_pillow_sec01:after {
+  right: 0;
+  bottom: 0;
+  clip-path: polygon(100% 12%, 0 100%, 100% 100%);
+  -webkit-clip-path: polygon(100% 12%, 0 100%, 100% 100%);
+  background: #00ABC9;
+  width: 100%;
+  height: 100%;
+}
+.clean_pillow_sec01 .container {
+  position: relative;
+  z-index: 1;
+}
+.clean_pillow_sec01_img {
+  width: 589px;
+  margin-left: auto;
+}
+.clean_pillow_sec01_ttl {
+  margin-bottom: 51px;
+  transform: rotate(-15deg);
+}
+.clean_pillow_sec01_ttl .ttl_small {
+  color: #00ABC9;
+  font-size: 50px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 13px;
+}
+.clean_pillow_sec01_ttl .ttl_big {
+  color: #00ABC9;
+  font-size: 60px;
+  font-weight: bold;
+  display: block;
+  position: relative;
+  left: -11px;
+}
+
+.clean_pillow_sec02_item {
+  position: relative;
+  background: #00ABC9;
+}
+.clean_pillow_sec02_item .img {
+  width: 50%;
+  flex-shrink: 0;
+  margin: 0;
+  line-height: 0;
+  z-index: 2;
+}
+.clean_pillow_sec02_info {
+  width: 50%;
+  z-index: 2;
+}
+.clean_pillow_sec02 .wrap_info {
+  display: flex;
+  width: 550px;
+  padding: 150px 0 0 48px;
+}
+.clean_pillow_sec02 .wrap_info .num {
+  font-family: "M PLUS 1p", sans-serif;
+  font-size: 179px;
+  font-weight: bold;
+  color: #F6FF00;
+  line-height: 1em;
+  margin: -4px 17px 0 0;
+}
+.clean_pillow_sec02 .wrap_info .ttl {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 26px;
+}
+.clean_pillow_sec02 .wrap_info .des {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.83em;
+  white-space: nowrap;
+}
+.clean_pillow_sec02_item.i02 .wrap_info {
+  margin-left: auto;
+  padding: 139px 40px 0 0;
+}
+.clean_pillow_sec02_item.i02 .wrap_info .num {
+  margin: 4px 22px 0 0;
+}
+.clean_pillow_sec02_item.i03 {
+  background: none;
+}
+.clean_pillow_sec02_item.i03:after {
+  background: #00ABC9;
+  left: 50%;
+  top: -292px;
+  width: calc(100% + 280px);
+  height: 100%;
+  z-index: 1;
+  transform: rotate(-15deg) translateX(-50%);
+}
+
+.voice {
+  position: relative;
+  padding: 138px 0 70px;
+}
+.voice_ttl {
+  position: relative;
+  color: #00ABC9;
+  margin-bottom: 55px;
+  line-height: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+}
+.voice_list {
+  padding: 0 42px;
+}
+.voice_item {
+  display: flex;
+  margin-bottom: 46px;
+}
+.voice_item:last-child {
+  margin-bottom: 0;
+}
+.voice_item_img {
+  margin: 0;
+  line-height: 0;
+  flex-shrink: 0;
+}
+.voice_item_caption {
+  width: 742px;
+  margin-bottom: 27px;
+}
+.voice_item_txt {
+  font-size: 30px;
+  font-weight: 500;
+  color: #0959A7;
+  letter-spacing: 0.1em;
+  padding: 0 56px;
+}
+
+.voice_item.i01 .voice_item_img {
+  width: 249px;
+  margin: 44px 14px 0 0;
+}
+.voice_item.i02 .voice_item_img {
+  width: 280px;
+  margin: 36px -18px 0 0;
+}
+.voice_item.i03 .voice_item_img {
+  width: 245px;
+  margin: 13px -4px 0 21px;
+}
+
+.solve_problem {
+  background: url(../images/kirepillow/solve_problem_bg.jpg) no-repeat center;
+  background-size: cover;
+  padding: 123px 0 93px;
+}
+.solve_problem_list {
+  display: flex;
+  margin-bottom: 22px;
+}
+.solve_problem_ttl {
+  width: 608px;
+  flex-shrink: 0;
+  margin: 27px 80px 0 14px;
+}
+.solve_problem_img {
+  width: 376px;
+  flex-shrink: 0;
+  margin: 0;
+}
+.solve_problem_des {
+  color: #fff;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.4em;
+  letter-spacing: 0.1em;
+}
+.solve_problem .kirepillow_box_ttl_big {
+  margin-bottom: 168px;
+}
+
+.contact_form {
+  background: #F3F3F3;
+  padding: 77px 0;
+}
+.contact_form_ttl {
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 24px;
+  line-height: 1.5em;
+}
+.contact_form_ttl_small {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: #28A4E1;
+  margin-bottom: 45px;
+  letter-spacing: 0.1em;
+}
+.contact_form_wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.contact_form_path {
+  display: flex;
+  background: #fff;
+}
+.contact_form_path li {
+  position: relative;
+  border-top: solid 1px #B0B0B0;
+  border-bottom: solid 1px #B0B0B0;
+  width: 33.3333333333%;
+  text-align: center;
+}
+.contact_form_path li .wrap {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  color: #B0B0B0;
+  font-weight: bold;
+  padding: 21px 5px 17px;
+}
+.contact_form_path li.active .wrap {
+  color: #158FCB;
+}
+.contact_form_path li:after {
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 80px;
+  background: url(../images/kirepillow/contact_form_arrow_step.png) no-repeat center/cover;
+}
+.contact_form_path li:last-child:after {
+  content: none;
+}
+.contact_form_mail {
+  padding: 50px 44px;
+  background: #fff;
+}
+.contact_form_ttl01 {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 11px;
+  line-height: 1.5em;
+}
+.contact_form_txt {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 64px;
+  line-height: 1.5em;
+}
+.contact_form_tbl {
+  margin-bottom: 50px;
+}
+.contact_form_tbl dl {
+  display: table;
+  width: 100%;
+}
+.contact_form_tbl dt {
+  width: 245px;
+  display: table-cell;
+  line-height: 1.5em;
+  vertical-align: top;
+}
+.contact_form_tbl dt .required {
+  position: relative;
+  top: 5px;
+  background: #28A4E1;
+  width: 81px;
+  padding: 5px 3px;
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-right: 20px;
+  font-size: 16px;
+  flex-shrink: 0;
+  line-height: 1.2em;
+}
+.contact_form_tbl dt .required.bg01 {
+  background: #B0B0B0;
+}
+.contact_form_tbl dd {
+  display: table-cell;
+  width: calc(100% - 245px);
+  line-height: 1.5em;
+  vertical-align: top;
+  padding: 0 0 0 28px;
+}
+.contact_form_tbl .wrap_ttl {
+  display: flex;
+  align-items: flex-start;
+}
+.contact_form_tbl .wrap_ttl .ttl {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+.contact_form_tbl input:focus, .contact_form_tbl textarea:focus, .contact_form_tbl select:focus {
+  outline: 0;
+}
+.contact_form_tbl textarea {
+  width: 100%;
+  height: 223px;
+  padding: 20px;
+  border: solid 1px #B0B0B0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.contact_form_tbl input {
+  background: #fff;
+  border: solid 1px #B0B0B0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.contact_form_tbl input[type=text], .contact_form_tbl input[type=email] {
+  padding: 10px 20px 11px;
+  width: 100%;
+}
+.contact_form_checkbox {
+  text-align: center;
+  margin: 74px 0 0;
+}
+.contact_form_checkbox .txt {
+  color: #000;
+  display: block;
+  line-height: 1.5em;
+  margin-bottom: 30px;
+}
+.contact_form_checkbox input {
+  margin-right: 10px;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+}
+.contact_form_checkbox .txt_underline {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #28A4E1;
+}
+.contact_form_checkbox .txt_underline:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: #28A4E1;
+  width: 100%;
+  height: 1px;
+}
+.contact_form_checkbox .txt_underline a {
+  position: relative;
+  z-index: 3;
+  text-decoration: none;
+  color: #555;
+  transition: all 0.5s;
+}
+.contact_form_checkbox label {
+  position: relative;
+  justify-content: center;
+}
+.contact_form_checkbox label input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+.contact_form_checkbox label .txt_checkbox {
+  position: relative;
+  padding-left: 30px;
+  display: inline-block;
+  color: #000;
+}
+.contact_form_checkbox label .txt_checkbox:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #28A4E1;
+  left: 0;
+  font-weight: bold;
+  top: 9px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
+  border: solid 1px #ccc;
+}
+.contact_form_checkbox label .txt_checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+  background: url(../images/kirepillow/icon_check.png) no-repeat center;
+  background-size: contain;
+  width: 15px;
+  height: 12px;
+  left: 3px;
+  top: 13px;
+}
+.contact_form_checkbox label input:checked ~ .txt_checkbox:after {
+  display: block;
+}
+.contact_form_btn {
+  width: 411px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.contact_form_btn input {
+  position: relative;
+  line-height: 1.5em;
+  background: #28A4E1;
+  padding: 20px 10px;
+  text-decoration: none;
+  border: solid 1px #28A4E1;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.contact_form_note {
+  font-size: 16px;
+  color: #B0B0B0;
+  display: block;
+  margin-bottom: 3px;
+}
+
+@media screen and (min-width: 769px) {
+  .contact_form_btn input:hover {
+    background: #fff;
+    color: #28A4E1;
+  }
+  .contact_form_checkbox .txt_underline:hover {
+    opacity: 0.7;
+  }
+  .clean_pillow_sec02_item.i03 {
+    margin-top: -5px;
+  }
+  .clean_pillow_sec02_item.i03 .wrap_info {
+    padding: 160px 0 0 34px;
+  }
+  .clean_pillow_sec02_item.i03 .wrap_info .num {
+    margin: -16px 17px 0 0;
+  }
+  .clean_pillow_sec02_item.i03 .wrap_info .ttl {
+    margin-bottom: 16px;
+  }
+  .voice_item.i02 {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 1880px) {
+  .kirepillow_box_ttl_big .ttl_big {
+    width: 100%;
+    left: 30px;
+  }
+  .kirepillow_box_ttl_big {
+    margin-left: 0;
+    padding: 111px 0 85px;
+    width: 120%;
+    left: -12%;
+  }
+  .kirepillow_mv .kirepillow_box_ttl_big {
+    margin-top: -84px;
+  }
+  .kirepillow_box_ttl_big .img {
+    left: 49%;
+    transform: translateX(-50%) rotate(15deg);
+    top: -89px;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .kirepillow_mv_slide_item {
+    width: 570px !important;
+  }
+  .kirepillow_mv .kirepillow_box_ttl_big {
+    margin-top: -100px;
+  }
+  .kirepillow_box_ttl_big .img {
+    left: 45%;
+    transform: translateX(-50%) rotate(15deg);
+    width: 43%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .kirepillow_mv_slide_item {
+    width: 470px !important;
+  }
+  .kirepillow_mv_slide {
+    margin-left: calc((100% - 1890px) / 2);
+  }
+  .kirepillow_mv .kirepillow_box_ttl_big {
+    margin-top: -100px;
+  }
+  .kirepillow_box_ttl_big .ttl_big {
+    width: 80%;
+    left: 24px;
+  }
+  .kirepillow_box_ttl_big .img {
+    left: 45%;
+    transform: translateX(-50%) rotate(15deg);
+    width: 34%;
+    top: -30px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .kirepillow_mv_slide_item {
+    width: 400px !important;
+  }
+  .kirepillow_mv_slide {
+    margin-left: calc((100% - 1570px) / 2);
+  }
+  .kirepillow_mv {
+    padding: 15px 1% 57px;
+  }
+  .kirepillow_mv_item.i02 {
+    right: 0;
+    width: 28vw;
+    height: 28vw;
+    padding: 1vw;
+  }
+  .kirepillow_mv_item.i02 .img .txt_small {
+    font-size: 14px;
+    bottom: 1vw;
+  }
+  .kirepillow_mv_item.i01 {
+    width: 72%;
+    margin-top: 5vw;
+  }
+  .kirepillow_mv_item.i03 {
+    width: 60%;
+  }
+  .kirepillow_mv_item.i03 .ttl {
+    margin: -15vw 0 0 18vw;
+  }
+}
+@media screen and (max-width: 992px) {
+  .kirepillow_mv_slide_item {
+    width: 320px !important;
+  }
+  .kirepillow_mv_slide {
+    margin-left: calc((100% - 1270px) / 2);
+  }
+  .kirepillow_mv_item.i02 .img .txt_small {
+    font-size: 2vw;
+    bottom: 1.5vw;
+    width: 100%;
+    text-align: center;
+  }
+  .kirepillow_box_ttl_big {
+    padding: 68px 0;
+  }
+  .kirepillow_mv .kirepillow_box_ttl_big {
+    margin-top: -60px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .kirepillow_mv_list {
+    margin-bottom: 10vw;
+  }
+  .kirepillow_mv_txt_address {
+    letter-spacing: 0.01em;
+  }
+  .kirepillow_mv_slide_item {
+    width: 35vw !important;
+  }
+  .kirepillow_mv_slide {
+    margin-left: -18vw;
+  }
+  .kirepillow_mv .kirepillow_box_ttl_big {
+    margin-top: -4vw;
+    padding: 8vw 0 7vw;
+  }
+}
+@media screen and (max-width: 425px) {
+  .kirepillow_mv_txt_address {
+    font-size: 12px;
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*!
+animation > text-animation
+------------------------------
+*/
+.fadeIn {
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  transform: translate(0, 50px);
+}
+
+.scrollIn {
+  opacity: 1;
+  transform: translate(0, 0);
+}/*# sourceMappingURL=kirepillow.css.map */

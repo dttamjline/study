@@ -1,0 +1,90 @@
+@use "../global" as g;
+
+/*!
+foundation > base
+------------------------------
+*/
+h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+    font-size: 250%;
+    -webkit-text-size-adjust: none;
+
+}
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+a {
+    color: #158FCB;
+}
+a:hover, a:active {
+    text-decoration: none;
+}
+table {
+    width: 100%
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+p {
+    margin: 0 0 1.5em;
+}
+
+section p:last-child, .section p:last-child {
+    margin-bottom: 0;
+}
+p, dd, td, th, li {
+    line-height: 1.6em;
+}
+
+
+img {
+	transition: all 0.5s;
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+body {
+    color: g.$color1;
+    font-family: g.$font-family-base;
+}
+
+.wrapper {
+    overflow-x: hidden;
+}
+%d_flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%d_flex_space{
+    display: flex;
+    justify-content: space-between;
+}
+%trans{
+    transition: all 0.5s;
+}
+%pos_a{
+    position: absolute;
+    content: '';
+}
+@include g.mq(minmd) {
+    .sp{
+        display: none;
+    }
+    a:hover img {
+        opacity: 0.7;
+    }
+}
+@include g.mq(md) {
+    h1, h2, h3, h4, h5, h6, input, button, textarea, select, p, blockquote, th, td, pre, address, li, dt, dd {
+        font-size: 150%;
+    }
+    a, a *, div, div *{
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    a:hover img {
+        opacity: 1;
+    }
+    .pc {
+        display: none;
+    }
+}

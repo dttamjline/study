@@ -1,0 +1,22 @@
+@use "../../global" as g;
+
+/*!
+page > top > common
+------------------------------
+*/
+.mv {  
+  
+}
+
+.skills {
+
+    @include g.mq(md) {
+        padding: 80px 0;
+    }
+}
+
+
+
+.footer {
+
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <style>
+    *,
+    ::before,
+    ::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        font-family: "Concert One", cursive;
+        background: #f8c985;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .numbers{
+        position: relative;
+        width: 35rem;
+        height: 35rem;
+        border-radius: 50%;
+        background: #F68657;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        border: solid 7px #f55f20;
+    }
+    .numbers > div{
+        position: absolute;
+        font-size: 4rem;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+    .twelve{
+        top: 10px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .three{
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .six{
+        bottom: 10px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    .nine{
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .arrows{
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width: 20px;
+        height: 20px;
+    }
+    .arrows::before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        z-index: 10;
+    }
+
+    .arrows div {
+        width: 4px;
+        height: 110px;
+        background-color: #f8e800;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        border-radius: 100% 100% 0 0;
+        transform-origin: bottom center;
+    }
+    .arrows .hour {
+        height: 80px;
+        transform: rotate(90deg);
+    }
+
+    .arrows .second {
+        background-color: #ff0000;
+        transform: rotate(270deg);
+    }
+    .one{
+        right: 90px;
+        top: 25px;
+    }
+    .two{
+        right: 35px;
+        top: 75px;
+    }
+    .five{
+        right: 90px;
+        bottom: 25px;
+    }
+    .four{
+        right: 35px;
+        bottom: 75px;
+    }
+    .seven{
+        left: 90px;
+        bottom: 25px;
+    }
+    .eight{
+        left: 35px;
+        bottom: 75px;
+    }
+    .eleven{
+        left: 90px;
+        top: 25px;
+    }
+    .ten{
+        left: 35px;
+        top: 75px;
+    }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="clock">
+          <div class="numbers">
+            <div class="one">1</div>
+            <div class="two">2</div>
+            <div class="three">3</div>
+            <div class="four">4</div>
+            <div class="five">5</div>
+            <div class="six">6</div>
+            <div class="seven">7</div>
+            <div class="eight">8</div>
+            <div class="nine">9</div>
+            <div class="ten">10</div>
+            <div class="eleven">11</div>
+            <div class="twelve">12</div>
+          </div>
+          <div class="arrows">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+          </div>
+        </div>
+        <div id="ocean"></div>
+      </main>
+    <script>
+        const h = document.querySelector('.hour');
+
+        const m = document.querySelector('.minute');
+
+        const s = document.querySelector('.second');
+      
+
+        function setDate(){
+            const time = new Date();
+            const getSecond = time.getSeconds();
+            console.log(getSecond)
+            const getMinute = time.getMinutes();
+            console.log(getMinute)
+            const getHour = time.getHours();
+            console.log(getHour)
+            // //move the second arrow
+            const secondDegree = (getSecond / 60) * 360;
+            s.style.transform = `rotate(${secondDegree}deg)`;
+
+            // //move the minute arrow
+            const minuteDegree = (getMinute / 60) * 360;
+            m.style.transform = `rotate(${minuteDegree}deg)`;
+
+            // //move the hour arrow
+            const hourDegree = (getHour / 12) * 360;
+           h.style.transform = `rotate(${hourDegree}deg)`;
+
+        }
+        setInterval(setDate, 1000);
+    </script>
+</body>
+</html>
