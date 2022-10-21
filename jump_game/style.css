@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+img{
+    max-width: 100%;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.frame{
+    width: 90%;
+    margin: 0 auto;
+    border: solid 2px #000;
+    height: 500px;
+    display: flex;
+    align-items: flex-end;
+}
+#animal{
+    width: 80px;
+    bottom: 0;
+    position:relative;
+}
+.animate{
+    animation: jump 0.3s linear;
+}
+@keyframes jump{
+    0%{bottom: 300px;}
+    30%{bottom: 100px;}
+    70%{bottom: 100px;}
+    100%{bottom: 250px;}
+}
+
+#tree{
+    width: 40px;
+    position: relative;
+    left: 500px;
+    animation: block 1.5s infinite linear; 
+    bottom: 0;
+}
+@keyframes block{
+    0%{left: 500px}
+    100%{left: -20px}
+}
+p{
+    text-align: center;
+}
