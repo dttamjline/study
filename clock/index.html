@@ -109,7 +109,10 @@
         transform: translateX(-50%);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
         border-radius: 100% 100% 0 0;
-        transform-origin: bottom center;
+        --rotation: 0;
+        transform-origin: bottom;
+        z-index: 10;
+        transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
     }
     .arrows .hour {
         height: 80px;
@@ -180,36 +183,26 @@
         <div id="ocean"></div>
       </main>
     <script>
+            setInterval(setClock, 1000)
+            const hourHand = document.querySelector('.hour')
+            const minuteHand = document.querySelector('.minute')
+            const secondHand = document.querySelector('.second')
 
-        (function(){
-            function setDate(){
-            const h = document.querySelector('.hour');
-            const m = document.querySelector('.minute');
-            const s = document.querySelector('.second');
-            const time = new Date();
-            const getSecond = time.getSeconds();
-            console.log(getSecond)
-            const getMinute = time.getMinutes();
-            console.log(getMinute)
-            const getHour = time.getHours();
-            console.log(getHour)
-            // //move the second arrow
-            const secondDegree = (getSecond / 60) * 360;
-            s.style.transform = `rotate(${secondDegree}deg)`;
+            function setClock() {
+            const currentDate = new Date()
+            const secondsRatio = currentDate.getSeconds() / 60
+            const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60
+            const hoursRatio = (minutesRatio + currentDate.getHours()) / 12
+            setRotation(secondHand, secondsRatio)
+            setRotation(minuteHand, minutesRatio)
+            setRotation(hourHand, hoursRatio)
+            }
 
-            // //move the minute arrow
-            const minuteDegree = (getMinute / 60) * 360;
-            m.style.transform = `rotate(${minuteDegree}deg)`;
+            function setRotation(element, rotationRatio) {
+            element.style.setProperty('--rotation', rotationRatio * 360)
+            }
 
-            // //move the hour arrow
-            const hourDegree = (getHour / 12) * 360;
-           h.style.transform = `rotate(${hourDegree}deg)`;
-
-        }
-        setDate();
-        setInterval(setDate, 1000);
-   
-        })();
+            setClock()
     </script>
 </body>
 </html>
