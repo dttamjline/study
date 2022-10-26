@@ -1,0 +1,16 @@
+/*!
+global > font
+------------------------------
+*/
+
+@font-face {
+    font-family: 'Staatliches';
+    font-style: normal;
+    font-weight: 400;
+    font-display: optional;
+    src: url('../fonts/staatliches/Staatliches-Regular.ttf') format('truetype');
+}
+
+
+$font-family-base: 'Noto Sans JP', sans-serif;
+$font-family-number: 'Staatliches', sans-serif;

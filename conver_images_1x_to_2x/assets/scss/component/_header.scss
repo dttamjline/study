@@ -1,0 +1,204 @@
+@use "sass:math";
+@use "../global" as g;
+
+/*!
+component > header
+------------------------------
+*/
+.header {
+    box-shadow: 0 0px 5px 0px rgba($color: g.$color-base, $alpha: 0.2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: g.$color-white;
+
+    @include g.mq(md) {
+        box-shadow: none;
+        background: transparent;
+
+        &.active,
+        &.import_active {
+            box-shadow: 0 0px 5px 0px rgba($color: g.$color-base, $alpha: 0.2);
+
+            .header__inner {
+                padding: 20px 7vw 20px 40px;
+                background: g.$color-white;
+            }
+
+            .header__logo {
+                max-width: 50px;
+            }
+
+            .gnavi__item__link {
+                color: g.$color-base;
+            }
+        }
+    }
+
+    &__logo {
+        max-width: 40px;
+        transition: 0.5s;
+        position: relative;
+        z-index: 11;
+
+        @include g.mq(md) {
+            max-width: 50px;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        @include g.mq(xd) {
+            max-width: 60px;
+        }
+    }
+
+    &__inner {
+        padding: 14px 20px;
+        transition: 0.5s;
+
+        @include g.mq(md) {
+            padding: 20px 7vw 20px 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include g.mq(xd) {
+            padding: 72px clamp(7vw, 30vw - 40px, 13.7vw) 72px 3.8vw;
+        }
+    }
+
+    &__btn {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        transform: translateY(100px);
+        transition: 0.5s;
+
+        @include g.mq(md) {
+            position: unset;
+            transform: none !important;
+        }
+
+        .note {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            bottom: 0;
+            right: 0;
+            font-size: g.rem(12);
+            line-height: 1.2;
+            background: g.$color-white;
+            width: 50%;
+            height: 48px;
+            font-weight: 400;
+            transition: 0.5s;
+
+            @include g.mq(md) {
+                font-size: g.rem(16);
+                position: fixed;
+                bottom: 115px;
+                left: 40px;
+                width: 150px;
+                height: 110px;
+                box-shadow: 0px 0px 10px 0px rgba($color: g.$color-black, $alpha: 0.14);
+                text-align: center;
+                line-height: math.div(23, 16);
+                padding: 0 0 8px 0;
+                letter-spacing: 0;
+                transform: translateX(-200px);
+                transition: 0.5s;
+            }
+
+            &__icon01 {
+                width: 20px;
+                margin-right: 5px;
+
+                @include g.mq(md) {
+                    width: 40px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: -20px;
+                }
+            }
+
+            &__icon02 {
+                width: 20px;
+                margin-left: 5px;
+
+                @include g.mq(md) {
+                    width: 61px;
+                    position: absolute;
+                    left: calc(50% - 5px);
+                    transform: translateX(-50%);
+                    bottom: -35px;
+                }
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .btnmail01 {
+            height: 48px;
+            width: 50%;
+            max-width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+            font-size: g.rem(12);
+
+            @include g.mq(md) {
+                position: fixed;
+                top: 82px;
+                right: 0;
+                width: 80px;
+                writing-mode: tb-rl;
+                display: flex;
+                justify-content: center;
+                height: auto;
+                border-radius: 8px 0 0 8px;
+                text-align: center;
+                font-size: g.rem(24);
+                padding: 48px 10px 45px 10px;
+                letter-spacing: 0.05em;
+                transform: translateX(100px);
+                transition: 0.5s;
+            }
+
+            @include g.mq(xd) {
+                top: 64px;
+            }
+
+            &__txt {
+                padding-left: 25px;
+
+                @include g.mq(md) {
+                    padding-left: 0;
+                    padding-top: 36px;
+                }
+
+                &::after {
+                    width: 18px;
+                    height: 14px;
+
+                    @include g.mq(md) {
+                        width: 35px;
+                        height: 25px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        top: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

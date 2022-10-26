@@ -1,0 +1,14 @@
+@use "sass:math";
+@use "../../global" as g;
+
+.thank {
+    padding: 50px 0;
+
+    @include g.mq(md) {
+        padding: 200px 0 100px 0;
+    }
+
+    .ttl02 {
+        margin-bottom: 20px;
+    }
+}

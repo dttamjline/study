@@ -1,0 +1,23 @@
+@use "sass:math";
+@use "../global" as g;
+
+/*!
+component > list
+------------------------------
+*/
+
+.list01 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &__item {
+        width: 30%;
+        margin: 10px;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

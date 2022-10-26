@@ -1,0 +1,127 @@
+@use "sass:math";
+@use "../global" as g;
+
+/*!
+component > btn
+------------------------------
+*/
+.toggle {
+    width: 34px;
+    height: 34px;
+    position: fixed;
+    top: 11px;
+    right: 20px;
+    transition: 0.5s;
+    z-index: 11;
+
+    @include g.mq(md) {
+        display: block;
+        top: 27px;
+        right: 3.8vw;
+    }
+
+    @include g.mq(ld) {
+        display: none;
+    }
+
+    &__line {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: g.$color-base;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.5s;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 3px;
+            background: g.$color-base;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            transition: 0.5s;
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 3px;
+            background: g.$color-base;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            transition: 0.5s;
+        }
+    }
+
+    &.active {
+        .toggle__line {
+            background: transparent;
+
+            &::before {
+                transform: rotate(-45deg) translate(-7px, 7px);
+            }
+
+            &::after {
+                transform: rotate(45deg) translate(-7px, -7px);
+            }
+        }
+
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+.totop {
+    font-size: 0;
+    background: g.$color-white;
+    border: 1px solid g.$color-base;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+    transform: translateY(150px);
+    transition: 0.5s;
+
+    @include g.mq(md) {
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        right: 40px;
+        bottom: 80px;
+    }
+
+    &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-left: 1px solid g.$color-base;
+        border-top: 1px solid g.$color-base;
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 2px);
+        transform: translate(-50%, -50%) rotate(45deg);
+        pointer-events: none;
+
+        @include g.mq(md) {
+            width: 14px;
+            height: 14px;
+            border-left: 2px solid g.$color-base;
+            border-top: 2px solid g.$color-base;
+            top: calc(50% + 3px);
+        }
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

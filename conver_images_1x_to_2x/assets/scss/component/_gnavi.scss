@@ -1,0 +1,84 @@
+@use "sass:math";
+@use "../global" as g;
+
+/*!
+component > gnavi
+------------------------------
+*/
+.gnavi {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 56px);
+    display: none;
+    z-index: 10;
+    background: g.$color-white;
+    border-top: 1px solid g.$color-secondary-1;
+
+    @include g.mq(md) {
+        display: none;
+        top: 0;
+        padding-top: 82px;
+        height: 100%;
+        border-top: none;
+    }
+
+    @include g.mq(ld) {
+        display: block;
+        border: none;
+        background: transparent;
+        position: relative;
+        top: 0;
+        height: auto;
+        padding-top: 0;
+
+        &__content {
+            display: flex;
+            justify-content: flex-end;
+            color: g.$color-white;
+        }
+    }
+
+    &__item {
+        padding: 15px 20px;
+        border-bottom: 1px solid g.$color-secondary-1;
+        text-align: center;
+
+        @include g.mq(md) {
+            &:first-child {
+                border-top: 1px solid g.$color-secondary-1;
+            }
+        }
+
+        @include g.mq(ld) {
+            padding: 15px 10px;
+            border: none;
+
+            &:first-child {
+                border: none;
+            }
+        }
+
+        @include g.mq(xd) {
+            padding: 15px 20px;
+        }
+
+        &__link {
+            font-weight: 700;
+            transition: 0.5s;
+
+            @include g.mq(ld) {
+                font-size: g.rem(16);
+            }
+
+            @include g.mq(xd) {
+                font-size: g.rem(18);
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
