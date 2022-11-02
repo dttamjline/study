@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_object_string</title>
+</head>
+<body>
+    <script>
+        // const array = ['i','l','o','v','e','y','o','u'];
+        // //1.Array to string
+        // const myString = array.join('');
+        // console.log('Array to string method 1: '+ myString);  
+        // console.log('Array to string method 2: '+ array.toString().replaceAll(',',''));
+     
+        // const stringResult = array.map((arr,index) => {
+        //     return `${arr}`;
+        // });
+        // console.log('Array to string method 3: ' + stringResult.join(''));
+
+
+        
+        //2. String to array
+        const str01 = 'Javascript is easy with me';
+        //method 1: 
+        // const arr01 = str01.split(' ');
+        // console.log(arr01);
+        
+        //method 2: 
+        const arr02 = [];
+        let a ="";
+        for(let i = 0; i < str01.length; i++){
+            
+            if(str01[i] === ' '){
+                arr02.push(a);
+                a='';
+            }else{
+                a= a+str01[i];
+            }
+            if(i == str01.length - 1){
+                arr02.push(a);
+            }
+        }
+        console.log(arr02)
+
+    </script>
+</body>
+</html>
