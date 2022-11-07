@@ -8,8 +8,11 @@
 </head>
 <body>
     <script>
-        // const array = ['i','l','o','v','e','y','o','u'];
-        // //1.Array to string
+        const array = ['i','l','o','v','e','y','o','u'];
+        console.log('array to string');
+        // 1.Array to string
+        //////////////////////////////////////
+
         // const myString = array.join('');
         // console.log('Array to string method 1: '+ myString);  
         // console.log('Array to string method 2: '+ array.toString().replaceAll(',',''));
@@ -20,14 +23,16 @@
         // console.log('Array to string method 3: ' + stringResult.join(''));
 
 
-        
+        //////////////////////////////////////
         //2. String to array
+        //////////////////////////////////////
+        console.log('String to array');
         const str01 = 'Javascript is easy with me';
-        //method 1: 
-        // const arr01 = str01.split(' ');
-        // console.log(arr01);
+        //method 1: Using .split(‘’):
+        const arr01 = str01.split(' ');
+        //console.log(arr01);
         
-        //method 2: 
+        //method 2: Using old school method (for loop and array.push())
         const arr02 = [];
         let a ="";
         for(let i = 0; i < str01.length; i++){
@@ -42,8 +47,45 @@
                 arr02.push(a);
             }
         }
-        console.log(arr02)
+        // console.log(arr02)
+        //method 3 : Using spread syntax ([…str])
+        // const arr03 = [...str01];
+        // console.log(arr03);
+        
+        //method 4: Using Array.from(str)
 
+        const arr04 = Array.from(str01);
+        console.log(arr04);
+
+        //method 5: Using Object.assign([], str)
+        const arr05 = Object.assign([],str01);
+        console.log(arr05);
+
+        //method 6 :  Using Array.prototype.slice.call(‘string’)
+        const arr06 = Array.prototype.slice.call(str01);
+        console.log(arr06);
+
+
+        console.log('Array to object');
+        //////////////////////////////////////
+        //3.Array to object
+        //////////////////////////////////////
+        
+        //medthod 1 : Using Object.assign([], {})
+        const obj01 = Object.assign({}, array);
+        //console.log(obj01);
+
+        //medthod 2: spread 
+
+        const obj02 = {...array};
+        //console.log(obj02);
+
+        //method 3 : reduce
+        let obj03 = array.reduce(function(accumulator, currentValue){
+            return {...accumulator, [currentValue]: currentValue}
+        },{});
+
+        console.log(obj03);
     </script>
 </body>
 </html>
