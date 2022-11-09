@@ -101,20 +101,14 @@ const btn_playAgain = document.querySelector('.btn_playAgain');
 const intro = document.querySelector('.box_intro');
 const over = document.querySelector('.box_over');
 const body = document.querySelector('.frame');
-body.onclick = function(){
-    if(animal.classList == "animate"){return}
-    animal.classList.add("animate");
-    setTimeout(function(){
-        animal.classList.remove("animate");
-    },1000);
-}
+
 function setState(){
     // clearInterval(time)
 
     let time = setInterval(function() {
         var animalBottom = parseInt(window.getComputedStyle(animal).getPropertyValue("bottom"));
         var treeLeft = parseInt(window.getComputedStyle(tree).getPropertyValue("left"));
-     
+        // console.log(treeLeft)
        if(treeLeft<40 && treeLeft>-40 && animalBottom<=78){
         
             document.getElementById("score").innerHTML = Math.floor(counter/100);
@@ -124,30 +118,50 @@ function setState(){
         
             clearInterval(time);
             console.log('11')
-            console.log(counter)
         }
-        else if(animalBottom > 78 && animal.classList.contains('animate')){
-            console.log('222')
-            console.log(counter)
-            counter++;
-            document.getElementById("current_score").innerHTML = Math.floor(counter/100);
-        }
-     
-    }, 100);
+       
+        counter++;
+        console.log('22')
+        document.getElementById("current_score").innerHTML = Math.floor(counter/100);
+    
+
+    }, 10);
 
 }
+function setJump(){
+    if(animal.classList == "animate")
+    {
+        return
+    }
+    animal.classList.add("animate");
+
+    setTimeout(function(){
+        animal.classList.remove("animate");
+    },1000);
+}
+body.onclick = function(){
+    setJump();
+}
 function reset(){
+    intro.classList.add('hide');
     over.classList.remove('show');
-    document.getElementById("current_score").innerHTML = '0';
+    document.getElementById("current_score").innerHTML = 0;
     tree.classList.add('active');
 }
 btn.onclick = function(){
-    intro.classList.add('hide');
-    tree.classList.add('active');
     reset();
     setState();
 }
 btn_playAgain.onclick = function(){
     reset();
     setState();
+}
+
+document.body.onkeyup = function(e) {
+if (e.key == " " ||
+    e.code == "Space" ||      
+    e.keyCode == 32      
+) {
+    setJump();
+}
 }
