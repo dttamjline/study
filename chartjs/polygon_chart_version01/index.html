@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="ラクセミ">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="./">
+		<meta property="og:image" content="./assets/images/common/img_ogp.jpg">
+        <meta property="og:site_name" content="ラクセミ">
+        <meta property="og:description" content="ラクセミ">
+        <title>ラクセミ</title>
+        <meta name="description" content="ラクセミ" />
+        <link rel="shortcut icon" href="./assets/images/common/favicon.ico" > 
+	    <link rel="stylesheet" href="./assets/js/vender/slick/slick.css">
+		<link href="./assets/js/vender/animate/animate.css" rel="stylesheet">
+		<link href="./assets/css/style.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/4004085d58.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+	<!-- ↓↓ wrapper ↓↓ -->
+	<div id="wrapper">
+		<!-- ↓↓ header ↓↓ -->
+		<!-- <header id="header">
+			<div class="container">
+				<h1 class="logo">
+					<a class="logo_link" href="./"><img loading="lazy" width="232" height="55" class="logo_img" src="./assets/images/common/img_logo.svg" alt=""></a>
+				</h1> 
+				<label class="menu_icon"><span class="menu_icon__line"></span></label>
+				<nav id="h_menu" class="h_menu">
+					<ul class="h_menu__list">
+						<li class="h_menu__item"><a class="link" href="#">menu01</a></li>
+						<li class="h_menu__item has_sub">
+							<span class="link" href="#">menu01</span>
+							<ul class="h_sub_menu">
+								<li class="h_sub_menu__item"><a class="sub_link" href="#">sub menu 1</a></li>
+								<li class="h_sub_menu__item"><a class="sub_link" href="#">sub menu 2</a></li>
+								<li class="h_sub_menu__item"><a class="sub_link" href="#">sub menu 3</a></li>
+								<li class="h_sub_menu__item"><a class="sub_link" href="#">sub menu 4</a></li>
+							</ul>
+						</li>
+						<li class="h_menu__item"><a class="link" href="#">menu01</a></li>
+						<li class="h_menu__item"><a class="link" href="#">menu01</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header> -->
+		<!-- ↑↑ header ↑↑ -->
+		<!-- ↓↓ main ↓↓ -->
+		<main>
+			<!-- ↓↓ intro ↓↓ -->
+			<section class="intro c_section show">
+				<div class="container">
+					<p class="intro__ttl">あなたにピッタリのツボはどれ？</p>
+					<h1 class="c_ttl">五臓体質診断</h1>
+					<p class="intro__desc">「体質は変わらない」と思われがちですが、日々のちょっとした心がけ次第で改善できます。<br>そのためにも「肩こり・めまい・だるさ」といった身体の不調から、今の体調を知ることが大切です。<br>まずはタイプ別のチェックリストで、自分の体質を理解しましょう。</p>
+					<p class="c_btn"><a class="c_btn__link" href="#q_check01">診断してみる</a></p>
+				</div>
+			</section>
+			<!-- ↑↑ intro ↑↑ -->
+			<!-- ↓↓ check01 ↓↓ -->
+			<section id="q_check01" class="q_check01 c_section">
+				<div class="container">
+					<h2 class="c_ttl01">水タイプ</h2>
+					<p class="c_desc">あてはまる項目すべてにチェックを入れよう！</p>
+					<p class="c_ttl__small">【チェック1】</p>
+					<div class="c_group">
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb01">
+									<span class="c_cb__txt">めまいを起こすことがある</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb02">
+									<span class="c_cb__txt">おなかの両脇が張りやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb03">
+									<span class="c_cb__txt">頻繁に高音の耳鳴りがする</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb04">
+									<span class="c_cb__txt">気持ちが落ち込みやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb05">
+									<span class="c_cb__txt">手足がしびれたり、ひきつることがある</span>
+								</label>
+							</li>
+						</ul>
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb06">
+									<span class="c_cb__txt">嫌なことがあると血圧が上がりやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb07">
+									<span class="c_cb__txt">詰めの形や色がよくない、割れやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb08">
+									<span class="c_cb__txt">目が疲れやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb09">
+									<span class="c_cb__txt">目が乾きやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb10">
+									<span class="c_cb__txt">イライラしやすい、怒りっぽい</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<p class="c_btn"><a class="c_btn__link" href="#q_check02">次へ</a></p>
+				</div>
+			</section>
+			<!-- ↑↑ check01 ↑↑ -->
+			<!-- ↓↓ check02 ↓↓ -->
+			<section id="q_check02" class="q_check02 c_section">
+				<div class="container">
+					<h2 class="c_ttl01">金タイプ</h2>
+					<p class="c_desc">あてはまる項目すべてにチェックを入れよう！</p>
+					<p class="c_ttl__small">【チェック2】</p>
+					<div class="c_group">
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb11">
+									<span class="c_cb__txt">倦怠感がある</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb12">
+									<span class="c_cb__txt">顔が赤くなりやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb13">
+									<span class="c_cb__txt">冷や汗をかきやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb14">
+									<span class="c_cb__txt">寝つきが悪い、または何度も目が覚める</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb15">
+									<span class="c_cb__txt">よく夢を見る</span>
+								</label>
+							</li>
+						</ul>
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb16">
+									<span class="c_cb__txt">動揺しやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb17">
+									<span class="c_cb__txt">物忘れが多い</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb18">
+									<span class="c_cb__txt">動悸、息切れしやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb19">
+									<span class="c_cb__txt">手足が冷えやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb20">
+									<span class="c_cb__txt">舌が荒れやすい</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<p class="c_btn"><a class="c_btn__link" href="#q_check03">次へ</a></p>
+				</div>
+			</section>
+			<!-- ↑↑ check02 ↑↑ -->
+			<!-- ↓↓ check03 ↓↓ -->
+			<section id="q_check03" class="q_check03 c_section">
+				<div class="container">
+					<h2 class="c_ttl01">木タイプ</h2>
+					<p class="c_desc">あてはまる項目すべてにチェックを入れよう！</p>
+					<p class="c_ttl__small">【チェック３】</p>
+					<div class="c_group">
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb21">
+									<span class="c_cb__txt">食後にお腹が張りやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb22">
+									<span class="c_cb__txt">心配ごとが絶えない</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb23">
+									<span class="c_cb__txt">下痢をしやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb24">
+									<span class="c_cb__txt">腹痛を起こしやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb25">
+									<span class="c_cb__txt">げっぷが出やすい</span>
+								</label>
+							</li>
+						</ul>
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb26">
+									<span class="c_cb__txt">胸やけしやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb27">
+									<span class="c_cb__txt">疲れやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb28">
+									<span class="c_cb__txt">食欲がない</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb29">
+									<span class="c_cb__txt">お腹が冷えがち</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb30">
+									<span class="c_cb__txt">お腹がちゃぷちゃぷ鳴る</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<p class="c_btn"><a class="c_btn__link" href="#q_check04">次へ</a></p>
+				</div>
+			</section>
+			<!-- ↑↑ check03 ↑↑ -->
+			<!-- ↓↓ check04 ↓↓ -->
+			<section id="q_check04" class="q_check04 c_section">
+				<div class="container">
+					<h2 class="c_ttl01">火タイプ</h2>
+					<p class="c_desc">あてはまる項目すべてにチェックを入れよう！</p>
+					<p class="c_ttl__small">【チェック1】</p>
+					<div class="c_group">
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb31">
+									<span class="c_cb__txt">息切れしやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb32">
+									<span class="c_cb__txt">肌が乾燥しやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb33">
+									<span class="c_cb__txt">咳やたんがよく出る</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb34">
+									<span class="c_cb__txt">鼻炎と診断されたことがある</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb35">
+									<span class="c_cb__txt">寒さや暑さに敏感である</span>
+								</label>
+							</li>
+						</ul>
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb36">
+									<span class="c_cb__txt">風邪をひきやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb37">
+									<span class="c_cb__txt">寒気がしやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb38">
+									<span class="c_cb__txt">すぐに落ち込む</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb39">
+									<span class="c_cb__txt">声がよく枯れる</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb40">
+									<span class="c_cb__txt">よく鼻水が出る</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<p class="c_btn"><a class="c_btn__link" href="#q_check05">次へ</a></p>
+				</div>
+			</section>
+			<!-- ↑↑ check04 ↑↑ -->
+			<!-- ↓↓ check05 ↓↓ -->
+			<section id="q_check05" class="q_check05 c_section">
+				<div class="container">
+					<h2 class="c_ttl01">土タイプ</h2>
+					<p class="c_desc">あてはまる項目すべてにチェックを入れよう！</p>
+					<p class="c_ttl__small">【チェック1】</p>
+					<div class="c_group">
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb41">
+									<span class="c_cb__txt">老けて見える</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb42">
+									<span class="c_cb__txt">頻繁に低音の耳鳴りがする</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb43">
+									<span class="c_cb__txt">足腰がだるい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb44">
+									<span class="c_cb__txt">音が聞き取りにくいことがある</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb45">
+									<span class="c_cb__txt">長くたっていると腰が痛くなる</span>
+								</label>
+							</li>
+						</ul>
+						<ul class="c_list">
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb46">
+									<span class="c_cb__txt">足がむくみやすい</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb47">
+									<span class="c_cb__txt">尿のきれがよくない</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb48">
+									<span class="c_cb__txt">怖がりだと思う</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb49">
+									<span class="c_cb__txt">呼吸が浅い</span>
+								</label>
+							</li>
+							<li class="c_item">
+								<label class="c_item__wrap">
+									<input type="checkbox" class="c_cb__input" name="q_cb50">
+									<span class="c_cb__txt">耳が人より大きい、または人より小さい</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<p class="c_btn"><a class="c_btn__link c_btn__result" href="#result">次へ</a></p>
+				</div>
+			</section>
+			<!-- ↑↑ check05 ↑↑ -->
+			<section id="result" class="result c_section">
+				<div class="container">
+					<h3 class="c_ttl">診断結果</h3>
+					<div class="result__list">
+						<div class="result__chart">
+							<canvas id="myChart" width="400" height="400"></canvas>
+						</div>
+						<div class="result__info">
+
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- ↑↑ main ↑↑ -->
+		<!-- ↓↓ footer ↓↓ -->
+		<footer id="footer">
+			<p class="copyright">Copyright</p>
+		</footer>
+		<!-- ↑↑ footer ↑↑ -->
+	</div>
+	<!-- ↑↑ wrapper ↑↑ -->
+<script src="./assets/js/jquery-3.5.1.min.js"></script>
+<!-- <script src="./assets/js/vender/slick/slick.min.js"></script>
+<script src="./assets/js/vender/animate/wow.js"></script> -->
+<script src="./assets/js/vender/chart/chart.js"></script>
+<script src="./assets/js/vender/excel/xlsx.full.min.js"></script>
+
+
+<script src="./assets/js/common.js"></script>
+<script src="./assets/js/top.js"></script>
+</body>
+</html>
+

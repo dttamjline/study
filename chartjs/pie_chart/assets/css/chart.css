@@ -1,0 +1,270 @@
+
+.c-chart__circle canvas {
+  width: 100% !important;
+  height: 100% !important;
+  
+}
+
+.c-chart {
+  position: relative;
+  width: 75vw;
+  height: 75vw;
+  margin: 0 auto;
+}
+.flex_chart{
+  width: 100%;
+  height: 100%;
+}
+
+.c-chart__item--i01,
+.c-chart__item--i02,
+.c-chart__item--i03,
+.c-chart__item--i04 {
+  position: absolute;
+  z-index: 1;
+}
+
+.c-chart__item__txt .txt_small {
+  font-size: 4.8vw;
+  margin-bottom: 1.3333333333vw;
+  font-weight: 500;
+  letter-spacing: 0;
+  display: block;
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+.c-chart__item__txt .number_small {
+  font-size: 5.3333333333vw;
+  font-weight: 500;
+  display: block;
+  line-height: 1.5em;
+  letter-spacing: 0;
+}
+
+.c-chart__item__txt--i02 {
+  color: #6E86CB;
+}
+
+.c-chart__item__txt .number_small>span {
+  font-size: 10.6666666667vw;
+  font-weight: bold;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.c-chart__item--i01 {
+  top: -8vw;
+  left: 6%;
+  color: #6E86CA;
+}
+
+.c-chart__item--i01::after {
+  content: "";
+  position: absolute;
+  background-color: #BBC1D3;
+  width: 14.0625vw;
+  height: 0.2vw;
+  top: 11vw;
+  left: 11.8125vw;
+  transform: rotate(8deg);
+}
+
+.c-chart__item--i02 {
+  top: 11vw;
+  left: 15vw;
+  color: #fff;
+}
+
+.c-chart__item--i03 {
+  bottom: 12vw;
+  left: 29vw;
+  color: #fff;
+}
+
+.c-chart__item--i04 {
+  right: 14vw;
+  top: 15vw;
+  color: #fff;
+}
+.c-chart__circle {
+  transform: rotate(-18deg);
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .c-chart{
+    width: 13.375vw;
+    height: 13.375vw;
+  }
+  .c-chart__item__txt--i02 {
+    right: -1vw;
+    top: -0.6875vw;
+  }
+
+  .c-chart__item--i01 {
+    top: -0.75vw;
+    left: -1.375vw;
+  }
+
+  .c-chart__item--i01::after {
+    width: 4vw;
+    height: 1vw;
+    top: 0.6vw;
+    left: 4.6vw;
+  }
+
+  .c-chart__item--i02 {
+    top: 2.8125vw;
+    left: 3.2125vw;
+  }
+
+  .c-chart__item--i03 {
+    bottom: 1.25vw;
+    left: 3.75vw;
+  }
+
+  .c-chart__item--i04 {
+    right: 1.975vw;
+    top: 2.55vw;
+  }
+
+  .c-chart__item--i01::after {
+    width: 3.0625vw;
+    height: 0.1vw;
+    top: 1.625vw;
+    left: 3.8125vw;
+    transform: rotate(18deg);
+  }
+
+
+  .c-chart__item__txt .txt_small {
+    font-size: 1.25vw;
+    margin-bottom: 0.43750000000000006vw;
+  }
+
+  .c-chart__item__txt .number_small {
+    font-size: 1.5vw;
+  }
+
+  .c-chart__item__txt .number_small>span {
+    font-size: 2.5vw;
+  }
+
+  .c-chart__item--i02.c-chart__item__txt .number_small>span,
+  .c-chart__item--i01.c-chart__item__txt .number_small>span {
+    font-size: 2vw;
+  }
+
+  .c-chart__item--i02.c-chart__item__txt .txt_small,
+  .c-chart__item--i01.c-chart__item__txt .txt_small {
+    font-size: 0.75vw;
+  }
+
+  .c-chart__item__txt .txt_small {
+    font-size: 1.125vw;
+    margin-bottom: 0.0625vw;
+  }
+
+  .c-chart__item__txt .number_small>span {
+    font-size: 2.5vw;
+  }
+
+
+  .c-chart__item__txt--i03::after {
+    width: 4.0625vw;
+    height: 0.1vw;
+    top: 1vw;
+    left: 3.8125vw;
+    transform: rotate(8deg);
+  }
+
+  .c-chart__item__txt--i04.c-chart__item__txt .txt_small,
+  .c-chart__item__txt--i03.c-chart__item__txt .txt_small {
+    font-size: 0.75vw;
+  }
+
+  .c-chart__item__txt--i04.c-chart__item__txt .number_small,
+  .c-chart__item__txt--i03.c-chart__item__txt .number_small {
+    font-size: 1.125vw;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+  .c-chart__item--i02 {
+    top: 2.3125vw;
+    left: 2.8125vw;
+  }
+
+  .c-chart__item--i04 {
+    right: 1.875vw;
+    top: 2.25vw;
+  }
+}
+
+@media screen and (min-width: 1601px) {
+  .c-chart__item__txt .txt_small {
+    font-size: 18px;
+    margin-bottom: 1px;
+  }
+
+  .c-chart__item__txt .number_small {
+    font-size: 24px;
+  }
+
+  .c-chart__item__txt .number_small>span {
+    font-size: 40px;
+  }
+
+  .c-chart__item__txt--i02 {
+    right: -16px;
+    top: -11px;
+  }
+
+  .c-chart__item--i02.c-chart__item__txt .number_small>span,
+  .c-chart__item--i01.c-chart__item__txt .number_small>span {
+    font-size: 32px;
+  }
+
+  .c-chart__item--i02.c-chart__item__txt .txt_small,
+  .c-chart__item--i01.c-chart__item__txt .txt_small {
+    font-size: 12px;
+  }
+
+  .c-chart__item--i02.c-chart__item__txt .number_small,
+  .c-chart__item--i01.c-chart__item__txt .number_small {
+    font-size: 18px;
+  }
+
+  .c-chart__item--i01 {
+    top: -12px;
+    left: -22px;
+  }
+
+  .c-chart__item--i02 {
+    top: 37px;
+    left: 45px;
+  }
+
+  .c-chart__item--i04 {
+    right: 30px;
+    top: 36px;
+  }
+
+  .c-chart__item--i03 {
+    bottom: 20px;
+    left: 60px;
+  }
+
+  .c-chart__item--i01::after {
+    width: 49px;
+    height: 1px;
+    top: 26px;
+    left: 61px;
+    transform: rotate(18deg);
+  }
+  .c-chart{
+    width: 214px;
+    height: 214px;
+  }
+}

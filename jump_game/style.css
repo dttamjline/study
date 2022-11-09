@@ -1,50 +1,107 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
+.wrapper{
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+#canvas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -2;
+}
+
 img{
     max-width: 100%;
 }
 body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #9be3ff, #00499a);
 }
+.sun {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background-color: #f9cb5d;
+    border-radius: 50%;
+  }
+  
+ 
 .frame{
     width: 90%;
     margin: 0 auto;
-    border: solid 2px #000;
-    height: 500px;
+    position: relative;
+    height: 90%;
     display: flex;
     align-items: flex-end;
+    overflow: hidden;
+    padding-bottom: 30px;
 }
+.frame::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 30%;
+    background: rgba(0, 0, 0, 0.15);
+    left: 0;
+    bottom: -120px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: skewX(-15deg);
+}
+
 #animal{
-    width: 80px;
+    width: 120px;
     bottom: 0;
     position:relative;
 }
 .animate{
-    animation: jump 0.3s linear;
+    animation: jump 1s linear;
 }
 @keyframes jump{
     0%{bottom: 300px;}
-    30%{bottom: 100px;}
-    70%{bottom: 100px;}
-    100%{bottom: 250px;}
+    /* 50%{bottom: 150px;} */
+    100%{bottom: 0;}
 }
 
 #tree{
     width: 40px;
     position: relative;
-    left: 500px;
-    animation: block 1.5s infinite linear; 
+    left: 50%;
+    transform: translateX(-50%);
+
     bottom: 0;
 }
+#tree.active{
+    animation: block 2.5s infinite linear; 
+}
 @keyframes block{
-    0%{left: 500px}
-    100%{left: -20px}
+    0%{left: 50%}
+    100%{left: -180px}
 }
 p{
     text-align: center;
+}
+.btn{
+    border: solid 2px #f9cb5d;
+    background: #f9cb5d;
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    width: 250px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    z-index: 1000;
+    pointer-events: all;
 }

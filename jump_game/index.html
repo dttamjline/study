@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" onclick="jump()">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="frame">
-        <div id="animal"><img src="dino.png" alt="dino"></div>
-        <div id="tree"><img src="trees.png" alt="tree"></div>
+    <div class="wrapper">
+        <p class="btn">PLAY</p>
+       
+        <p>Score: <span id="scoreSpan"></span></p>
+        <div class="frame">
+            <div id="animal"><img src="squid.png" alt="squid"></div>
+            <div id="tree"><img src="trees.png" alt="trees"></div>
+        </div>
+
+        <div class="sun">
+        </div>
+        <canvas id="canvas"></canvas>
     </div>
-    <p>Score: <span id="scoreSpan"></span></p>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="script.js"></script>
 </html>
