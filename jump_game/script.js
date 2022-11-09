@@ -32,7 +32,9 @@ function init() {
     const length = 300;
     const plane_scale = 4;
     const plane = [];
-
+    let value = '0xcccccc';
+    let colorValue = parseInt ( value.replace("#","0x"), 16 );
+    var colored = new THREE.Color( colorValue );
     for (let i = 0; i < length; i++) {
         const geometry = new THREE.SphereGeometry(
             plane_scale,
@@ -40,7 +42,8 @@ function init() {
             plane_scale
         );
         const material = new THREE.MeshBasicMaterial({
-            color: '0xcccccc',
+        
+            color:colored,
             opacity: 0.5,
             transparent: true,
         });
@@ -88,15 +91,16 @@ function init() {
 
 
 
-
-
 const animal = document.getElementById("animal");
 const tree = document.getElementById("tree");
 let counter=0;
 
 
-const btn = document.querySelector('.btn');
-const body = document.querySelector('.wrapper');
+const btn = document.querySelector('.btn_play');
+const btn_playAgain = document.querySelector('.btn_playAgain');
+const intro = document.querySelector('.box_intro');
+const over = document.querySelector('.box_over');
+const body = document.querySelector('.frame');
 body.onclick = function(){
     if(animal.classList == "animate"){return}
     animal.classList.add("animate");
@@ -104,23 +108,46 @@ body.onclick = function(){
         animal.classList.remove("animate");
     },1000);
 }
+function setState(){
+    // clearInterval(time)
 
-btn.onclick = function(){
-    tree.classList.add('active');
-    this.style.display = 'none';
-
-    setInterval(function() {
+    let time = setInterval(function() {
         var animalBottom = parseInt(window.getComputedStyle(animal).getPropertyValue("bottom"));
         var treeLeft = parseInt(window.getComputedStyle(tree).getPropertyValue("left"));
-        if(treeLeft<40 && treeLeft>-40 && animalBottom<=78){
-            tree.style.animation = "none";
-           // alert("Game Over. score: "+Math.floor(counter/100));
+     
+       if(treeLeft<40 && treeLeft>-40 && animalBottom<=78){
+        
+            document.getElementById("score").innerHTML = Math.floor(counter/100);
             counter=0;
-            tree.style.animation = "tree 2s infinite linear";
-        }else{
-            counter++;
-            document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
+            tree.classList.remove('active');
+            over.classList.add('show');
+        
+            clearInterval(time);
+            console.log('11')
+            console.log(counter)
         }
-    }, 10);
-}
+        else if(animalBottom > 78 && animal.classList.contains('animate')){
+            console.log('222')
+            console.log(counter)
+            counter++;
+            document.getElementById("current_score").innerHTML = Math.floor(counter/100);
+        }
+     
+    }, 100);
 
+}
+function reset(){
+    over.classList.remove('show');
+    document.getElementById("current_score").innerHTML = '0';
+    tree.classList.add('active');
+}
+btn.onclick = function(){
+    intro.classList.add('hide');
+    tree.classList.add('active');
+    reset();
+    setState();
+}
+btn_playAgain.onclick = function(){
+    reset();
+    setState();
+}
