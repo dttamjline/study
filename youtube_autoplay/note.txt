@@ -1,0 +1,36 @@
+Fix video youtube autoplay 
+https://www.youtube.com/embed/F8t7cOab6Wk?playsinline=1&playlist=F8t7cOab6Wk&loop=1&autoplay=1&controls=0&rel=0&modestbranding=1&enablejsapi=1&origin=http%3A%2F%2Fjlweb.kir.jp&widgetid=1
+
+<div id="player"></div>
+
+$(function () {
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    const videoYTId = $(window).width() < 768 ? 'O5DftWSeJzk' : 'F8t7cOab6Wk';
+
+    window.onYouTubeIframeAPIReady = function () {
+        new YT.Player('player', {
+            videoId: videoYTId,
+            events: {
+                onReady: onPlayerReady,
+            },
+            playerVars: {
+                playsinline: 1,
+                playlist: videoYTId,
+                loop: 1,
+                autoplay: 1,
+                controls: 0,
+                rel: 0,
+                modestbranding: 1,
+            },
+        });
+    };
+
+    function onPlayerReady(event) {
+        event.target.mute();
+        event.target.playVideo();
+    }
+});

@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/img/common/favicon.ico">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="assets/css/common.css">
+  <title></title>
+  <link rel="stylesheet" href="assets/css/modal.css">
+  <link rel="stylesheet" href="assets/css/chart.css">
+  <link rel="stylesheet" href="assets/css/in_numbers.css">
+  <style>
+    
+    .btn__modal{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      background: #2A3E76;
+      color: #fff;
+      cursor: pointer;
+      }
+  </style>
+</head>
+
+<body style="height:100vh">
+ 
+<main class="l-main">
+  <a class="btn__modal" data-id="modal01">Click to open modal</a>
+</main>
+
+<div id="modal01" class="c-modal">
+  <div class="c-modal__container">
+      <div class="c-modal__list">
+        <div class="c-modal__item modal__chart01">
+          <p class="c-modal__ttl">平均残業時間<br>（2019年）</p>
+          <div class="c-modal__chart">
+            <div class="c-chart">
+              <p class="c-chart__item__txt c-chart__item--i01">
+                <span class="txt_small">1時間以上</span>
+                <span class="number_small" data-num="5" data-color="#6E86CB"><span>5</span>&#65285;</span>
+              </p>
+              <p class="c-chart__item__txt c-chart__item--i02">
+                <span class="txt_small">しない</span>
+                <span class="number_small" data-num="29" data-color="#2A3E76"><span>29</span>&#65285;</span>
+              </p>
+              <p class="c-chart__item__txt c-chart__item--i03">
+                <span class="txt_small">ほぼしない</span>
+                <span class="number_small" data-num="52" data-color="#37529C"><span>52</span>&#65285;</span>
+              </p>
+
+              <p class="c-chart__item__txt c-chart__item--i04">
+                <span class="txt_small">30分～1時間</span>
+                <span class="number_small" data-num="14" data-color="#4867BE"><span>14</span>&#65285;</span>
+              </p>
+              <div class="flex_chart">
+                  <div class="c-chart__circle">
+                      <canvas class="chart_canvas"></canvas>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="c-modal__item modal__chart02">
+            <p class="c-modal__ttl">平均残業時間<br>（2020年）</p>
+            <div class="c-modal__chart">
+              <div class="c-chart">
+                <p class="c-chart__item__txt c-chart__item--i01">
+                  <span class="txt_small">1時間以上</span>
+                  <span class="number_small" data-num="5" data-color="#6E86CB"><span>5</span>&#65285;</span>
+                </p>
+                <p class="c-chart__item__txt c-chart__item--i02">
+                  <span class="txt_small">しない</span>
+                  <span class="number_small" data-num="29" data-color="#2A3E76"><span>29</span>&#65285;</span>
+                </p>
+                <p class="c-chart__item__txt c-chart__item--i03">
+                  <span class="txt_small">ほぼしない</span>
+                  <span class="number_small" data-num="52" data-color="#37529C"><span>52</span>&#65285;</span>
+                </p>
+  
+                <p class="c-chart__item__txt c-chart__item--i04">
+                  <span class="txt_small">30分～1時間</span>
+                  <span class="number_small" data-num="14" data-color="#4867BE"><span>14</span>&#65285;</span>
+                </p>
+                <div class="flex_chart">
+                    <div class="c-chart__circle">
+                        <canvas class="chart_canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="c-modal__item modal__chart03">
+          <p class="c-modal__ttl">平均残業時間<br>（2021年）</p>
+          <div class="c-modal__chart">
+            <div class="c-chart">
+              <p class="c-chart__item__txt c-chart__item--i01">
+                <span class="txt_small">1時間以上</span>
+                <span class="number_small" data-num="5" data-color="#6E86CB"><span>5</span>&#65285;</span>
+              </p>
+              <p class="c-chart__item__txt c-chart__item--i02">
+                <span class="txt_small">しない</span>
+                <span class="number_small" data-num="29" data-color="#2A3E76"><span>29</span>&#65285;</span>
+              </p>
+              <p class="c-chart__item__txt c-chart__item--i03">
+                <span class="txt_small">ほぼしない</span>
+                <span class="number_small" data-num="52" data-color="#37529C"><span>52</span>&#65285;</span>
+              </p>
+
+              <p class="c-chart__item__txt c-chart__item--i04">
+                <span class="txt_small">30分～1時間</span>
+                <span class="number_small" data-num="14" data-color="#4867BE"><span>14</span>&#65285;</span>
+              </p>
+              <div class="flex_chart">
+                  <div class="c-chart__circle">
+                      <canvas class="chart_canvas"></canvas>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      <span class="c-modal__close"><span></span></span>
+  </div>
+  <span class="c-modal__overlay"></span>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="assets/js/chart.js"></script> 
+    <script src="assets/js/in_number.js"></script>
+    <script src="assets/vender/wow.js"></script>
+    <script src="assets/js/common.js"></script>
+</body>
+</html>
