@@ -102,35 +102,34 @@ const intro = document.querySelector('.box_intro');
 const over = document.querySelector('.box_over');
 const body = document.querySelector('.frame');
 
-function setLose(){
+function setState(){
+    // clearInterval(time)
+
     let time = setInterval(function() {
         let animalBottom = parseInt(window.getComputedStyle(animal).getPropertyValue("bottom"));
         let treeLeft = parseInt(window.getComputedStyle(tree).getPropertyValue("left"));
-        if(treeLeft<40 && treeLeft>-40 && animalBottom<=78){
-            document.getElementById("score").innerHTML =  counter;
+        // console.log(treeLeft)
+       if(treeLeft<40 && treeLeft>-40 && animalBottom<=78){
+        
+            document.getElementById("score").innerHTML = Math.floor(counter/100);
             counter=0;
             tree.classList.remove('active');
             over.classList.add('show');
-             clearInterval(time);
-            console.log(222)
+        
+            clearInterval(time);
+            console.log('11')
         }
-    },10)
-}
+       
+        else{
+            counter++;
+            console.log('22')
+            document.getElementById("current_score").innerHTML = Math.floor(counter/100);
+        }
+    
 
-function setState(){
-    let animalBottom = parseInt(window.getComputedStyle(animal).getPropertyValue("bottom"));
-    let treeLeft = parseInt(window.getComputedStyle(tree).getPropertyValue("left"));
-      
-    if( treeLeft - 120 < 40   && animalBottom > 78){
-        counter+=1;
-        console.log(111)
-        // console.log(counter)
-        document.getElementById("current_score").innerHTML =  counter;
-    } 
+    }, 10);
 
 }
-
-
 function setJump(){
     if(animal.classList == "animate")
     {
@@ -144,8 +143,6 @@ function setJump(){
 }
 body.onclick = function(){
     setJump();
-    setState();
-    setLose();
 }
 function reset(){
     intro.classList.add('hide');
@@ -155,6 +152,7 @@ function reset(){
 }
 btn.onclick = function(){
     reset();
+    setState();
 }
 btn_playAgain.onclick = function(){
     reset();
@@ -167,9 +165,6 @@ if (e.key == " " ||
     e.keyCode == 32      
 ) {
     setJump();
-    setState();
-    setLose();
 }
 }
-setState();
-setLose();
+1

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box_intro c_box">
+            <div class="title">
+                <h2 data-shadow='2,3 CON MỰC' class="txt_ani">2,3 CON MỰC</h2>
+            </div>
+            <p class="desc fadein">Press <span>SPACE</span>or<span>LEFT MOUSE</span> to jump...</p>
+            <p class="btn btn_play fadein">PLAY</p>
+        </div>
+        <div class="box_over c_box">
+            <div class="title">
+                <h2 data-shadow='GAME OVER !!!'>GAME OVER !!!</h2>
+                <p class="your_scrore">Your score: <span id="score"></span></p>
+            </div>
+            <p class="btn btn_playAgain">PLAY AGAIN</p>
+        </div>
+        <p class="your_current_scrore">Score: <span id="current_score">0</span></p>
+     
+        <div class="frame">
+            <div id="animal"><img src="squid.png" alt="squid"></div>
+            <div id="tree"><img src="trees.png" alt="trees"></div>
+        </div>
+
+        <div class="sun"></div>
+        <canvas id="canvas"></canvas>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script> <!-- 3.3.1 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mntn-dev/t.js/t.min.js"></script>
+<script src="text_ani.js"></script>
+<script src="script.js"></script>
+</html>
