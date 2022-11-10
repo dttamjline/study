@@ -106,8 +106,8 @@ function setState(){
     // clearInterval(time)
 
     let time = setInterval(function() {
-        var animalBottom = parseInt(window.getComputedStyle(animal).getPropertyValue("bottom"));
-        var treeLeft = parseInt(window.getComputedStyle(tree).getPropertyValue("left"));
+        let animalBottom = parseInt(window.getComputedStyle(animal).getPropertyValue("bottom"));
+        let treeLeft = parseInt(window.getComputedStyle(tree).getPropertyValue("left"));
         // console.log(treeLeft)
        if(treeLeft<40 && treeLeft>-40 && animalBottom<=78){
         
