@@ -1,6 +1,6 @@
 var new_speed=100;
 
-$('.title h2').t({
+$('.txt_ani').t({
 speed:100,
 typing:
   function(e){

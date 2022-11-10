@@ -52,7 +52,34 @@
         background-position: 100% -100%
     }
 }
-
+@keyframes fadeIn {
+    0% { 
+        opacity: 0; 
+        transform: translateY(50px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fadein
+{
+    display: inline-block;
+    animation: fadeIn 2s; 
+    overflow: hidden;
+}
+.desc{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 30px;
+  
+}
+.desc span{
+    display: inline-block;
+    padding: 10px;
+    background: #189dfb;
+    margin: 0 10px;
+}
 .c_box {
     position: fixed;
     left: 0;

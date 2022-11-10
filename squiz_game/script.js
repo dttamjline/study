@@ -120,9 +120,11 @@ function setState(){
             console.log('11')
         }
        
-        counter++;
-        console.log('22')
-        document.getElementById("current_score").innerHTML = Math.floor(counter/100);
+        else{
+            counter++;
+            console.log('22')
+            document.getElementById("current_score").innerHTML = Math.floor(counter/100);
+        }
     
 
     }, 10);
