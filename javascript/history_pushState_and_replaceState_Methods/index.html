@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history_pushState_and_replaceState_Methods</title>
+    <style>
+        *,*::after,*::before{
+            box-sizing: border-box;
+        }
+        a{
+            display: block;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a class="btnReplace" href="#">replaceState</a>
+    <a class="btnPush" href="#">history_pushState</a>
+    <script>
+        //Cả 2 Dùng để lưu thông tin điều hướng của 1 trang web vào mục History của Chrome
+        const btnReplace = document.querySelector('.btnReplace');
+        const btnPush = document.querySelector('.btnPush');
+        //history_pushState
+        //Lưu lại vào mục Hostory của Chrome sau mỗi lần F5
+        //F5 lại sẽ lỗi 404 nếu link tới page khác => chỉ sự dụng cho anchor link
+
+        btnPush.onclick = function(e){
+            e.preventDefault();
+   
+            //history.pushState({id:1},'', 'http://127.0.0.1:5502/javascript/history_pushState_and_replaceState_Methods/other.html');
+            //=> dùng cho dạng anchor link thôi
+            history.pushState({id:1},'', '#ttl01')
+            document.title = 'New title';
+        }
+
+
+
+        //replaceState_Methods
+        // chỉ lưu 1 lần duy nhất
+        //F5 lại sẽ trả về trang ban đầu trước khi click
+      
+        btnReplace.onclick = function(e){
+            e.stopPropagation();
+            //Code bên dưới là sẽ điều hướng tới tiêu để hiện tại, link hiện tại
+            //history.replaceState('',document.title,document.title, window.location.origin + window.location.pathname + window.location.search);
+            //=> muốn đổi link thì
+            history.replaceState({id:1},'', 'http://127.0.0.1:5502/javascript/history_pushState_and_replaceState_Methods');
+            document.title = 'New title';
+        }
+
+
+    </script>
+</body>
+</html>
