@@ -3,6 +3,7 @@ console.log(typeof document.querySelector);
 console.log($);
 const $$ = document.querySelectorAll.bind(document);
 const app = {
+    currentIndex: 0,
     songs: [
         {
             name: 'Hazy Moon',
@@ -94,11 +95,12 @@ const app = {
         console.log(html);
         $('.playlist').innerHTML = html;
     },
-
+    loadCurrentSong: function () {},
     //include function
     start: function () {
         this.swithTheme();
         this.render();
+        this.loadCurrentSong();
     },
 };
 //app start
