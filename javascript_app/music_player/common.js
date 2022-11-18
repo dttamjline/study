@@ -49,7 +49,6 @@ const app = {
             },
         });
     },
-    //switch theme
     swithTheme: function () {
         const themeItem = $$('.player_theme li');
         themeItem.forEach((element) => {
@@ -62,7 +61,6 @@ const app = {
             };
         });
     },
-    //render list song
     render: function () {
         //method 1
         // let html = this.songs.map((song, index) => {
@@ -90,7 +88,7 @@ const app = {
                 song.image ? song.image : 'thumb.jpg'
             })"></div>
             <div class="body">
-               <h3 class="title">${song.name}</h3>
+                <h3 class="title">${song.name}</h3>
                 <p class="author">${song.singer}</p>
             </div>
             <div class="option">
@@ -101,25 +99,43 @@ const app = {
         console.log(html);
         $('.playlist').innerHTML = html;
     },
-    //handle event
     handleEvent: function () {
         let _this = this;
         btnPlay.onclick = function () {
             if (_this.isPlaying) {
-                (_this.isPlaying = false), audio.pause();
-                player.classList.remove('playing');
+                audio.onpause();
             } else {
-                (_this.isPlaying = true), audio.play();
-                player.classList.add('playing');
+                audio.onplay();
             }
         };
+        audio.onplay = function () {
+            _this.isPlaying = true;
+            player.classList.add('playing');
+            audio.play();
+        };
+        audio.onpause = function () {
+            _this.isPlaying = false;
+            player.classList.remove('playing');
+            audio.pause();
+        };
     },
+
     loadCurrentSong: function () {
         heading.textContent = this.currentSong.name;
         cdThumb.style.backgroundImage = this.currentSong.image;
         audio.src = this.currentSong.path;
+
+        let audioFirst = document.getElementById('audio');
+        console.log(audioFirst);
+        //this.isPlaying = true;
+        //player.classList.add('playing');
+        audioFirst.play();
+        // audio.get(0).play();
+        // console.log(audio.get(0));
+        // this.songs[0].play();
+
+        //console.log(this.currentSong);
     },
-    //include function
     start: function () {
         this.defineProperties();
         this.swithTheme();
@@ -128,5 +144,5 @@ const app = {
         this.loadCurrentSong();
     },
 };
-//app start
+
 app.start();
