@@ -265,9 +265,7 @@
     .player_theme li.dark span{
         background: #333;
     }
-    .song.is_playing{
-        background: #ffc5c5;
-    }
+
     @media screen and (max-width: 1366px) and (max-height: 700px){
         .cd{
             width: 100px;

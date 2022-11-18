@@ -1,0 +1,118 @@
+@media screen and (min-width: 751px) {
+    #topic_path ul li a:hover {
+        text-decoration: none;
+    }
+
+    .pagination li:not([class]) a:hover {
+        opacity: 0.8;
+    }
+
+    .wp-pagenavi a:hover {
+        opacity: 0.8;
+    }
+}
+
+/* end screen-min: 751px */
+
+
+
+@media screen and (max-width: 750px) {
+    .image-r,
+    .image-l {
+        float: none;
+        text-align: center;
+        margin: 0 0 20px;
+    }
+
+    .tb-block-sp th,
+    .tb-block-sp td {
+        widows: 100% !important;
+    }
+
+    .tb-block-sp tr:not(:last-child) th + td {
+        border-top: none;
+    }
+
+    .scroll-noti {
+        font-size: 12px;
+        opacity: 0.6;
+    }
+
+    .tb-scroll-sp {
+        overflow: auto;
+        padding-bottom: 20px;
+    }
+
+    .tb-scroll-sp table {
+        min-width: 800px;
+    }
+
+    #content {
+        padding: 30px 0 50px;
+    }
+}
+
+/* end screen-max: 750px */
+
+
+
+@media screen and (max-width: 640px) {}
+
+/* end screen-max:640px */
+
+
+
+@media screen and (max-width: 560px) {}
+
+/* end screen-max:560px */
+
+
+
+@media screen and (max-width: 520px) {}
+
+/* end screen-max:520px */
+
+
+@media screen and (max-width: 475px) {}
+
+/* end screen-max:475px */
+
+
+
+@media screen and (max-width: 425px) {}
+
+/* end screen-max:425px */
+
+
+
+@media screen and (max-width: 375px) {}
+
+/* end screen-max:375px */
+
+
+
+@media screen and (max-width: 320px) {}
+
+/* end screen-max:320px */
+
+
+
+/*============================= HACK CSS =============================*/
+
+/* IE */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {}
+
+
+/* EGDE */
+@supports (-ms-ime-align:auto) {}
+
+
+/* FIREFOX */
+@-moz-document url-prefix() {}
+
+
+/* Safari 10.1+ (which is the latest version of Safari at this time) */
+@media not all and (min-resolution:.001dpcm) {
+    @media {}
+}

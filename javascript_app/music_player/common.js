@@ -2,37 +2,43 @@ const $ = document.querySelector.bind(document);
 console.log(typeof document.querySelector);
 console.log($);
 const $$ = document.querySelectorAll.bind(document);
+const player = $('.player');
+const heading = $('header h2');
+const cdThumb = $('.cd_thumb');
+const audio = $('#audio');
+const btnPlay = $('.btn_toggle-play');
 const app = {
     currentIndex: 0,
+    isPlaying: false,
     songs: [
-        {
-            name: 'Hazy Moon',
-            singer: 'Hatsune Miku',
-            path: 'https://free-mp3-download.net/download.php?id=1600064572',
-            image: 'https://e-cdns-images.dzcdn.net/images/cover/3246fc8e6dfd21361fdff1bcbe794a7a/500x500-000000-80-0-0.jpg',
-        },
         {
             name: 'Best Friend',
             singer: 'Jason Chen',
-            path: 'https://free-mp3-download.net/download.php?id=669287582',
+            path: 'https://cdns-preview-f.dzcdn.net/stream/c-fb3e8cbfcd0dae33831118345e68b800-2.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/b86f5acc3e17da0b2da165aa6e1c278a/500x500-000000-80-0-0.jpg',
+        },
+        {
+            name: 'Hazy Moon',
+            singer: 'Hatsune Miku',
+            path: 'https://cdns-preview-a.dzcdn.net/stream/c-a5831868fd62ca5b54307fcca7f64448-3.mp3',
+            image: 'https://e-cdns-images.dzcdn.net/images/cover/3246fc8e6dfd21361fdff1bcbe794a7a/500x500-000000-80-0-0.jpg',
         },
         {
             name: "We Don't Talk Anymore",
             singer: 'Charlie Puth',
-            path: 'https://free-mp3-download.net/download.php?id=117797212',
+            path: 'https://cdns-preview-3.dzcdn.net/stream/c-31ed99bd4e3b2519fee9aa8a12f6826d-6.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/948200588c813c1afd10f29b56e0ce50/500x500-000000-80-0-0.jpg',
         },
         {
             name: 'Shape of You',
             singer: 'Ed Sheeran',
-            path: 'https://free-mp3-download.net/download.php?id=139470659',
+            path: 'https://cdns-preview-d.dzcdn.net/stream/c-d8f5b81a6243ddfa4c97b9a4c86a82fa-6.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/107c2b43f10c249077c1f7618563bb63/500x500-000000-80-0-0.jpg',
         },
         {
             name: 'Step Step',
             singer: 'SURAN',
-            path: 'https://free-mp3-download.net/download.php?id=137456560',
+            path: 'https://cdns-preview-d.dzcdn.net/stream/c-dc3fb2339a13be6ec4dc8d1782996e3d-3.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/a70128d12ecd8fb89b8b2e969f567af5/500x500-000000-80-0-0.jpg',
         },
     ],
@@ -95,11 +101,30 @@ const app = {
         console.log(html);
         $('.playlist').innerHTML = html;
     },
-    loadCurrentSong: function () {},
+    //handle event
+    handleEvent: function () {
+        let _this = this;
+        btnPlay.onclick = function () {
+            if (_this.isPlaying) {
+                (_this.isPlaying = false), audio.pause();
+                player.classList.remove('playing');
+            } else {
+                (_this.isPlaying = true), audio.play();
+                player.classList.add('playing');
+            }
+        };
+    },
+    loadCurrentSong: function () {
+        heading.textContent = this.currentSong.name;
+        cdThumb.style.backgroundImage = this.currentSong.image;
+        audio.src = this.currentSong.path;
+    },
     //include function
     start: function () {
+        this.defineProperties();
         this.swithTheme();
         this.render();
+        this.handleEvent();
         this.loadCurrentSong();
     },
 };

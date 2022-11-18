@@ -1,0 +1,241 @@
+#content p:last-child,
+#content table:last-child {
+    margin-bottom: 0;
+}
+
+.section:last-child {
+    padding: 0;
+}
+
+table {
+    margin-bottom: 3rem;
+}
+
+table:last-child {
+    margin-bottom: 0;
+}
+
+table td,
+table th {
+    border: solid 1px transparent;
+    padding: 1em 1em;
+    line-height: 1.6em;
+}
+
+table th {
+    color: #fff;
+    font-weight: 500;
+    background: #0a2d54;
+}
+
+table td {
+    background: #fff;
+    vertical-align: top;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-color: #f3f3f3;
+}
+
+.cell-align-top {
+    vertical-align: top;
+}
+
+.cell-align-middle {
+    vertical-align: middle;
+}
+
+.cell-align-bottom {
+    vertical-align: bottom;
+}
+
+.txt-bold {
+    font-weight: 700;
+}
+
+.txt-small {
+    font-size: 80%;
+}
+
+.tb-fixed-layout {
+    table-layout: fixed;
+}
+
+.txt-alert,
+.txt-red {
+    color: #f00;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: 3px;
+}
+
+.pagination li.disabled {
+    display: none;
+}
+
+.pagination li a {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Kosugi Maru', sans-serif;
+    background: #fff;
+    text-decoration: none;
+    color: #111;
+    font-weight: bold;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pagination li.active a {
+    cursor: default;
+    background: #004290;
+    color: #fff;
+    font-weight: 400;
+}
+
+.wp-pagenavi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 43px;
+}
+
+.wp-pagenavi span,
+.wp-pagenavi a {
+    display: inline-flex;
+    min-width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1em;
+    padding: 3px 5px 5px;
+    background: #b5b5b5;
+    text-decoration: none;
+    margin: 5px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: none;
+}
+
+.wp-pagenavi span.current {
+    background: #544638;
+}
+
+.wp-pagenavi a.previouspostslink,
+.wp-pagenavi a.nextpostslink {
+    font-size: 26px;
+    color: #56493b;
+    padding-bottom: 10px;
+}
+
+.wp-pagenavi a.nextpostslink {
+    padding-right: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+    line-height: 1.6em;
+    padding: 1em 1.5em;
+}
+
+/*============================= C_O_N_T_E_N_T =============================*/
+
+#content {
+    padding: 50px 0 100px;
+}
+
+#topic_path {
+    padding: 15px 0;
+    background: #fff;
+}
+
+#topic_path ul li {
+    font-size: 14px;
+}
+
+.primary-list:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.primary-list li {
+    padding-left: 12px;
+    position: relative;
+    margin-bottom: 0.6em;
+}
+
+.primary-list li:last-child {
+    margin-bottom: 0;
+}
+
+.primary-list li:before {
+    content: "";
+    border-left: solid 6px #dd1616;
+    border-top: solid 4px transparent;
+    border-bottom: solid 4px transparent;
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    padding: 50px 0;
+}
+
+h3 {
+    font-size: 32px;
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: 26px;
+    margin-bottom: 1em;
+}
+
+h5 {
+    font-size: 22px;
+    margin-bottom: 1em;
+}
+
+h6 {
+    font-size: 18px;
+    margin-bottom: 1em;
+}
+
+/*============================= HACK CSS =============================*/
+
+/* IE */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {}
+
+
+/* EGDE */
+@supports (-ms-ime-align:auto) {}
+
+
+/* FIREFOX */
+@-moz-document url-prefix() {}
+
+
+/* Safari 10.1+ (which is the latest version of Safari at this time) */
+@media not all and (min-resolution:.001dpcm) {
+    @media {}
+}

@@ -1,0 +1,131 @@
+@media screen and (min-width: 751px) {
+    .sp {
+        display: none !important;
+    }
+
+    .to-top:hover {
+        background: #004870;
+    }
+}
+
+/* end screen-min:751px */
+
+
+
+@media screen and (min-width: 751px) and (max-width: 1500px) {}
+
+/* end screen-min:751px && screen-max:1500px */
+
+
+
+@media screen and (max-width: 750px) {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    input,
+    button,
+    textarea,
+    select,
+    p,
+    blockquote,
+    th,
+    td,
+    pre,
+    address,
+    li,
+    dt,
+    dd {
+        font-size: 140%;
+    }
+
+    p {
+        line-height: 1.8em;
+    }
+    #wrapper {
+        min-width: unset !important;
+    }
+
+    .inner {
+        width: 100%;
+        padding: 0 3%;
+    }
+
+    .pc {
+        display: none !important;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+}
+
+/* end screen-max:750px */
+
+
+
+@media screen and (max-width: 640px) {}
+
+/* end screen-max:640px */
+
+
+
+@media screen and (max-width: 560px) {}
+
+/* end screen-max:560px */
+
+
+
+@media screen and (max-width: 520px) {}
+
+/* end screen-max:520px */
+
+
+
+@media screen and (max-width: 475px) {}
+
+/* end screen-max:475px */
+
+
+
+@media screen and (max-width: 425px) {
+
+}
+
+/* end screen-max:425px */
+
+
+
+@media screen and (max-width: 375px) {}
+
+/* end screen-max:375px */
+
+
+
+@media screen and (max-width: 320px) {}
+
+/* end screen-max:320px */
+
+
+
+/*============================= HACK CSS =============================*/
+
+/* IE */
+@media (-ms-high-contrast: none),
+(-ms-high-contrast: active) {}
+
+
+/* EGDE */
+@supports (-ms-ime-align:auto) {}
+
+
+/* FIREFOX */
+@-moz-document url-prefix() {}
+
+
+/* Safari 10.1+ (which is the latest version of Safari at this time) */
+@media not all and (min-resolution:.001dpcm) {
+    @media {}
+}
