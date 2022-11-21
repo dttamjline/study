@@ -147,6 +147,7 @@ header h2 {
 
 .control .btn:hover {
     opacity: 0.7;
+    color: #00fd7d;
 }
 
 .control .btn.active {

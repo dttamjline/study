@@ -9,8 +9,9 @@ const audio = $('#audio');
 const btnPlay = $('.btn_toggle-play');
 const btnNext = $('.btn_next');
 const btnPrev = $('.btn_prev');
-const progress = $('#progress');
 const btnRepeat = $('.btnRepeat');
+const btnRadom = $('.btn_random');
+const progress = $('#progress');
 const cdThumbAni = cdThumb.animate(
     {
         transform: 'rotate(360deg)',
@@ -23,6 +24,7 @@ const cdThumbAni = cdThumb.animate(
 const app = {
     currentIndex: 0,
     isPlaying: false,
+    isRandom: false,
     songs: [
         {
             name: 'Best Friend',
@@ -142,32 +144,59 @@ const app = {
                 );
                 progress.value = progressPercent;
             }
-            //auto play next song and when play the last song, it will stop playing next song
-            if (audio.currentTime == audio.duration) {
-                if (_this.currentIndex >= _this.songs.length - 1) {
-                    _this.stopPlaying();
-                } else {
-                    _this.loadNextSong();
-                }
-            }
         };
         progress.onchange = function (e) {
             const seekCurrentTime = (e.target.value * audio.duration) / 100;
             audio.currentTime = seekCurrentTime;
-            // if (audio.currentTime == audio.duration) {
-            //     _this.loadNextSong();
-            // }
         };
 
         btnNext.onclick = function () {
-            _this.loadNextSong();
+            if (_this.isRandom) {
+                _this.loadRandomSong();
+            } else {
+                _this.loadNextSong();
+            }
         };
         btnPrev.onclick = function () {
-            _this.loadPrevSong();
+            if (_this.isRandom) {
+                _this.loadRandomSong();
+            } else {
+                _this.loadPrevSong();
+            }
         };
         btnRepeat.onclick = function () {
             this.classList.toggle('active');
-            _this.repeatSong();
+            console.log(this);
+            if (this.classList.contains('active')) {
+                audio.loop = true;
+            } else {
+                audio.loop = false;
+            }
+        };
+        btnRadom.onclick = function () {
+            this.classList.toggle('active');
+            // console.log(this);
+            if (this.classList.contains('active')) {
+                _this.isRandom = true;
+            } else {
+                _this.isRandom = false;
+            }
+        };
+        //auto play next song and when play the last song, it will stop playing next song
+        audio.onended = function () {
+            if (_this.currentIndex >= _this.songs.length - 1) {
+                if (_this.isRandom == false) {
+                    _this.stopPlaying();
+                } else {
+                    _this.loadRandomSong();
+                }
+            } else {
+                if (_this.isRandom == false) {
+                    _this.loadNextSong();
+                } else {
+                    _this.loadRandomSong();
+                }
+            }
         };
     },
     loadCurrentSong: function () {
@@ -191,19 +220,21 @@ const app = {
         }
         this.loadCurrentSong();
     },
+    loadRandomSong: function () {
+        let num;
+        do {
+            num = Math.floor(Math.random() * this.songs.length);
+        } while (num === this.currentIndex);
+        this.currentIndex = num;
+        this.loadCurrentSong();
+    },
     stopPlaying: function () {
         this.isPlaying = false;
         player.classList.remove('playing');
         audio.pause();
         cdThumbAni.pause();
     },
-    repeatSong: function () {
-        let _this = this;
-        console.log('3');
-        let timer = setInterval({}, audio.duration);
-        clearInterval(timer);
-        console.log(timer);
-    },
+
     start: function () {
         this.defineProperties();
         this.swithTheme();
@@ -213,7 +244,6 @@ const app = {
         this.loadNextSong();
         this.loadPrevSong();
         this.stopPlaying();
-        this.repeatSong();
     },
 };
 
