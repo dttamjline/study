@@ -1,12 +1,25 @@
 const $ = document.querySelector.bind(document);
-console.log(typeof document.querySelector);
-console.log($);
+//console.log(typeof document.querySelector);
+//console.log($);
 const $$ = document.querySelectorAll.bind(document);
 const player = $('.player');
 const heading = $('header h2');
 const cdThumb = $('.cd_thumb');
 const audio = $('#audio');
 const btnPlay = $('.btn_toggle-play');
+const btnNext = $('.btn_next');
+const btnPrev = $('.btn_prev');
+const progress = $('#progress');
+const btnRepeat = $('.btnRepeat');
+const cdThumbAni = cdThumb.animate(
+    {
+        transform: 'rotate(360deg)',
+    },
+    {
+        duration: 15000,
+        iterations: Infinity,
+    }
+);
 const app = {
     currentIndex: 0,
     isPlaying: false,
@@ -96,11 +109,13 @@ const app = {
             </div>
         </div>`);
         });
-        console.log(html);
+        // console.log(html);
         $('.playlist').innerHTML = html;
     },
     handleEvent: function () {
         let _this = this;
+
+        cdThumbAni.pause();
         btnPlay.onclick = function () {
             if (_this.isPlaying) {
                 audio.onpause();
@@ -112,29 +127,82 @@ const app = {
             _this.isPlaying = true;
             player.classList.add('playing');
             audio.play();
+            cdThumbAni.play();
         };
         audio.onpause = function () {
             _this.isPlaying = false;
             player.classList.remove('playing');
             audio.pause();
+            cdThumbAni.pause();
+        };
+        audio.ontimeupdate = function () {
+            if (audio.duration) {
+                const progressPercent = Math.floor(
+                    (audio.currentTime / audio.duration) * 100
+                );
+                progress.value = progressPercent;
+            }
+            //auto play next song and when play the last song, it will stop playing next song
+            if (audio.currentTime == audio.duration) {
+                if (_this.currentIndex >= _this.songs.length - 1) {
+                    _this.stopPlaying();
+                } else {
+                    _this.loadNextSong();
+                }
+            }
+        };
+        progress.onchange = function (e) {
+            const seekCurrentTime = (e.target.value * audio.duration) / 100;
+            audio.currentTime = seekCurrentTime;
+            // if (audio.currentTime == audio.duration) {
+            //     _this.loadNextSong();
+            // }
+        };
+
+        btnNext.onclick = function () {
+            _this.loadNextSong();
+        };
+        btnPrev.onclick = function () {
+            _this.loadPrevSong();
+        };
+        btnRepeat.onclick = function () {
+            this.classList.toggle('active');
+            _this.repeatSong();
         };
     },
-
     loadCurrentSong: function () {
         heading.textContent = this.currentSong.name;
-        cdThumb.style.backgroundImage = this.currentSong.image;
+        cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
         audio.src = this.currentSong.path;
+    },
 
-        let audioFirst = document.getElementById('audio');
-        console.log(audioFirst);
-        //this.isPlaying = true;
-        //player.classList.add('playing');
-        audioFirst.play();
-        // audio.get(0).play();
-        // console.log(audio.get(0));
-        // this.songs[0].play();
+    loadNextSong: function () {
+        this.currentIndex++;
+        if (this.currentIndex >= this.songs.length) {
+            this.currentIndex = 0;
+        }
+        this.loadCurrentSong();
+    },
+    loadPrevSong: function () {
+        this.currentIndex--;
 
-        //console.log(this.currentSong);
+        if (this.currentIndex < 0) {
+            this.currentIndex = this.songs.length - 1;
+        }
+        this.loadCurrentSong();
+    },
+    stopPlaying: function () {
+        this.isPlaying = false;
+        player.classList.remove('playing');
+        audio.pause();
+        cdThumbAni.pause();
+    },
+    repeatSong: function () {
+        let _this = this;
+        console.log('3');
+        let timer = setInterval({}, audio.duration);
+        clearInterval(timer);
+        console.log(timer);
     },
     start: function () {
         this.defineProperties();
@@ -142,6 +210,10 @@ const app = {
         this.render();
         this.handleEvent();
         this.loadCurrentSong();
+        this.loadNextSong();
+        this.loadPrevSong();
+        this.stopPlaying();
+        this.repeatSong();
     },
 };
 
