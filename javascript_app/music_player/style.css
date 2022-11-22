@@ -9,28 +9,24 @@ html{
     scrollbar-color: var(--primary-color) #868686;
     scrollbar-width: thin;
 }
-html.overflow{
-    overflow-y: hidden;
-}
-/* For Chrome and other browsers except Firefox */
 
-.playlist::-webkit-scrollbar {
+/* For Chrome and other browsers except Firefox */
+::-webkit-scrollbar {
     width: 0.4em;
     background-color: #868686;
 }
-.playlist::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: var(--primary-color); 
 }
 
 
-* {
+*,*::after,*::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    overflow: hidden;
     font-family: "Poppins", sans-serif;
     background: var(--primary-color);
 }
@@ -147,11 +143,10 @@ header h2 {
 
 .control .btn:hover {
     opacity: 0.7;
-    color: #00fd7d;
 }
 
 .control .btn.active {
-    color: #00fd7d;
+    color: #b3b3b3;
 }
 
 .control .btn_toggle-play {
@@ -200,6 +195,7 @@ header h2 {
     background-color: #fff;
     padding: 8px 16px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .song.active {
@@ -304,7 +300,6 @@ header h2 {
     .cd {
         width: 100px;
     }
-
     .playlist {
         height: 195px;
     }

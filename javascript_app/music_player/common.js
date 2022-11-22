@@ -12,6 +12,7 @@ const btnPrev = $('.btn_prev');
 const btnRepeat = $('.btnRepeat');
 const btnRadom = $('.btn_random');
 const progress = $('#progress');
+const song = $$('.song');
 const cdThumbAni = cdThumb.animate(
     {
         transform: 'rotate(360deg)',
@@ -184,17 +185,13 @@ const app = {
         };
         //auto play next song and when play the last song, it will stop playing next song
         audio.onended = function () {
-            if (_this.currentIndex >= _this.songs.length - 1) {
-                if (_this.isRandom == false) {
+            if (_this.isRandom == true) {
+                _this.loadRandomSong();
+            } else {
+                if (_this.currentIndex >= _this.songs.length - 1) {
                     _this.stopPlaying();
                 } else {
-                    _this.loadRandomSong();
-                }
-            } else {
-                if (_this.isRandom == false) {
                     _this.loadNextSong();
-                } else {
-                    _this.loadRandomSong();
                 }
             }
         };
@@ -203,6 +200,7 @@ const app = {
         heading.textContent = this.currentSong.name;
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
         audio.src = this.currentSong.path;
+        // console.log(this.currentSong);
     },
 
     loadNextSong: function () {
