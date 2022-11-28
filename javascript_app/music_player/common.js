@@ -13,6 +13,8 @@ const btnRepeat = $('.btnRepeat');
 const btnRadom = $('.btn_random');
 const progress = $('#progress');
 const song = $$('.song');
+const playlist = $('.playlist');
+
 const cdThumbAni = cdThumb.animate(
     {
         transform: 'rotate(360deg)',
@@ -99,7 +101,9 @@ const app = {
         //method 2 :
         let html = '';
         this.songs.map((song, index) => {
-            return (html += `<div class="song">
+            return (html += `<div class="song ${
+                index === this.currentIndex ? 'active' : ''
+            }">
             <div class="thumb" style="background-image:url(${
                 song.image ? song.image : 'thumb.jpg'
             })"></div>
@@ -157,6 +161,8 @@ const app = {
             } else {
                 _this.loadNextSong();
             }
+            _this.render();
+            _this.scrollToActiveSong();
         };
         btnPrev.onclick = function () {
             if (_this.isRandom) {
@@ -164,6 +170,8 @@ const app = {
             } else {
                 _this.loadPrevSong();
             }
+            _this.render();
+            _this.scrollToActiveSong();
         };
         btnRepeat.onclick = function () {
             this.classList.toggle('active');
@@ -195,11 +203,19 @@ const app = {
                 }
             }
         };
+        playlist.onclick = function (e) {
+            const el = e.target.closest('.song');
+            if (el) {
+                $('.song.active').classList.remove('active');
+                el.classList.add('active');
+            }
+        };
     },
     loadCurrentSong: function () {
         heading.textContent = this.currentSong.name;
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
         audio.src = this.currentSong.path;
+        this.scrollToActiveSong();
         // console.log(this.currentSong);
     },
 
@@ -231,6 +247,14 @@ const app = {
         player.classList.remove('playing');
         audio.pause();
         cdThumbAni.pause();
+    },
+    scrollToActiveSong: function () {
+        setTimeout(function () {
+            $('.song.active').scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+            });
+        }, 300);
     },
 
     start: function () {

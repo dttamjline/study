@@ -198,17 +198,20 @@ header h2 {
     cursor: pointer;
 }
 
-.song.active {
+.song.active, .song:hover {
     background-color: var(--primary-color);
 }
 
-.song:active {
-    opacity: 0.8;
-}
+
 
 .song.active .option,
 .song.active .author,
 .song.active .title {
+    color: #fff;
+}
+.song:hover .option,
+.song:hover .author,
+.song:hover .title {
     color: #fff;
 }
 
