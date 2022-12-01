@@ -1,0 +1,126 @@
+/*
+Copyright (c) 2009, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.7.0
+*/
+/**
+ * YUI Fonts
+ * @module fonts
+ * @namespace yui-
+ * @requires 
+ */
+
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ */
+body {
+    font: 62.5% Meiryo, arial, clean, verdana, 'Hiragino Kaku Gothic Pro', "ＭＳ Ｐゴシック", Osaka, sans-serif;
+    color: #333;
+    line-height: 1.4;
+}
+
+html>
+
+/**/
+body {
+    font-size: 10px;
+    font-size
+    /*\**/
+    : 62.5%\9;
+}
+
+/* Except IE & Add IE8 */
+
+/**
+ * Nudge down to get to 10px equivalent for these form elements
+ */
+select,
+input,
+button,
+textarea {
+    font: 100% Meiryo, arial, clean, verdana, 'Hiragino Kaku Gothic Pro', "ＭＳ Ｐゴシック", Osaka, sans-serif;
+    color: #333;
+    line-height: 1.4;
+}
+
+/**
+ * To help tables remember to inherit
+ */
+table {
+    font-size: inherit;
+    font: 100%;
+    color: #333;
+    line-height: 1.4;
+}
+
+/**
+ * Bump up IE to get to 13px equivalent for these fixed-width elements
+ */
+pre,
+code,
+kbd,
+samp,
+tt {
+    font-family: monospace;
+    font-size: 100%;
+    *font-size: 108%;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* Font-size fixed */
+li li,
+li dt,
+li dd,
+li input,
+li select,
+li button,
+li textarea,
+li p,
+li th,
+li td,
+dt li,
+dt dt,
+dt dd,
+dt input,
+dt select,
+dt button,
+dt textarea,
+dt p,
+dt th,
+dt td,
+dd li,
+dd dt,
+dd dd,
+dd input,
+dd select,
+dd button,
+dd textarea,
+dd p,
+dd th,
+dd td,
+th li,
+th dt,
+th dd,
+th input,
+th select,
+th button,
+th textarea,
+th p,
+th th,
+th td,
+td li,
+td dt,
+td dd,
+td input,
+td select,
+td button,
+td textarea,
+td p,
+td th,
+td td,
+p input {
+    font-size: 100%;
+}
