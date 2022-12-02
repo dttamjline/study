@@ -325,7 +325,7 @@ header h2 {
     height: 100%;
     z-index: 111;
     background: rgba(0, 0, 0, 0.4);
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -364,6 +364,9 @@ header h2 {
     padding: 6px 15px;
     line-height: 1.5em;
     width: 100%;
+}
+.modal_form_input:focus{
+    outline: 0;
 }
 .modal_form_tll{
     margin-bottom: 5px;

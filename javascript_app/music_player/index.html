@@ -17,8 +17,8 @@
     <style>
        
     </style>
-    <div class="wrapper animate__animated animate__backInUp">
-        <div class="player">
+    <div class="wrapper">
+        <div class="player animate__animated animate__backInUp">
             <h1 class="player_title">MY PLAYLIST</h1>
             <ul class="player_theme">
                 <li class="light active" data-color="#F28080"><span></span>Normal Mode</li>
@@ -62,7 +62,7 @@
                 <audio id="audio" src=""></audio>
 
                 <div class="crud">
-                    <button class="btn_crud_add" data-id="modal_add">Add New Song <i class="fa-solid fa-plus"></i></button>
+                    <button class="btn_crud_add">Add New Song <i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
     
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div id="modal_add" class="modal">
+    <!-- <div id="modal_add" class="modal">
         <div class="modal_wrap">
             <div class="modal_content">
                 <p class="modal_ttl">Add New Song</p>
@@ -81,19 +81,19 @@
                 <div class="modal_form">
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Name</p>
-                        <input class="modal_form_input" type="text" placeholder="Your song name" onblur="this.placeholder='Your song name'" onfocus="this.placeholder=''">
+                        <input class="modal_form_input song_name" type="text" placeholder="Your song name" onblur="this.placeholder='Your song name'" onfocus="this.placeholder=''">
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Singer</p>
-                        <input class="modal_form_input" type="text" placeholder="Your singer name" onblur="this.placeholder='Your singer name'" onfocus="this.placeholder=''">
+                        <input class="modal_form_input song_singer" type="text" placeholder="Your singer name" onblur="this.placeholder='Your singer name'" onfocus="this.placeholder=''">
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Mp3 link</p>
-                        <input class="modal_form_input" type="text" placeholder="Your link mp3" onblur="this.placeholder='Your link mp3'" onfocus="this.placeholder=''">
+                        <input class="modal_form_input song_mp3" type="text" placeholder="Your link mp3" onblur="this.placeholder='Your link mp3'" onfocus="this.placeholder=''">
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Image Thumb</p>
-                        <input class="modal_form_input" type="text" placeholder="Your url image thumb" onblur="this.placeholder='Your url image thumb'" onfocus="this.placeholder=''">
+                        <input class="modal_form_input song_thumb" type="text" placeholder="Your url image thumb" onblur="this.placeholder='Your url image thumb'" onfocus="this.placeholder=''">
                     </div>
                     <div class="modal_form_btn">
                         <button class="modal_form_btn_confirm">Add song</button>
@@ -102,32 +102,32 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div id="modal_edit" class="modal">
+    <div id="modal_update" class="modal">
         <div class="modal_wrap">
             <div class="modal_content">
-                <p class="modal_ttl">Add New Song</p>
+                <p class="modal_ttl">Update Song</p>
                 <i class="fas fa-times modal_btn_close"></i>
                 <div class="modal_form">
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Name</p>
-                        <input class="modal_form_input" type="text" placeholder="Your song name" onblur="this.placeholder='Your song name'" onfocus="this.placeholder=''">
+                        <input id="song_name" class="modal_form_input song_name" type="text" placeholder="Your song name" onblur="this.placeholder='Your song name'" onfocus="this.placeholder=''">
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Singer</p>
-                        <input class="modal_form_input" type="text" placeholder="Your singer name" onblur="this.placeholder='Your singer name'" onfocus="this.placeholder=''">
+                        <input class="modal_form_input song_singer" type="text" placeholder="Your singer name" onblur="this.placeholder='Your singer name'" onfocus="this.placeholder=''">
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Mp3 link</p>
-                        <input class="modal_form_input" type="text" placeholder="Your link mp3" onblur="this.placeholder='Your link mp3'" onfocus="this.placeholder=''">
+                        <input class="modal_form_input song_mp3" type="text" placeholder="Your link mp3" onblur="this.placeholder='Your link mp3'" onfocus="this.placeholder=''">
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Image Thumb</p>
-                        <input class="modal_form_input" type="text" placeholder="Your url image thumb" onblur="this.placeholder='Your url image thumb'" onfocus="this.placeholder=''">
+                        <input class="modal_form_input song_thumb" type="text" placeholder="Your url image thumb" onblur="this.placeholder='Your url image thumb'" onfocus="this.placeholder=''">
                     </div>
                     <div class="modal_form_btn">
-                        <button class="modal_form_btn_confirm">Add song</button>
+                        <button class="modal_form_btn_update">Update song</button>
                         <button class="modal_form_btn_cancel">Cancel</button>
                     </div>
                 </div>
