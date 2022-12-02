@@ -1,12 +1,30 @@
+console.log(this);
+
 const $ = document.querySelector.bind(document);
 //console.log(typeof document.querySelector);
-//console.log($);
+console.log($);
 const $$ = document.querySelectorAll.bind(document);
+
+const btnOpenModal = $('.btn_crud_add');
+const btnCancel = $('.modal_form_btn_cancel');
+const btnClose = $('.modal_btn_close');
+btnOpenModal.onclick = function () {
+    let id = this.dataset.id;
+    console.log(id);
+    $('#' + id).classList.add('show');
+};
+
+btnCancel.onclick = function () {
+    $('.modal_add').classList.remove('show');
+};
+btnClose.onclick = function () {
+    $('.modal_add').classList.remove('show');
+};
 const player = $('.player');
 const heading = $('header h2');
 const cdThumb = $('.cd_thumb');
 const audio = $('#audio');
-const btnPlay = $('.btn_toggle-play');
+const btnPlay = $('.btn_toggle_play');
 const btnNext = $('.btn_next');
 const btnPrev = $('.btn_prev');
 const btnRepeat = $('.btnRepeat');
@@ -14,6 +32,13 @@ const btnRadom = $('.btn_random');
 const progress = $('#progress');
 const song = $$('.song');
 const playlist = $('.playlist');
+const btnEdit = $('.btn_edit_song');
+
+// btnEdit.onclick = function () {
+//     let id = this.dataset.id;
+//     console.log(id);
+//     $('#' + id).classList.add('show');
+// };
 
 const cdThumbAni = cdThumb.animate(
     {
@@ -32,36 +57,36 @@ const app = {
         {
             name: 'Best Friend',
             singer: 'Jason Chen',
-            path: 'mp3/1.mp3',
-            // path: 'https://cdns-preview-f.dzcdn.net/stream/c-fb3e8cbfcd0dae33831118345e68b800-2.mp3',
+            // path: 'mp3/1.mp3',
+            path: 'https://cdns-preview-f.dzcdn.net/stream/c-fb3e8cbfcd0dae33831118345e68b800-2.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/b86f5acc3e17da0b2da165aa6e1c278a/500x500-000000-80-0-0.jpg',
         },
         {
             name: 'Hazy Moon',
             singer: 'Hatsune Miku',
-            path: 'mp3/2.mp3',
-            // path: 'https://cdns-preview-a.dzcdn.net/stream/c-a5831868fd62ca5b54307fcca7f64448-3.mp3',
+            //path: 'mp3/2.mp3',
+            path: 'https://cdns-preview-a.dzcdn.net/stream/c-a5831868fd62ca5b54307fcca7f64448-3.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/3246fc8e6dfd21361fdff1bcbe794a7a/500x500-000000-80-0-0.jpg',
         },
         {
             name: "We Don't Talk Anymore",
             singer: 'Charlie Puth',
-            path: 'mp3/3.mp3',
-            // path: 'https://cdns-preview-3.dzcdn.net/stream/c-31ed99bd4e3b2519fee9aa8a12f6826d-6.mp3',
+            //path: 'mp3/3.mp3',
+            path: 'https://cdns-preview-3.dzcdn.net/stream/c-31ed99bd4e3b2519fee9aa8a12f6826d-6.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/948200588c813c1afd10f29b56e0ce50/500x500-000000-80-0-0.jpg',
         },
         {
             name: 'Shape of You',
             singer: 'Ed Sheeran',
-            path: 'mp3/4.mp3',
-            // path: 'https://cdns-preview-d.dzcdn.net/stream/c-d8f5b81a6243ddfa4c97b9a4c86a82fa-6.mp3',
+            //path: 'mp3/4.mp3',
+            path: 'https://cdns-preview-d.dzcdn.net/stream/c-d8f5b81a6243ddfa4c97b9a4c86a82fa-6.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/107c2b43f10c249077c1f7618563bb63/500x500-000000-80-0-0.jpg',
         },
         {
             name: 'Step Step',
             singer: 'SURAN',
-            path: 'mp3/5.mp3',
-            // path: 'https://cdns-preview-d.dzcdn.net/stream/c-dc3fb2339a13be6ec4dc8d1782996e3d-3.mp3',
+            //path: 'mp3/5.mp3',
+            path: 'https://cdns-preview-d.dzcdn.net/stream/c-dc3fb2339a13be6ec4dc8d1782996e3d-3.mp3',
             image: 'https://e-cdns-images.dzcdn.net/images/cover/a70128d12ecd8fb89b8b2e969f567af5/500x500-000000-80-0-0.jpg',
         },
     ],
@@ -71,7 +96,7 @@ const app = {
                 return this.songs[this.currentIndex];
             },
         });
-        console.log(app);
+        //console.log(app);
     },
     swithTheme: function () {
         const themeItem = $$('.player_theme li');
@@ -119,7 +144,8 @@ const app = {
                 <p class="author">${song.singer}</p>
             </div>
             <div class="option">
-                <i class="fas fa-ellipsis-h"></i>
+                <i class="fas fa-edit btn_edit_song" data-id="modal_edit"></i>
+                <i class="fas fa-times btn_remove_song"></i>
             </div>
         </div>`);
         });
@@ -217,8 +243,8 @@ const app = {
         playlist.onclick = function (e) {
             const el = e.target.closest('.song');
             let id = el.dataset.id;
-            console.log(id);
-            console.log(_this.currentIndex);
+            //console.log(id);
+            //console.log(_this.currentIndex);
             if (_this.currentIndex !== id || e.target.closest('.option')) {
                 if (_this.currentIndex !== id) {
                     $('.song.active').classList.remove('active');
@@ -232,9 +258,9 @@ const app = {
                 }
             }
         };
-        window.onload = function () {
-            audio.onplay();
-        };
+        // window.onload = function () {
+        //     audio.onplay();
+        // };
     },
     loadCurrentSong: function () {
         heading.textContent = this.currentSong.name;
