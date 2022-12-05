@@ -62,7 +62,7 @@
                 <audio id="audio" src=""></audio>
 
                 <div class="crud">
-                    <button class="btn_crud_add">Add New Song <i class="fa-solid fa-plus"></i></button>
+                    <button class="btn_open_add_song" data-name="modal_add">Add New Song <i class="fa-solid fa-plus"></i></button>
                 </div>
             </div>
     
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <!-- <div id="modal_add" class="modal">
+    <!-- <div class="modal">
         <div class="modal_wrap">
             <div class="modal_content">
                 <p class="modal_ttl">Add New Song</p>
@@ -104,10 +104,10 @@
         </div>
     </div> -->
 
-    <div id="modal_update" class="modal">
+    <div class="modal">
         <div class="modal_wrap">
             <div class="modal_content">
-                <p class="modal_ttl">Update Song</p>
+                <p class="modal_ttl"></p>
                 <i class="fas fa-times modal_btn_close"></i>
                 <div class="modal_form">
                     <div class="modal_form_group">
@@ -126,8 +126,8 @@
                         <p class="modal_form_tll">Image Thumb</p>
                         <input class="modal_form_input song_thumb" type="text" placeholder="Your url image thumb" onblur="this.placeholder='Your url image thumb'" onfocus="this.placeholder=''">
                     </div>
-                    <div class="modal_form_btn">
-                        <button class="modal_form_btn_update">Update song</button>
+                    <div class="modal_form_list_btn">
+                        <button class="modal_form_btn"></button>
                         <button class="modal_form_btn_cancel">Cancel</button>
                     </div>
                 </div>

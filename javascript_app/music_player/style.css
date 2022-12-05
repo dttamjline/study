@@ -382,12 +382,12 @@ header h2 {
     color: var(--primary-color);
     cursor: pointer;
 }
-.modal_form_btn{
+.modal_form_list_btn{
     position: relative;
     display: flex;
     justify-content: center;
 }
-.modal_form_btn button{
+.modal_form_list_btn button{
     background: var(--primary-color);
     color: #fff;
     padding: 10px;
@@ -400,11 +400,11 @@ header h2 {
     text-align: center;
 }
 @media screen and (min-width: 768px){
-    .crud button, .modal_form_btn button, .modal_btn_close{
+    .crud button, .modal_form_list_btn button, .modal_btn_close{
         transition: all 0.5s;
         cursor: pointer;
     }
-    .crud button:hover,.modal_form_btn button:hover, .modal_btn_close:hover{
+    .crud button:hover,.modal_form_list_btn button:hover, .modal_btn_close:hover{
         opacity: 0.8;
     }
 }

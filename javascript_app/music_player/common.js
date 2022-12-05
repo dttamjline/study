@@ -5,7 +5,8 @@ const $ = document.querySelector.bind(document);
 // console.log($);
 const $$ = document.querySelectorAll.bind(document);
 
-const btnOpenModal = $('.btn_crud_add');
+const btnOpenAddSong = $('.btn_open_add_song');
+const btnOpenEditSong = $('.btn_open_edit_song');
 const btnCancel = $('.modal_form_btn_cancel');
 const btnClose = $('.modal_btn_close');
 
@@ -26,7 +27,6 @@ const btnRadom = $('.btn_random');
 const progress = $('#progress');
 const song = $$('.song');
 const playlist = $('.playlist');
-const btnEdit = $('.btn_edit_song');
 const btnAddNewSong = $('.modal_form_btn_confirm');
 const btnUpdateSong = $('.modal_form_btn_update');
 const cdThumbAni = cdThumb.animate(
@@ -133,7 +133,7 @@ const app = {
                 <p class="author">${song.singer}</p>
             </div>
             <div class="option">
-                <i class="fas fa-edit btn_edit_song" data-id="${index}"></i>
+                <i class="fas fa-edit btn_open_edit_song" data-id="${index}"></i>
                 <i class="fas fa-times btn_remove_song"></i>
             </div>
         </div>`);
@@ -237,34 +237,60 @@ const app = {
             const el = e.target.closest('.song');
             //console.log(id);
             //console.log(_this.currentIndex);
-            if (_this.currentIndex !== id || e.target.closest('.option')) {
-                if (_this.currentIndex !== id) {
+            if (
+                e.target.closest('.song:not(.active)') ||
+                e.target.closest('.option')
+            ) {
+                if (e.target.closest('.song:not(.active)')) {
                     $('.song.active').classList.remove('active');
                     el.classList.add('active');
                     _this.currentIndex = id;
                     _this.loadCurrentSong();
                     audio.onplay();
                 }
-                if (e.target.closest('.option')) {
-                    if (e.target.classList.contains('btn_edit_song')) {
-                        $('#modal_update').classList.add('show');
-                        console.log('fff');
-                        const id = _this.getId(e);
-                        const currentSong = _this.songs[id];
-                        console.log(currentSong);
-                        $('.song_name').value = currentSong.name;
-                    }
+                if (
+                    e.target.closest('.option') &&
+                    e.target.classList.contains('btn_open_edit_song')
+                ) {
+                    const id = _this.getId(e);
+                    const currentSong = _this.songs[id];
+                    console.log(currentSong);
+                    $('.modal').classList.add('show');
+                    $('.modal').classList.add('modal_update');
+                    $('.modal').setAttribute('data-id', id);
+                    $('.modal_ttl').innerHTML = 'Update Song';
+                    $('.modal_form_btn').classList.remove(
+                        'modal_form_btn_confirm'
+                    );
+                    $('.modal_form_btn').classList.add('modal_form_btn_update');
+                    $('.modal_form_btn').innerHTML = 'Update Song';
+                    $('.song_name').value = currentSong.name;
+                    $('.song_singer').value = currentSong.singer;
+                    $('.song_mp3').value = currentSong.path;
+                    $('.song_thumb').value = currentSong.image;
                 }
             }
         };
+
+        btnOpenAddSong.onclick = function () {
+            $('.modal').classList.add('show');
+            $('.modal').classList.add('modal_add');
+            $('.modal_ttl').innerHTML = 'Add New Song';
+            $('.modal_form_btn').classList.add('modal_form_btn_update');
+            $('.modal_form_btn').classList.add('modal_form_btn_confirm');
+            $('.modal_form_btn').innerHTML = 'Add Song';
+            $('.song_name').value = '';
+            $('.song_singer').value = '';
+            $('.song_mp3').value = '';
+            $('.song_thumb').value = '';
+        };
         btnCancel.onclick = function () {
             $('.modal').classList.remove('show');
+            $('.modal').removeAttribute('data-id');
         };
         btnClose.onclick = function () {
             $('.modal').classList.remove('show');
-        };
-        btnOpenModal.onclick = function () {
-            $('#modal_add').classList.add('show');
+            $('.modal').removeAttribute('data-id');
         };
         btnAddNewSong.onclick = function () {
             const obj = {
@@ -277,7 +303,18 @@ const app = {
             $('.modal').classList.remove('show');
             _this.render();
         };
-        btnUpdateSong.onclick = function (e) {};
+        btnUpdateSong.onclick = function (e) {
+            let idSong = $('.modal_update').dataset.id;
+            const currentSong = _this.songs[idSong];
+            currentSong.name = $('.song_name').value;
+            currentSong.singer = $('.song_singer').value;
+            currentSong.path = $('.song_mp3').value;
+            currentSong.image = $('.song_thumb').value;
+            console.log(currentSong);
+            _this.render();
+            $('.modal').classList.remove('show');
+            $('.song[data-id="' + idSong + '"]').classList.add('active');
+        };
         // window.onload = function () {
         //     audio.onplay();
         // };
