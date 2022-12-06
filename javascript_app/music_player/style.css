@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #F28080;
+    --primary-color: #ff3131;
     --second-color: #0D0D0D;
 }
 html{
@@ -301,7 +301,7 @@ header h2 {
 }
 
 .player_theme li.light span {
-    background: #F28080;
+    background: #ff3131;
 }
 
 .player_theme li.dark span {
@@ -311,9 +311,10 @@ header h2 {
 
 .crud button{
     margin: 5px;
-    border: 0;
     border: solid 2px var(--primary-color);
     padding: 5px;
+    background: var(--primary-color);
+    color: #fff;
 }
 
 
@@ -399,6 +400,21 @@ header h2 {
     cursor: pointer;
     text-align: center;
 }
+.modal_txt{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 50px;
+}
+.modal_del .modal_form_group{
+    display: none;
+}
+.modal_update .modal_txt, .modal_add .modal_txt{
+    display: none;
+}
+.modal_del .modal_wrap{
+    height: auto;
+    max-width: 55%;
+}
 @media screen and (min-width: 768px){
     .crud button, .modal_form_list_btn button, .modal_btn_close{
         transition: all 0.5s;
@@ -422,6 +438,7 @@ header h2 {
     .modal_wrap{
         height: 85%;
     }
+
 }
 
 @media screen and (max-width: 767px) {

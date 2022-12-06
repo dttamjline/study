@@ -7,9 +7,9 @@ const $$ = document.querySelectorAll.bind(document);
 
 const btnOpenAddSong = $('.btn_open_add_song');
 const btnOpenEditSong = $('.btn_open_edit_song');
+const btnOpenDelSong = $('.btn_open_del_song');
 const btnCancel = $('.modal_form_btn_cancel');
 const btnClose = $('.modal_btn_close');
-
 const player = $('.player');
 const heading = $('header h2');
 const cdThumb = $('.cd_thumb');
@@ -25,10 +25,9 @@ const btnPrev = $('.btn_prev');
 const btnRepeat = $('.btnRepeat');
 const btnRadom = $('.btn_random');
 const progress = $('#progress');
-const song = $$('.song');
 const playlist = $('.playlist');
-const btnAddNewSong = $('.modal_form_btn_confirm');
-const btnUpdateSong = $('.modal_form_btn_update');
+const modalFormButton = $('.modal_form_btn');
+const modalFormDel = $('.modal_form_del');
 const cdThumbAni = cdThumb.animate(
     {
         transform: 'rotate(360deg)',
@@ -134,7 +133,7 @@ const app = {
             </div>
             <div class="option">
                 <i class="fas fa-edit btn_open_edit_song" data-id="${index}"></i>
-                <i class="fas fa-times btn_remove_song"></i>
+                <i class="fas fa-times btn_open_del_song" data-id="${index}"></i>
             </div>
         </div>`);
         });
@@ -232,89 +231,118 @@ const app = {
         };
 
         playlist.onclick = function (e) {
-            console.log(e);
-            let id = _this.getId(e);
-            const el = e.target.closest('.song');
-            //console.log(id);
-            //console.log(_this.currentIndex);
+            //console.log(e.target);
+            //console.log(e.target.classList.contains('btn_open_edit_song'));
+
+            const songNode = e.target.closest('.song:not(.active)');
+            let idSong = e.target.closest('.song').dataset.id;
+            const currentSong = _this.songs[idSong];
+            // Handle when clicking on the song
             if (
-                e.target.closest('.song:not(.active)') ||
-                e.target.closest('.option')
+                songNode &&
+                !e.target.closest('.btn_open_edit_song') &&
+                !e.target.closest('.btn_open_del_song')
             ) {
-                if (e.target.closest('.song:not(.active)')) {
-                    $('.song.active').classList.remove('active');
-                    el.classList.add('active');
-                    _this.currentIndex = id;
-                    _this.loadCurrentSong();
-                    audio.onplay();
-                }
-                if (
-                    e.target.closest('.option') &&
-                    e.target.classList.contains('btn_open_edit_song')
-                ) {
-                    const id = _this.getId(e);
-                    const currentSong = _this.songs[id];
-                    console.log(currentSong);
-                    $('.modal').classList.add('show');
-                    $('.modal').classList.add('modal_update');
-                    $('.modal').setAttribute('data-id', id);
-                    $('.modal_ttl').innerHTML = 'Update Song';
-                    $('.modal_form_btn').classList.remove(
-                        'modal_form_btn_confirm'
-                    );
-                    $('.modal_form_btn').classList.add('modal_form_btn_update');
-                    $('.modal_form_btn').innerHTML = 'Update Song';
-                    $('.song_name').value = currentSong.name;
-                    $('.song_singer').value = currentSong.singer;
-                    $('.song_mp3').value = currentSong.path;
-                    $('.song_thumb').value = currentSong.image;
-                }
+                _this.currentIndex = Number(songNode.dataset.id);
+                _this.loadCurrentSong();
+                _this.render();
+                audio.play();
+            }
+
+            if (e.target.closest('.btn_open_edit_song')) {
+                console.log(e.target.closest('.btn_open_edit_song'));
+
+                $('.modal').classList.add('show');
+                $('.modal').classList.add('modal_update');
+                $('.modal').classList.remove('modal_add');
+                $('.modal').classList.remove('modal_del');
+                $('.modal').setAttribute('data-id', idSong);
+                $('.modal_ttl').innerHTML = 'Update Song';
+                $('.modal_form_btn').innerHTML = 'Update Song';
+                $('.song_name').value = currentSong.name;
+                $('.song_singer').value = currentSong.singer;
+                $('.song_mp3').value = currentSong.path;
+                $('.song_thumb').value = currentSong.image;
+            }
+            if (e.target.closest('.btn_open_del_song')) {
+                $('.modal').classList.add('show');
+                $('.modal').classList.add('modal_del');
+                $('.modal').classList.remove('modal_add');
+                $('.modal').classList.remove('modal_update');
+                $('.modal').setAttribute('data-id', idSong);
+                $('.modal_ttl').innerHTML = 'Delete Song';
+                $('.modal_form_btn').innerHTML = 'Delete Song';
             }
         };
 
         btnOpenAddSong.onclick = function () {
             $('.modal').classList.add('show');
             $('.modal').classList.add('modal_add');
+            $('.modal').classList.remove('modal_update');
+            $('.modal').classList.remove('modal_del');
             $('.modal_ttl').innerHTML = 'Add New Song';
-            $('.modal_form_btn').classList.add('modal_form_btn_update');
-            $('.modal_form_btn').classList.add('modal_form_btn_confirm');
             $('.modal_form_btn').innerHTML = 'Add Song';
             $('.song_name').value = '';
             $('.song_singer').value = '';
             $('.song_mp3').value = '';
             $('.song_thumb').value = '';
         };
+
         btnCancel.onclick = function () {
             $('.modal').classList.remove('show');
             $('.modal').removeAttribute('data-id');
+            if ($('.modal').classList.contains('modal_add')) {
+                $('.modal').classList.remove('modal_update');
+                $('.modal').classList.remove('modal_del');
+            } else if ($('.modal').classList.contains('modal_update')) {
+                $('.modal').classList.remove('modal_add');
+                $('.modal').classList.remove('modal_del');
+            } else if ($('.modal').classList.contains('modal_del')) {
+                $('.modal').classList.remove('modal_add');
+                $('.modal').classList.remove('modal_update');
+            }
         };
         btnClose.onclick = function () {
             $('.modal').classList.remove('show');
             $('.modal').removeAttribute('data-id');
+            $('.modal').removeAttribute('data-id');
+            if ($('.modal').classList.contains('modal_add')) {
+                $('.modal').classList.remove('modal_update');
+                $('.modal').classList.remove('modal_del');
+            } else if ($('.modal').classList.contains('modal_update')) {
+                $('.modal').classList.remove('modal_add');
+                $('.modal').classList.remove('modal_del');
+            } else if ($('.modal').classList.contains('modal_del')) {
+                $('.modal').classList.remove('modal_add');
+                $('.modal').classList.remove('modal_update');
+            }
         };
-        btnAddNewSong.onclick = function () {
-            const obj = {
-                name: song_name.value,
-                singer: song_singer.value,
-                path: song_mp3.value,
-                image: song_thumb.value,
-            };
-            _this.songs.push(obj);
-            $('.modal').classList.remove('show');
+        modalFormButton.onclick = function () {
+            if ($('.modal').classList.contains('modal_add')) {
+                const obj = {
+                    name: song_name.value,
+                    singer: song_singer.value,
+                    path: song_mp3.value,
+                    image: song_thumb.value,
+                };
+                _this.songs.push(obj);
+            } else if ($('.modal').classList.contains('modal_update')) {
+                let idSong = $('.modal_update').dataset.id;
+                const currentSong = _this.songs[idSong];
+                currentSong.name = $('.song_name').value;
+                currentSong.singer = $('.song_singer').value;
+                currentSong.path = $('.song_mp3').value;
+                currentSong.image = $('.song_thumb').value;
+            } else if ($('.modal').classList.contains('modal_del')) {
+                let idSong = $('.modal_del').dataset.id;
+                if (idSong > -1) {
+                    _this.songs.splice(idSong, 1);
+                }
+            }
             _this.render();
-        };
-        btnUpdateSong.onclick = function (e) {
-            let idSong = $('.modal_update').dataset.id;
-            const currentSong = _this.songs[idSong];
-            currentSong.name = $('.song_name').value;
-            currentSong.singer = $('.song_singer').value;
-            currentSong.path = $('.song_mp3').value;
-            currentSong.image = $('.song_thumb').value;
-            console.log(currentSong);
-            _this.render();
             $('.modal').classList.remove('show');
-            $('.song[data-id="' + idSong + '"]').classList.add('active');
         };
+
         // window.onload = function () {
         //     audio.onplay();
         // };
@@ -337,7 +365,6 @@ const app = {
     },
     loadPrevSong: function () {
         this.currentIndex--;
-
         if (this.currentIndex < 0) {
             this.currentIndex = this.songs.length - 1;
         }
@@ -367,12 +394,23 @@ const app = {
             });
         }, 300);
     },
-    getId: function (e) {
-        const el = e.target.closest('.song');
-        const id = el.dataset.id;
-        return id;
+    validator: function () {
+        let name = $('.song_name').value;
+        let singer = $('.song_singer').value;
+        let path = $('.song_mp3').value;
+        let image = $('.song_thumb').value;
+        console.log($$('.modal_form_input'));
+        const obj = $$('.modal_form_input');
+        console.log(Object.values(obj));
+        let arr = Object.values(obj);
+        arr.forEach(function (item, index) {
+            item.oninput = function () {
+                $('.error').innerHTML = '';
+            };
+        });
     },
     start: function () {
+        this.validator();
         this.defineProperties();
         this.swithTheme();
         this.render();
