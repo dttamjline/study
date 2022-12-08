@@ -79,35 +79,36 @@
                 <p class="modal_ttl"></p>
                 <i class="fas fa-times modal_btn_close"></i>
                 <p class="modal_txt">Do you want to delete this song?</p>
-                <div class="modal_form">
+                <form action="" class="modal_form" id="modal_form">
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Name</p>
-                        <input class="modal_form_input song_name" type="text" placeholder="Your song name" onblur="this.placeholder='Your song name'" onfocus="this.placeholder=''">
-                        <span class="error"></span>
+                        <input class="modal_form_input song_name" type="text" placeholder="Your song name">
+                        <span class="modal_form_error"></span>
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Singer</p>
-                        <input class="modal_form_input song_singer" type="text" placeholder="Your singer name" onblur="this.placeholder='Your singer name'" onfocus="this.placeholder=''">
-                        <span class="error"></span>
+                        <input class="modal_form_input song_singer" type="text" placeholder="Your singer name">
+                        <span class="modal_form_error"></span>
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Mp3 link</p>
-                        <input class="modal_form_input song_mp3" type="text" placeholder="Your link mp3" onblur="this.placeholder='Your link mp3'" onfocus="this.placeholder=''">
-                        <span class="error"></span>
+                        <input class="modal_form_input song_mp3" type="text" placeholder="Your link mp3">
+                        <span class="modal_form_error"></span>
                     </div>
                     <div class="modal_form_group">
                         <p class="modal_form_tll">Image Thumb</p>
-                        <input class="modal_form_input song_thumb" type="text" placeholder="Your url image thumb" onblur="this.placeholder='Your url image thumb'" onfocus="this.placeholder=''">
-                        <span class="error"></span>
+                        <input class="modal_form_input song_thumb" type="text" placeholder="Your url image thumb">
+                        <span class="modal_form_error"></span>
                     </div>
                     <div class="modal_form_list_btn">
                         <button class="modal_form_btn"></button>
                         <button class="modal_form_btn_cancel">Cancel</button>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-    <script src="common.js"></script>
+    <script type="module" src="common.js"></script>
+    <!-- <script src="validator.js"></script> -->
 </body>
 </html>

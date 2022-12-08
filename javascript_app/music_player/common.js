@@ -1,3 +1,5 @@
+import validator from './validator.js';
+console.log(validator);
 //console.log(this);
 
 const $ = document.querySelector.bind(document);
@@ -250,8 +252,7 @@ const app = {
             }
 
             if (e.target.closest('.btn_open_edit_song')) {
-                console.log(e.target.closest('.btn_open_edit_song'));
-
+                _this.removeValidator();
                 $('.modal').classList.add('show');
                 $('.modal').classList.add('modal_update');
                 $('.modal').classList.remove('modal_add');
@@ -265,6 +266,7 @@ const app = {
                 $('.song_thumb').value = currentSong.image;
             }
             if (e.target.closest('.btn_open_del_song')) {
+                _this.removeValidator();
                 $('.modal').classList.add('show');
                 $('.modal').classList.add('modal_del');
                 $('.modal').classList.remove('modal_add');
@@ -276,6 +278,7 @@ const app = {
         };
 
         btnOpenAddSong.onclick = function () {
+            _this.removeValidator();
             $('.modal').classList.add('show');
             $('.modal').classList.add('modal_add');
             $('.modal').classList.remove('modal_update');
@@ -288,7 +291,8 @@ const app = {
             $('.song_thumb').value = '';
         };
 
-        btnCancel.onclick = function () {
+        btnCancel.onclick = function (e) {
+            _this.removeValidator();
             $('.modal').classList.remove('show');
             $('.modal').removeAttribute('data-id');
             if ($('.modal').classList.contains('modal_add')) {
@@ -301,8 +305,9 @@ const app = {
                 $('.modal').classList.remove('modal_add');
                 $('.modal').classList.remove('modal_update');
             }
+            e.preventDefault();
         };
-        btnClose.onclick = function () {
+        btnClose.onclick = function (e) {
             $('.modal').classList.remove('show');
             $('.modal').removeAttribute('data-id');
             $('.modal').removeAttribute('data-id');
@@ -316,8 +321,9 @@ const app = {
                 $('.modal').classList.remove('modal_add');
                 $('.modal').classList.remove('modal_update');
             }
+            e.preventDefault();
         };
-        modalFormButton.onclick = function () {
+        modalFormButton.onclick = function (e) {
             if ($('.modal').classList.contains('modal_add')) {
                 const obj = {
                     name: song_name.value,
@@ -339,6 +345,7 @@ const app = {
                     _this.songs.splice(idSong, 1);
                 }
             }
+            e.preventDefault();
             _this.render();
             $('.modal').classList.remove('show');
         };
@@ -394,23 +401,31 @@ const app = {
             });
         }, 300);
     },
-    validator: function () {
-        let name = $('.song_name').value;
-        let singer = $('.song_singer').value;
-        let path = $('.song_mp3').value;
-        let image = $('.song_thumb').value;
-        console.log($$('.modal_form_input'));
-        const obj = $$('.modal_form_input');
-        console.log(Object.values(obj));
-        let arr = Object.values(obj);
-        arr.forEach(function (item, index) {
-            item.oninput = function () {
-                $('.error').innerHTML = '';
-            };
-        });
+    removeValidator: function () {
+        const el = $$('.modal_form_group.invalid');
+        const err = $$('.modal_form_error');
+        if (el) {
+            el.forEach(function (item, index) {
+                console.log(item);
+                item.classList.remove('invalid');
+            });
+        }
+        if (err) {
+            err.forEach(function (errItem, index) {
+                errItem.innerHTML = '';
+            });
+        }
+
+        // Array.from(el).forEach(function (el) {
+        //     el.classList.remove('invalid');
+        // });
+
+        // el.forEach((el) => {
+        //     el.classList.remove('invalid');
+        // });
     },
+
     start: function () {
-        this.validator();
         this.defineProperties();
         this.swithTheme();
         this.render();

@@ -411,9 +411,19 @@ header h2 {
 .modal_update .modal_txt, .modal_add .modal_txt{
     display: none;
 }
+.modal_del   .modal_form_error{
+    display: none;
+}
 .modal_del .modal_wrap{
     height: auto;
     max-width: 55%;
+}
+.modal_form_error{
+    color: red;
+    font-size: 0.75rem;
+}
+.invalid .modal_form_input{
+    border: solid 1px red;
 }
 @media screen and (min-width: 768px){
     .crud button, .modal_form_list_btn button, .modal_btn_close{
