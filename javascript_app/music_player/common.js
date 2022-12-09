@@ -65,11 +65,11 @@ const app = {
             image: 'https://e-cdns-images.dzcdn.net/images/cover/948200588c813c1afd10f29b56e0ce50/500x500-000000-80-0-0.jpg',
         },
         {
-            name: 'Shape of You',
-            singer: 'Ed Sheeran',
+            name: 'Somewhere Only We Know',
+            singer: 'Lily Allen',
             //path: 'mp3/4.mp3',
-            path: 'https://cdns-preview-d.dzcdn.net/stream/c-d8f5b81a6243ddfa4c97b9a4c86a82fa-6.mp3',
-            image: 'https://e-cdns-images.dzcdn.net/images/cover/107c2b43f10c249077c1f7618563bb63/500x500-000000-80-0-0.jpg',
+            path: 'https://cdns-preview-2.dzcdn.net/stream/c-285ae62079af7a8ce4cb17808f3abe75-9.mp3',
+            image: 'https://e-cdns-images.dzcdn.net/images/cover/5b14c2214e8b2828ab39ca31fac8b6d1/500x500-000000-80-0-0.jpg',
         },
         {
             name: 'Step Step',
