@@ -1,15 +1,14 @@
-import validator from './validator.js';
-console.log(validator);
-//console.log(this);
-
+import Validator from './validator.js';
+Validator({
+    form: '.modal_form',
+    rules: [Validator.isRequired('.modal_form_input')],
+});
 const $ = document.querySelector.bind(document);
 //console.log(typeof document.querySelector);
 // console.log($);
 const $$ = document.querySelectorAll.bind(document);
 
 const btnOpenAddSong = $('.btn_open_add_song');
-const btnOpenEditSong = $('.btn_open_edit_song');
-const btnOpenDelSong = $('.btn_open_del_song');
 const btnCancel = $('.modal_form_btn_cancel');
 const btnClose = $('.modal_btn_close');
 const player = $('.player');
@@ -323,7 +322,63 @@ const app = {
             }
             e.preventDefault();
         };
-        modalFormButton.onclick = function (e) {
+        // modalFormButton.onclick = function (e) {
+        //     e.preventDefault();
+
+        //     if ($('.modal').classList.contains('modal_add')) {
+        //         const obj = {
+        //             name: song_name.value,
+        //             singer: song_singer.value,
+        //             path: song_mp3.value,
+        //             image: song_thumb.value,
+        //         };
+        //         _this.songs.push(obj);
+        //     } else if ($('.modal').classList.contains('modal_update')) {
+        //         let idSong = $('.modal_update').dataset.id;
+        //         const currentSong = _this.songs[idSong];
+        //         currentSong.name = $('.song_name').value;
+        //         currentSong.singer = $('.song_singer').value;
+        //         currentSong.path = $('.song_mp3').value;
+        //         currentSong.image = $('.song_thumb').value;
+        //     } else if ($('.modal').classList.contains('modal_del')) {
+        //         let idSong = $('.modal_del').dataset.id;
+        //         if (idSong > -1) {
+        //             _this.songs.splice(idSong, 1);
+        //         }
+        //     }
+
+        //     _this.render();
+        //     $('.modal').classList.remove('show');
+        // };
+
+        let formElement = document.querySelector('.modal_form');
+        formElement.onsubmit = function (e) {
+            e.preventDefault();
+            console.log(e.target);
+            options.rules.forEach(function (rule) {
+                let inputElements = Object.values(
+                    formElement.querySelectorAll(rule.selector)
+                );
+
+                for (let input of inputElements) {
+                    let errorElement =
+                        input.parentElement.querySelector('.modal_form_error');
+                    let errorBorder =
+                        input.parentElement.querySelector('.modal_form_group');
+                    // console.log(errorBorder);
+                    let errorMess = rule.test(e.target.value);
+                    if (input.value === '') {
+                        errorElement.innerHTML = errorMess;
+                        // errorBorder.classList.add('invalid');
+                    } else {
+                        errorElement.innerHTML = '';
+                        //  errorBorder.classList.remove('invalid');
+                    }
+                }
+            });
+        };
+        formElement.onsubmit = function (e) {
+            e.preventDefault();
             if ($('.modal').classList.contains('modal_add')) {
                 const obj = {
                     name: song_name.value,
@@ -345,11 +400,9 @@ const app = {
                     _this.songs.splice(idSong, 1);
                 }
             }
-            e.preventDefault();
             _this.render();
             $('.modal').classList.remove('show');
         };
-
         // window.onload = function () {
         //     audio.onplay();
         // };
@@ -415,14 +468,6 @@ const app = {
                 errItem.innerHTML = '';
             });
         }
-
-        // Array.from(el).forEach(function (el) {
-        //     el.classList.remove('invalid');
-        // });
-
-        // el.forEach((el) => {
-        //     el.classList.remove('invalid');
-        // });
     },
 
     start: function () {

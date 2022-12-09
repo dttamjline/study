@@ -1,19 +1,19 @@
 function Validator(options) {
     let formElement = document.querySelector(options.form);
-    //console.log(formElement);
+    // console.log(formElement);
     if (formElement) {
-        //console.log(options.rules);
+        // console.log(options.rules);
         options.rules.forEach(function (rule) {
             // console.log(rule);
             let inputElements = Object.values(
                 formElement.querySelectorAll(rule.selector)
             );
 
-            for (input of inputElements) {
+            for (let input of inputElements) {
                 console.log(input);
                 let errorElement =
                     input.parentElement.querySelector('.modal_form_error');
-                console.log(errorElement);
+                //  console.log(errorElement);
                 input.onblur = function (e) {
                     let _this = this;
                     // console.log(e.target.value);
@@ -42,8 +42,29 @@ function Validator(options) {
             //console.log(inputElements);
         });
         formElement.onsubmit = function (e) {
-            e.prevenDefalut();
-            let isValid = false;
+            e.preventDefault();
+            console.log(e.target);
+            options.rules.forEach(function (rule) {
+                let inputElements = Object.values(
+                    formElement.querySelectorAll(rule.selector)
+                );
+
+                for (let input of inputElements) {
+                    let errorElement =
+                        input.parentElement.querySelector('.modal_form_error');
+                    let errorBorder =
+                        input.parentElement.querySelector('.modal_form_group');
+                    // console.log(errorBorder);
+                    let errorMess = rule.test(e.target.value);
+                    if (input.value === '') {
+                        errorElement.innerHTML = errorMess;
+                        // errorBorder.classList.add('invalid');
+                    } else {
+                        errorElement.innerHTML = '';
+                        //  errorBorder.classList.remove('invalid');
+                    }
+                }
+            });
         };
     }
 }
@@ -51,7 +72,7 @@ Validator.isRequired = function (selector) {
     return {
         selector: selector,
         test: function (value) {
-            return value.trim() ? undefined : 'Vui lòng nhập trường này';
+            return value ? undefined : 'Vui lòng nhập trường này';
         },
     };
 };
