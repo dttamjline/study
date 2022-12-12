@@ -1,0 +1,65 @@
+@use "../global" as g;
+
+/*!
+component > footer
+------------------------------
+*/
+
+.f_top{
+    background: g.$color-font-base;
+    padding: 60px 0 40px;
+    @include g.mq('md') {
+        padding: 108px 0 54px;
+        .container{
+            padding: 0 20px;
+        }
+    }
+
+}
+
+.copyright{
+    background: g.$color-font-base;
+    text-align: center;
+    color: g.$color-w;
+    letter-spacing: 0;
+    padding: 20px 3% 120px;
+    font-size: g.rem(13);
+    @include g.mq('md'){
+        font-size: g.rem(14);
+        padding: 10px 3% 119px;
+    }
+}
+#to_top{
+    position: fixed;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    right: 15px;
+    bottom: 20px;
+    transition: all 0.5s;
+    @include g.mq('md'){
+        right: 30px;
+        bottom: 100px;
+        width: 60px;
+        height: 60px;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        top: 59%;
+        padding: 5px;
+        left: 50%;
+        transform: translate(-50%,-50%) rotate(-45deg);
+        border-right: solid 2px g.$color-font-base;
+        border-top: solid 2px g.$color-font-base;
+        @include g.mq('md') {
+            padding:7px;
+            top: 59%;
+        }
+    }
+}

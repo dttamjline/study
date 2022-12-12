@@ -1,0 +1,19 @@
+@use "../global" as g;
+
+/*!
+layout > container
+------------------------------
+*/
+
+.container {
+    padding: 0 3%;
+    @include g.mq('md'){
+        max-width: g.$width-content;
+        padding: 0 15px;
+        margin:0 auto;
+    }
+    @include g.mq('xl') {
+        padding:0 20px;
+    } 
+}
+

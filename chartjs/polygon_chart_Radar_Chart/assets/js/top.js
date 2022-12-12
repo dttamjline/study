@@ -16,36 +16,14 @@ $(function () {
         p04 = '',
         p05 = '',
         num = 0;
-    $('input[type="checkbox"]').change(function () {
-        let id = $(this).parents('.c_section').attr('id');
-        num = $('#' + id).find('input:checked').length;
-        if (num) {
-            $('#' + id)
-                .find(btn)
-                .removeClass('disabled');
-        } else {
-            $('#' + id)
-                .find(btn)
-                .addClass('disabled');
-        }
-        switch (id) {
-            case 'q_check01':
-                p01 = num;
-                break;
-            case 'q_check02':
-                p02 = num;
-                break;
-            case 'q_check03':
-                p03 = num;
-                break;
-            case 'q_check04':
-                p04 = num;
-                break;
-            case 'q_check05':
-                p05 = num;
-                break;
-        }
-    });
+
+    window.onload = function () {
+        /*from www  . j  a  v a2 s.c  om*/
+        var radarOptions = {
+            scaleLineWidth: 16,
+            scaleLineColor: '#EEEEEE',
+        };
+    };
     $('.c_btn__result').on('click', function () {
         const data = {
             labels: [
@@ -66,6 +44,7 @@ $(function () {
                         parseInt(p05),
                     ],
                     fill: true,
+
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgb(255, 99, 132)',
                     pointBackgroundColor: 'rgb(255, 99, 132)',
@@ -81,18 +60,23 @@ $(function () {
             data: data,
 
             options: {
+                scale: {
+                    min: 0,
+                    max: 10,
+                },
                 scales: {
                     r: {
                         grid: {
                             color: '#000',
-                            display: false,
+                            display: true,
                         },
+
                         // pointLabels: {
                         //     color: 'red',
                         // },
                         angleLines: {
                             color: '#000',
-                            display: false,
+                            display: true,
                         },
                         beginAtZero: true,
                         ticks: {
@@ -100,6 +84,7 @@ $(function () {
                             color: '#000',
                             backdropColor: '#8fdbff', //background of number
                         },
+                        scaleLineColor: '#EEEEEE',
                     },
                 },
                 plugins: {

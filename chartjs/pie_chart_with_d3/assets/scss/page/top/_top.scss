@@ -1,0 +1,52 @@
+@use '../../global' as g;
+
+/*!
+page > top > common
+------------------------------
+*/
+/*!
+global > color
+------------------------------
+*/
+/*!
+global > content-width
+------------------------------
+*/
+/*!
+global > font
+------------------------------
+*/
+main{
+    height: 1000px;
+}
+.data_list {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-row-gap: 45px;
+    grid-column-gap: 20px;
+}
+.data_item {
+    background-color: rgba(255, 255, 255, 0.82);
+    padding: 30px 20px;
+    min-height: 180px;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.culture_item_pie {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.group_text{
+    font-size: g.rem(14);
+}
+
+

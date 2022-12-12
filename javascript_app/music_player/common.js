@@ -1,8 +1,8 @@
-import Validator from './validator.js';
-Validator({
-    form: '.modal_form',
-    rules: [Validator.isRequired('.modal_form_input')],
-});
+// import Validator from './validator.js';
+// const v = Validator({
+//     form: '.modal_form',
+//     rules: [Validator.isRequired('.modal_form_input')],
+// });
 const $ = document.querySelector.bind(document);
 //console.log(typeof document.querySelector);
 // console.log($);
@@ -351,58 +351,57 @@ const app = {
         //     $('.modal').classList.remove('show');
         // };
 
-        let formElement = document.querySelector('.modal_form');
-        formElement.onsubmit = function (e) {
-            e.preventDefault();
-            console.log(e.target);
-            options.rules.forEach(function (rule) {
-                let inputElements = Object.values(
-                    formElement.querySelectorAll(rule.selector)
-                );
+        // let formElement = document.querySelector('.modal_form');
+        // formElement.onsubmit = function (e) {
+        //     e.preventDefault();
+        //     console.log(e.target);
+        //     options.rules.forEach(function (rule) {
+        //         let inputElements = Object.values(
+        //             formElement.querySelectorAll(rule.selector)
+        //         );
 
-                for (let input of inputElements) {
-                    let errorElement =
-                        input.parentElement.querySelector('.modal_form_error');
-                    let errorBorder =
-                        input.parentElement.querySelector('.modal_form_group');
-                    // console.log(errorBorder);
-                    let errorMess = rule.test(e.target.value);
-                    if (input.value === '') {
-                        errorElement.innerHTML = errorMess;
-                        // errorBorder.classList.add('invalid');
-                    } else {
-                        errorElement.innerHTML = '';
-                        //  errorBorder.classList.remove('invalid');
-                    }
-                }
-            });
-        };
-        formElement.onsubmit = function (e) {
-            e.preventDefault();
-            if ($('.modal').classList.contains('modal_add')) {
-                const obj = {
-                    name: song_name.value,
-                    singer: song_singer.value,
-                    path: song_mp3.value,
-                    image: song_thumb.value,
-                };
-                _this.songs.push(obj);
-            } else if ($('.modal').classList.contains('modal_update')) {
-                let idSong = $('.modal_update').dataset.id;
-                const currentSong = _this.songs[idSong];
-                currentSong.name = $('.song_name').value;
-                currentSong.singer = $('.song_singer').value;
-                currentSong.path = $('.song_mp3').value;
-                currentSong.image = $('.song_thumb').value;
-            } else if ($('.modal').classList.contains('modal_del')) {
-                let idSong = $('.modal_del').dataset.id;
-                if (idSong > -1) {
-                    _this.songs.splice(idSong, 1);
-                }
-            }
-            _this.render();
-            $('.modal').classList.remove('show');
-        };
+        //         for (let input of inputElements) {
+        //             let errorElement =
+        //                 input.parentElement.querySelector('.modal_form_error');
+        //             let errorBorder =
+        //                 input.parentElement.querySelector('.modal_form_group');
+        //             // console.log(errorBorder);
+        //             let errorMess = rule.test(e.target.value);
+        //             if (input.value === '') {
+        //                 errorElement.innerHTML = errorMess;
+        //                 // errorBorder.classList.add('invalid');
+        //             } else {
+        //                 errorElement.innerHTML = '';
+        //                 //  errorBorder.classList.remove('invalid');
+        //             }
+        //         }
+        //     });
+        // };
+        // modalFormButton.onclick = function (e) {
+        //     e.preventDefault();
+
+        //     if ($('.modal').classList.contains('modal_add')) {
+        //         const obj = {
+        //             name: song_name.value,
+        //             singer: song_singer.value,
+        //             path: song_mp3.value,
+        //             image: song_thumb.value,
+        //         };
+        //         _this.songs.push(obj);
+        //     } else if ($('.modal').classList.contains('modal_update')) {
+        //         let idSong = $('.modal_update').dataset.id;
+        //         const currentSong = _this.songs[idSong];
+        //         currentSong.name = $('.song_name').value;
+        //         currentSong.singer = $('.song_singer').value;
+        //         currentSong.path = $('.song_mp3').value;
+        //         currentSong.image = $('.song_thumb').value;
+        //     } else if ($('.modal').classList.contains('modal_del')) {
+        //         let idSong = $('.modal_del').dataset.id;
+        //         if (idSong > -1) {
+        //             _this.songs.splice(idSong, 1);
+        //         }
+        //     }
+        // };
         // window.onload = function () {
         //     audio.onplay();
         // };
@@ -454,6 +453,122 @@ const app = {
             });
         }, 300);
     },
+    Validator: function (options) {
+        let _this = this;
+        let formElement = document.querySelector(options.form);
+        // console.log(formElement);
+        if (formElement) {
+            // console.log(options.rules);
+            options.rules.forEach(function (rule) {
+                // console.log(rule);
+                let inputElements = Object.values(
+                    formElement.querySelectorAll(rule.selector)
+                );
+
+                for (let input of inputElements) {
+                    console.log(input);
+                    let errorElement =
+                        input.parentElement.querySelector('.modal_form_error');
+                    //  console.log(errorElement);
+                    input.onblur = function (e) {
+                        let _this = this;
+                        // console.log(e.target.value);
+                        let errorMess = rule.test(e.target.value);
+                        if (errorMess) {
+                            errorElement.innerHTML = errorMess;
+                            _this.parentElement.classList.add('invalid');
+                        } else {
+                            errorElement.innerHTML = '';
+                            _this.parentElement.classList.remove('invalid');
+                        }
+                    };
+                    input.oninput = function (e) {
+                        let _this = this;
+                        let errorMess = rule.test(e.target.value);
+                        if (errorMess) {
+                            errorElement.innerHTML = errorMess;
+                            _this.parentElement.classList.add('invalid');
+                        } else {
+                            errorElement.innerHTML = '';
+                            _this.parentElement.classList.remove('invalid');
+                        }
+                    };
+                }
+
+                //console.log(inputElements);
+            });
+            formElement.onsubmit = function (e) {
+                e.preventDefault();
+                let isSuccess = false;
+                // console.log(e.target);
+                options.rules.forEach(function (rule) {
+                    let inputElements = Object.values(
+                        formElement.querySelectorAll(rule.selector)
+                    );
+
+                    for (let input of inputElements) {
+                        let errorElement =
+                            input.parentElement.querySelector(
+                                '.modal_form_error'
+                            );
+                        let errorBorder = input.parentElement;
+                        let errorMess = e.target.value
+                            ? undefined
+                            : 'Vui lòng nhập trường này';
+                        if (input.value === '') {
+                            errorElement.innerHTML = errorMess;
+                            errorBorder.classList.add('invalid');
+                            isSuccess = false;
+                        } else {
+                            console.log('dd');
+                            errorElement.innerHTML = '';
+                            errorBorder.classList.remove('invalid');
+                            isSuccess = true;
+                        }
+                    }
+                });
+                if(isSuccess = true){
+                    if ($('.modal').classList.contains('modal_add')) {
+                        const obj = {
+                            name: song_name.value,
+                            singer: song_singer.value,
+                            path: song_mp3.value,
+                            image: song_thumb.value,
+                        };
+                        _this.songs.push(obj);
+                      
+                    } else if (
+                        $('.modal').classList.contains('modal_update')
+                    ) {
+                        let idSong = $('.modal_update').dataset.id;
+                        const currentSong = _this.songs[idSong];
+                        currentSong.name = $('.song_name').value;
+                        currentSong.singer = $('.song_singer').value;
+                        currentSong.path = $('.song_mp3').value;
+                        currentSong.image = $('.song_thumb').value;
+                    } else if (
+                        $('.modal').classList.contains('modal_del')
+                    ) {
+                        let idSong = $('.modal_del').dataset.id;
+                        if (idSong > -1) {
+                            _this.songs.splice(idSong, 1);
+                        }
+                    }
+    
+                    _this.render();
+                    $('.modal').classList.remove('show');
+                }
+            };
+        }
+    },
+    isRequired: function (selector) {
+        return {
+            selector: selector,
+            test: function (value) {
+                return value ? undefined : 'Vui lòng nhập trường này';
+            },
+        };
+    },
     removeValidator: function () {
         const el = $$('.modal_form_group.invalid');
         const err = $$('.modal_form_error');
@@ -479,6 +594,10 @@ const app = {
         this.loadNextSong();
         this.loadPrevSong();
         this.stopPlaying();
+        this.Validator({
+            form: '.modal_form',
+            rules: [this.isRequired('.modal_form_input')],
+        });
     },
 };
 
