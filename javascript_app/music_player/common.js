@@ -322,86 +322,35 @@ const app = {
             }
             e.preventDefault();
         };
-        // modalFormButton.onclick = function (e) {
-        //     e.preventDefault();
+        modalFormButton.onclick = function (e) {
+            e.preventDefault();
 
-        //     if ($('.modal').classList.contains('modal_add')) {
-        //         const obj = {
-        //             name: song_name.value,
-        //             singer: song_singer.value,
-        //             path: song_mp3.value,
-        //             image: song_thumb.value,
-        //         };
-        //         _this.songs.push(obj);
-        //     } else if ($('.modal').classList.contains('modal_update')) {
-        //         let idSong = $('.modal_update').dataset.id;
-        //         const currentSong = _this.songs[idSong];
-        //         currentSong.name = $('.song_name').value;
-        //         currentSong.singer = $('.song_singer').value;
-        //         currentSong.path = $('.song_mp3').value;
-        //         currentSong.image = $('.song_thumb').value;
-        //     } else if ($('.modal').classList.contains('modal_del')) {
-        //         let idSong = $('.modal_del').dataset.id;
-        //         if (idSong > -1) {
-        //             _this.songs.splice(idSong, 1);
-        //         }
-        //     }
+            if ($('.modal').classList.contains('modal_add')) {
+                const obj = {
+                    name: song_name.value,
+                    singer: song_singer.value,
+                    path: song_mp3.value,
+                    image: song_thumb.value,
+                };
+                _this.songs.push(obj);
+            } else if ($('.modal').classList.contains('modal_update')) {
+                let idSong = $('.modal_update').dataset.id;
+                const currentSong = _this.songs[idSong];
+                currentSong.name = $('.song_name').value;
+                currentSong.singer = $('.song_singer').value;
+                currentSong.path = $('.song_mp3').value;
+                currentSong.image = $('.song_thumb').value;
+            } else if ($('.modal').classList.contains('modal_del')) {
+                let idSong = $('.modal_del').dataset.id;
+                if (idSong > -1) {
+                    _this.songs.splice(idSong, 1);
+                }
+            }
 
-        //     _this.render();
-        //     $('.modal').classList.remove('show');
-        // };
+            _this.render();
+            $('.modal').classList.remove('show');
+        };
 
-        // let formElement = document.querySelector('.modal_form');
-        // formElement.onsubmit = function (e) {
-        //     e.preventDefault();
-        //     console.log(e.target);
-        //     options.rules.forEach(function (rule) {
-        //         let inputElements = Object.values(
-        //             formElement.querySelectorAll(rule.selector)
-        //         );
-
-        //         for (let input of inputElements) {
-        //             let errorElement =
-        //                 input.parentElement.querySelector('.modal_form_error');
-        //             let errorBorder =
-        //                 input.parentElement.querySelector('.modal_form_group');
-        //             // console.log(errorBorder);
-        //             let errorMess = rule.test(e.target.value);
-        //             if (input.value === '') {
-        //                 errorElement.innerHTML = errorMess;
-        //                 // errorBorder.classList.add('invalid');
-        //             } else {
-        //                 errorElement.innerHTML = '';
-        //                 //  errorBorder.classList.remove('invalid');
-        //             }
-        //         }
-        //     });
-        // };
-        // modalFormButton.onclick = function (e) {
-        //     e.preventDefault();
-
-        //     if ($('.modal').classList.contains('modal_add')) {
-        //         const obj = {
-        //             name: song_name.value,
-        //             singer: song_singer.value,
-        //             path: song_mp3.value,
-        //             image: song_thumb.value,
-        //         };
-        //         _this.songs.push(obj);
-        //     } else if ($('.modal').classList.contains('modal_update')) {
-        //         let idSong = $('.modal_update').dataset.id;
-        //         const currentSong = _this.songs[idSong];
-        //         currentSong.name = $('.song_name').value;
-        //         currentSong.singer = $('.song_singer').value;
-        //         currentSong.path = $('.song_mp3').value;
-        //         currentSong.image = $('.song_thumb').value;
-        //     } else if ($('.modal').classList.contains('modal_del')) {
-        //         let idSong = $('.modal_del').dataset.id;
-        //         if (idSong > -1) {
-        //             _this.songs.splice(idSong, 1);
-        //         }
-        //     }
-        // };
         // window.onload = function () {
         //     audio.onplay();
         // };
@@ -498,66 +447,63 @@ const app = {
                 //console.log(inputElements);
             });
             formElement.onsubmit = function (e) {
-                e.preventDefault();
-                let isSuccess = false;
-                // console.log(e.target);
-                options.rules.forEach(function (rule) {
-                    let inputElements = Object.values(
-                        formElement.querySelectorAll(rule.selector)
-                    );
-
-                    for (let input of inputElements) {
-                        let errorElement =
-                            input.parentElement.querySelector(
-                                '.modal_form_error'
-                            );
-                        let errorBorder = input.parentElement;
-                        let errorMess = e.target.value
-                            ? undefined
-                            : 'Vui lòng nhập trường này';
-                        if (input.value === '') {
-                            errorElement.innerHTML = errorMess;
-                            errorBorder.classList.add('invalid');
-                            isSuccess = false;
-                        } else {
-                            console.log('dd');
-                            errorElement.innerHTML = '';
-                            errorBorder.classList.remove('invalid');
-                            isSuccess = true;
-                        }
-                    }
-                });
-                if(isSuccess = true){
-                    if ($('.modal').classList.contains('modal_add')) {
-                        const obj = {
-                            name: song_name.value,
-                            singer: song_singer.value,
-                            path: song_mp3.value,
-                            image: song_thumb.value,
-                        };
-                        _this.songs.push(obj);
-                      
-                    } else if (
-                        $('.modal').classList.contains('modal_update')
-                    ) {
-                        let idSong = $('.modal_update').dataset.id;
-                        const currentSong = _this.songs[idSong];
-                        currentSong.name = $('.song_name').value;
-                        currentSong.singer = $('.song_singer').value;
-                        currentSong.path = $('.song_mp3').value;
-                        currentSong.image = $('.song_thumb').value;
-                    } else if (
-                        $('.modal').classList.contains('modal_del')
-                    ) {
-                        let idSong = $('.modal_del').dataset.id;
-                        if (idSong > -1) {
-                            _this.songs.splice(idSong, 1);
-                        }
-                    }
-    
-                    _this.render();
-                    $('.modal').classList.remove('show');
-                }
+                // e.preventDefault();
+                // let isSuccess = false;
+                // // console.log(e.target);
+                // options.rules.forEach(function (rule) {
+                //     let inputElements = Object.values(
+                //         formElement.querySelectorAll(rule.selector)
+                //     );
+                //     for (let input of inputElements) {
+                //         let errorElement =
+                //             input.parentElement.querySelector(
+                //                 '.modal_form_error'
+                //             );
+                //         let errorBorder = input.parentElement;
+                //         let errorMess = e.target.value
+                //             ? undefined
+                //             : 'Vui lòng nhập trường này';
+                //         if (input.value === '') {
+                //             errorElement.innerHTML = errorMess;
+                //             errorBorder.classList.add('invalid');
+                //             isSuccess = false;
+                //         } else {
+                //             console.log('dd');
+                //             errorElement.innerHTML = '';
+                //             errorBorder.classList.remove('invalid');
+                //             isSuccess = true;
+                //         }
+                //     }
+                // });
+                // if(isSuccess = true){
+                //     if ($('.modal').classList.contains('modal_add')) {
+                //         const obj = {
+                //             name: song_name.value,
+                //             singer: song_singer.value,
+                //             path: song_mp3.value,
+                //             image: song_thumb.value,
+                //         };
+                //         _this.songs.push(obj);
+                //     } else if (
+                //         $('.modal').classList.contains('modal_update')
+                //     ) {
+                //         let idSong = $('.modal_update').dataset.id;
+                //         const currentSong = _this.songs[idSong];
+                //         currentSong.name = $('.song_name').value;
+                //         currentSong.singer = $('.song_singer').value;
+                //         currentSong.path = $('.song_mp3').value;
+                //         currentSong.image = $('.song_thumb').value;
+                //     } else if (
+                //         $('.modal').classList.contains('modal_del')
+                //     ) {
+                //         let idSong = $('.modal_del').dataset.id;
+                //         if (idSong > -1) {
+                //             _this.songs.splice(idSong, 1);
+                //         }
+                //     }
+                //     _this.render();
+                //     $('.modal').classList.remove('show');
+                // }
             };
         }
     },

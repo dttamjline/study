@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 React create element</title>
+</head>
+<body>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+
+    <script>
+        /////////////////////////////////////////////////////////////////////////////
+        //Test 1 : create <h1 title="Title DOM" class="heading">Text DOM</h1>
+        /////////////////////////////////////////////////////////////////////////////
+        //DOM
+        const h1DOM = document.createElement('h1');
+        h1DOM.title = 'Title DOM';
+        h1DOM.className = 'Heading';
+        h1DOM.innerText = 'Text DOM';
+        document.body.appendChild(h1DOM);
+        
+        //React
+        //React.createElement(type,
+            //props,
+        //children);
+        const h1React = React.createElement('h1',{
+            title: 'Title DOM',
+            className: 'Heading',
+        },'Text DOM');
+
+        console.dir(h1DOM);
+        console.log(h1React);
+        /////////////////////////////////////////////////////////////////////////////
+        //Test 2 : create 
+        //<ul><li>Coffee</li><li>Tea</li></ul>
+        /////////////////////////////////////////////////////////////////////////////
+        //DOM
+
+        const ulDOM = document.createElement('ul');
+        ulDOM.id = "ulid01"
+        const liDOM1 = document.createElement('li');
+        liDOM1.innerText = 'Coffee';
+        liDOM1.id="liid01"
+        const liDOM2 = document.createElement('li');
+        liDOM2.innerText = 'Tea';
+        ulDOM.appendChild(liDOM1);
+        ulDOM.appendChild(liDOM2);
+        document.body.appendChild(ulDOM);
+
+        //React
+        // const ulReact = React.createElement('ul',
+        //     null,
+        //     React.createElement('li',null,'Coffee'),
+        //     React.createElement('li',null,'Tea')
+        // );
+        const ulReact = React.createElement('ul',
+            {id:'ulid01'},
+            React.createElement('li',{
+                id: 'liid01'
+            },'Coffee'),
+            React.createElement('li',null,'Tea')
+        );
+        console.log(ulReact);
+
+    </script>
+</body>
+</html>
