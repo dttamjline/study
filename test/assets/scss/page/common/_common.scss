@@ -1,0 +1,50 @@
+@use '../../global' as g;
+@use '../../component';
+@use '../../layout';
+@use '../../foundation';
+/*!
+page > common > common
+------------------------------
+*/
+#wrapper {
+    position: relative;
+}
+
+.pc {
+    display: none;
+}
+body.overflow {
+    overflow: hidden;
+}
+a,
+a *,
+div,
+div * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+@include g.mq('md') {
+    .sp {
+        display: none;
+    }
+    .pc{
+        display: inherit;
+    }
+    html {
+        overflow-y: overlay;
+        overflow-y: auto;
+        /* Fix not show on Firefox */
+        scrollbar-color: #32634B #eee;
+        scrollbar-width: thin;
+    }
+    html.overflow {
+        overflow-y: hidden;
+    }
+    /* For Chrome and other browsers except Firefox */
+    body::-webkit-scrollbar {
+        width: 0.3em;
+        background-color: #eee;
+    }
+    body::-webkit-scrollbar-thumb {
+        background-color: #32634B;
+    }
+}

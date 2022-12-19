@@ -1,0 +1,21 @@
+@use "../global" as g;
+
+/*!
+foundation > base
+------------------------------
+*/
+body {
+    line-height: 2;
+    font-size: g.rem(15);
+    color: g.$color-font-base;
+    font-family: g.$font-family-base;
+    @include g.mq('md') {
+        font-size: g.clamped(16,18,768,1536);
+    }
+}
+
+// img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+// }
