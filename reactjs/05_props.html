@@ -48,6 +48,7 @@
             console.log(props)
             return (
                 <div className='post-item'>
+                    <label htmlFor="inputEmail1">Email<input id="inputEmail1" type="text" /></label>
                     <img src={props.image} alt={props.title}/>  
                     <h2 className='post-title'>{props.title}</h2>  
                     <p className='post-desc'>{props.desc}</p>
