@@ -307,7 +307,7 @@
                     <figure className="post-img">
                         <img src={props.img} alt={props.ttl}/>
                     </figure>
-                    <p className="post-title" onClick=''>{props.ttl}</p>
+                    <p className="post-title" onClick={() => {console.log(props.ttl)}}>{props.ttl}</p>
                     <p className="post-desc">{props.desc}</p>
                     <p className="post-count">{props.studentCount}</p>
                 </div>
