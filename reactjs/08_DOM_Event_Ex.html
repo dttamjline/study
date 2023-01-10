@@ -299,44 +299,47 @@
             "is_published": true
         }
         ]
-
-
-        function Course (props){
+        function Course ({course, onClick}){
             return (
                 <div className="post-item">
                     <figure className="post-img">
-                        <img src={props.img} alt={props.ttl}/>
+                        <img src={course.image_url} alt={course.title}/>
                     </figure>
-                    <p className="post-title" onClick={() => {console.log(props.ttl)}}>{props.ttl}</p>
-                    <p className="post-desc">{props.desc}</p>
-                    <p className="post-count">{props.studentCount}</p>
+                    <p className="post-title" onClick = {() => onClick(course)}>{course.title}</p>
+                    <p className="post-desc">{course.description}</p>
+                    <p className="post-count">{course.students_count}</p>
                 </div>
             )
         }
         //Create file App.js 
         function App(){
+            const handleClick = (course) => { 
+                console.log(course.title);
+            }
             return (
+
                 <div id="wrapper">
                     {
                         courses.map((course,index) => {
-                               return  <Course 
-                                    key= {course.id}
-                                    img = {course.image_url}
-                                    ttl= {course.title}
-                                    desc= {course.description}
-                                    studentCount = {course.students_count}
-                                />
-                                
+                                 //Cách 1 : sử dụng ngoặc tròn 
+                                return  (
+                                    <Course
+                                        key={course.id}
+                                        course = {course}
+                                        onClick = {handleClick}               
+                                    />
+                                )
+                                //Cách 2 : ko sử dụng ngoặc tròn thì chữ Course phải để kế return
+                                // return  <Course 
+                                //     key={course.id}
+                                //     course = {course}/>
                             }
                         )
                     }
                 </div>
             )
         }
-
         ReactDOM.render(<App />,document.getElementById('root'));
-
-
     </script>
 </body>
 </html>
