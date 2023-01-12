@@ -306,7 +306,7 @@ class SVGElement {
             }
 
             const onInputChange = () => {
-            const value = input.value === '' ? [] : input.value.toLowerCase().split('');
+            const value = input.value === '' ? [] : input.value.split('');
             addLetters(value);
             removeLetters(value);
             resizeLetters();
